@@ -1,0 +1,9 @@
+{
+  "name": "Eagle Vision Digital",
+  "short_name": "Eagle Vision",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#01030B",
+  "theme_color": "#01030B",
+  "icons": [{"src":"/assets/logos/eagle-vision-icon.png","sizes":"1024x1024","type":"image/png"}]
+}
