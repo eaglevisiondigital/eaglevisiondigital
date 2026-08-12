@@ -605,3 +605,38 @@ p{color:var(--muted);font-size:1.05rem}
 .websites-page .site-footer{margin-top:0}
 @media(max-width:1000px){.websites-page .cw-benefit-showcase{grid-template-columns:1fr}.websites-page .cw-process-gallery{grid-template-columns:repeat(2,1fr)}.websites-page .cw-faq .faq-list{grid-template-columns:1fr}}
 @media(max-width:700px){.websites-page .cw-hero{padding-top:20px!important}.websites-page .cw-hero-visual{transform:none}.websites-page .cw-benefit-visual{min-height:410px}.websites-page .cw-float-pill{display:none}.websites-page .cw-benefit-showcase .cw-benefit-grid{grid-template-columns:1fr}.websites-page .cw-process-gallery{grid-template-columns:1fr}.websites-page .cw-process-gallery picture{height:240px}}
+
+/* CUSTOM WEBSITES — HERO SHOWCASE REFINEMENT PASS 5 */
+.websites-page .cw-hero{padding-top:16px!important;padding-bottom:24px!important;overflow:hidden}
+.websites-page .cw-hero-grid{grid-template-columns:minmax(0,.94fr) minmax(560px,1.06fr);gap:42px;min-height:690px;align-items:center}
+.websites-page .cw-hero-copy{padding-top:4px}
+.websites-page .cw-hero-copy h1{max-width:760px}
+.websites-page .cw-hero-copy .lead{max-width:690px}
+.websites-page .cw-hero-art{position:relative;align-self:stretch;display:grid;place-items:center;min-width:0}
+.websites-page .cw-hero-art:before{content:"";position:absolute;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(22,140,255,.24) 0,rgba(22,140,255,.10) 26%,rgba(22,140,255,.025) 52%,transparent 72%);filter:blur(4px);pointer-events:none}
+.websites-page .cw-hero-art:after{content:"";position:absolute;inset:8% -7% 4% 0;background:radial-gradient(ellipse at 56% 58%,rgba(22,140,255,.12),transparent 52%);pointer-events:none}
+.websites-page .cw-hero-visual{position:relative;width:112%;max-width:920px;transform:translateX(-2%) scale(1.02);padding:0;filter:drop-shadow(0 36px 55px rgba(0,0,0,.45));z-index:1}
+.websites-page .cw-hero-visual img{display:block;width:100%;height:auto;border-radius:26px;mix-blend-mode:screen;filter:saturate(1.08) contrast(1.06)}
+.websites-page .cw-hero-badge{background:rgba(3,9,18,.88);border-color:rgba(98,184,255,.30);box-shadow:0 20px 45px rgba(0,0,0,.30),0 0 30px rgba(22,140,255,.07);backdrop-filter:blur(14px)}
+.websites-page .cw-hero-badge-top{top:42px;right:8px}
+.websites-page .cw-hero-badge-bottom{bottom:48px;left:16px}
+.websites-page .cw-quick-proof{padding-top:10px;padding-bottom:30px}
+.websites-page .cw-quick-grid>article{min-height:142px;background:radial-gradient(circle at 15% 0%,rgba(22,140,255,.12),transparent 38%),linear-gradient(145deg,rgba(7,18,33,.96),rgba(3,8,17,.96));border-color:rgba(82,173,255,.16)}
+.websites-page .cw-quick-grid>article:hover{box-shadow:0 24px 62px rgba(0,0,0,.28),0 0 42px rgba(22,140,255,.06)}
+.websites-page .cw-concepts{background:radial-gradient(circle at 50% 16%,rgba(22,140,255,.055),transparent 33%)}
+.websites-page .cw-deliverable-grid article{position:relative;overflow:hidden;background:linear-gradient(145deg,rgba(8,18,31,.90),rgba(3,8,16,.98));border-color:rgba(255,255,255,.09)}
+.websites-page .cw-deliverable-grid article:after{content:"";position:absolute;width:130px;height:130px;border:1px solid rgba(22,140,255,.10);border-radius:50%;right:-70px;top:-72px}
+.websites-page .cw-deliverable-grid i{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;border:1px solid rgba(22,140,255,.22);background:rgba(22,140,255,.07)}
+.websites-page .cw-final-shell{border:1px solid rgba(22,140,255,.16);border-radius:28px;background:radial-gradient(circle at 50% 38%,rgba(22,140,255,.11),transparent 38%),linear-gradient(145deg,rgba(7,18,32,.94),rgba(2,7,14,.98));box-shadow:0 28px 70px rgba(0,0,0,.22)}
+@media(max-width:1120px){
+  .websites-page .cw-hero-grid{grid-template-columns:1fr;min-height:0;gap:20px}
+  .websites-page .cw-hero-art{min-height:0;max-width:900px;margin:0 auto}
+  .websites-page .cw-hero-visual{width:100%;transform:none}
+}
+@media(max-width:700px){
+  .websites-page .cw-hero{padding-top:10px!important;padding-bottom:24px!important}
+  .websites-page .cw-hero-grid{gap:18px}
+  .websites-page .cw-hero-art{order:2;margin-top:0}
+  .websites-page .cw-hero-visual img{border-radius:18px}
+  .websites-page .cw-hero-art:before{width:420px;height:420px}
+}
