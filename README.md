@@ -27,3 +27,13 @@ Avoid thin or duplicated city pages.
 
 ## Deployment
 Static HTML5 + master CSS + ES6 JavaScript. GitHub repository deployed through Netlify.
+
+
+## Home Page Production Pass 1 — 2026-08-12
+- Preserved approved prototype messaging and section flow.
+- Corrected all internal links to permanent route architecture.
+- Added official phone and U.S./Canada positioning.
+- Strengthened Fort Walton Beach / Emerald Coast local relevance without keyword stuffing.
+- Added Organization + WebSite + WebPage JSON-LD graph.
+- Added skip link and semantic accessibility refinements.
+- Placeholder routes remain noindex until completed and approved.

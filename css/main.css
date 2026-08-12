@@ -166,3 +166,23 @@ button, input, textarea { font: inherit; }
   .site-footer__grid { gap: 2rem; }
   .site-footer__bottom { flex-direction: column; }
 }
+
+/* Home Production Pass 1 refinements */
+.skip-link{position:fixed;left:1rem;top:1rem;z-index:1000;transform:translateY(-180%);padding:.75rem 1rem;border-radius:.65rem;background:#fff;color:#01030b;font-weight:800}
+.skip-link:focus{transform:none}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero__audience{max-width:46rem;color:#8998b1;font-size:.95rem}
+.hero__location{margin-top:1.35rem!important;color:#8fa3bd;font-size:.84rem;font-weight:700;letter-spacing:.02em}
+.trust-strip__inner>div{padding:.4rem .65rem}
+.trust-strip__inner strong{display:block;color:#fff;font-size:.92rem;margin-bottom:.35rem}
+.trust-strip__inner span{display:block;color:#8f9caf;font-size:.78rem;line-height:1.45}
+.project-banner{padding-block:var(--space-5)}
+.project-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:clamp(2rem,5vw,4rem);border:1px solid var(--color-border-strong);border-radius:var(--radius-lg);background:linear-gradient(110deg,rgba(22,140,255,.14),rgba(255,255,255,.025));box-shadow:var(--shadow-glow)}
+.project-banner__inner .heading-lg{max-width:14ch}
+.local-proof{border-block:1px solid rgba(255,255,255,.05);background:linear-gradient(180deg,rgba(22,140,255,.035),transparent)}
+.local-proof__grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.5rem,7vw,7rem);align-items:center}
+.text-link{display:inline-block;margin-top:1rem;color:#6fc2ff;font-weight:800}
+.footer-location{color:#8ea1b9;font-size:.9rem;max-width:34rem}
+.founder__name{color:#fff}
+@media(max-width:62rem){.local-proof__grid{grid-template-columns:1fr}.project-banner__inner{align-items:flex-start;flex-direction:column}}
+@media(max-width:42rem){.trust-strip__inner>div{padding:.75rem 0}.project-banner{padding-block:3rem}.project-banner__inner .button{width:100%}}
