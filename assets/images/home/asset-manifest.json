@@ -1,0 +1,194 @@
+{
+  "hero-digital-solutions.png": {
+    "source": "/assets/images/home/source/hero-digital-solutions.png",
+    "production": "/assets/images/home/web/hero-digital-solutions.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 178778,
+    "web_bytes": 187598
+  },
+  "industries-strip.png": {
+    "source": "/assets/images/home/source/industries-strip.png",
+    "production": "/assets/images/home/web/industries-strip.webp",
+    "width": 2061,
+    "height": 360,
+    "source_bytes": 63120,
+    "web_bytes": 66878
+  },
+  "goal-attract-customers.png": {
+    "source": "/assets/images/home/source/goal-attract-customers.png",
+    "production": "/assets/images/home/web/goal-attract-customers.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 206468,
+    "web_bytes": 216148
+  },
+  "goal-streamline-operations.png": {
+    "source": "/assets/images/home/source/goal-streamline-operations.png",
+    "production": "/assets/images/home/web/goal-streamline-operations.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 200668,
+    "web_bytes": 211198
+  },
+  "goal-customer-relationships.png": {
+    "source": "/assets/images/home/source/goal-customer-relationships.png",
+    "production": "/assets/images/home/web/goal-customer-relationships.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 207676,
+    "web_bytes": 226034
+  },
+  "goal-scale-confidence.png": {
+    "source": "/assets/images/home/source/goal-scale-confidence.png",
+    "production": "/assets/images/home/web/goal-scale-confidence.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 208582,
+    "web_bytes": 223400
+  },
+  "service-custom-websites.png": {
+    "source": "/assets/images/home/source/service-custom-websites.png",
+    "production": "/assets/images/home/web/service-custom-websites.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 186390,
+    "web_bytes": 191708
+  },
+  "service-custom-apps.png": {
+    "source": "/assets/images/home/source/service-custom-apps.png",
+    "production": "/assets/images/home/web/service-custom-apps.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 203798,
+    "web_bytes": 209232
+  },
+  "service-ai-automation.png": {
+    "source": "/assets/images/home/source/service-ai-automation.png",
+    "production": "/assets/images/home/web/service-ai-automation.webp",
+    "width": 1024,
+    "height": 1536,
+    "source_bytes": 200942,
+    "web_bytes": 207196
+  },
+  "why-custom-built.png": {
+    "source": "/assets/images/home/source/why-custom-built.png",
+    "production": "/assets/images/home/web/why-custom-built.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 147350,
+    "web_bytes": 150434
+  },
+  "why-mobile-first.png": {
+    "source": "/assets/images/home/source/why-mobile-first.png",
+    "production": "/assets/images/home/web/why-mobile-first.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 147276,
+    "web_bytes": 153448
+  },
+  "why-ai-ready.png": {
+    "source": "/assets/images/home/source/why-ai-ready.png",
+    "production": "/assets/images/home/web/why-ai-ready.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 159672,
+    "web_bytes": 165304
+  },
+  "why-fast-secure.png": {
+    "source": "/assets/images/home/source/why-fast-secure.png",
+    "production": "/assets/images/home/web/why-fast-secure.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 160266,
+    "web_bytes": 164120
+  },
+  "why-built-scale.png": {
+    "source": "/assets/images/home/source/why-built-scale.png",
+    "production": "/assets/images/home/web/why-built-scale.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 177252,
+    "web_bytes": 182402
+  },
+  "why-us-support.png": {
+    "source": "/assets/images/home/source/why-us-support.png",
+    "production": "/assets/images/home/web/why-us-support.webp",
+    "width": 1536,
+    "height": 1024,
+    "source_bytes": 176372,
+    "web_bytes": 183982
+  },
+  "process-discover.png": {
+    "source": "/assets/images/home/source/process-discover.png",
+    "production": "/assets/images/home/web/process-discover.webp",
+    "width": 916,
+    "height": 1717,
+    "source_bytes": 120972,
+    "web_bytes": 123510
+  },
+  "process-design.png": {
+    "source": "/assets/images/home/source/process-design.png",
+    "production": "/assets/images/home/web/process-design.webp",
+    "width": 916,
+    "height": 1717,
+    "source_bytes": 114444,
+    "web_bytes": 116742
+  },
+  "process-build.png": {
+    "source": "/assets/images/home/source/process-build.png",
+    "production": "/assets/images/home/web/process-build.webp",
+    "width": 916,
+    "height": 1717,
+    "source_bytes": 165100,
+    "web_bytes": 167108
+  },
+  "process-launch.png": {
+    "source": "/assets/images/home/source/process-launch.png",
+    "production": "/assets/images/home/web/process-launch.webp",
+    "width": 916,
+    "height": 1717,
+    "source_bytes": 120698,
+    "web_bytes": 121838
+  },
+  "founder-dave-fowler.png": {
+    "source": "/assets/images/home/source/founder-dave-fowler.png",
+    "production": "/assets/images/home/web/founder-dave-fowler.webp",
+    "width": 1254,
+    "height": 1254,
+    "source_bytes": 209324,
+    "web_bytes": 224944
+  },
+  "stat-20-years.png": {
+    "source": "/assets/images/home/source/stat-20-years.png",
+    "production": "/assets/images/home/web/stat-20-years.webp",
+    "width": 1683,
+    "height": 935,
+    "source_bytes": 51480,
+    "web_bytes": 53696
+  },
+  "stat-400-businesses.png": {
+    "source": "/assets/images/home/source/stat-400-businesses.png",
+    "production": "/assets/images/home/web/stat-400-businesses.webp",
+    "width": 1683,
+    "height": 935,
+    "source_bytes": 55094,
+    "web_bytes": 57804
+  },
+  "stat-3-championships.png": {
+    "source": "/assets/images/home/source/stat-3-championships.png",
+    "production": "/assets/images/home/web/stat-3-championships.webp",
+    "width": 1683,
+    "height": 935,
+    "source_bytes": 48440,
+    "web_bytes": 49700
+  },
+  "stat-multiple-businesses.png": {
+    "source": "/assets/images/home/source/stat-multiple-businesses.png",
+    "production": "/assets/images/home/web/stat-multiple-businesses.webp",
+    "width": 1683,
+    "height": 935,
+    "source_bytes": 58724,
+    "web_bytes": 59640
+  }
+}
