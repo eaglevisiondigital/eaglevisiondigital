@@ -566,3 +566,41 @@ p{color:var(--muted);font-size:1.05rem}
   .websites-page .cw-outcome-grid article{min-height:0;padding:22px 20px 54px}.websites-page .cw-outcome-grid b{left:20px;bottom:20px}
   .websites-page .cw-difference{padding-top:56px}
 }
+
+/* CUSTOM WEBSITES — VISUAL STORYTELLING PASS 3 */
+.websites-page .cw-proof{padding-top:70px;padding-bottom:78px;background:radial-gradient(circle at 50% 15%,rgba(22,140,255,.055),transparent 38%)}
+.websites-page .cw-process-visual{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:38px}
+.websites-page .cw-process-card{position:relative;overflow:hidden;border:1px solid rgba(70,164,255,.16);border-radius:22px;background:linear-gradient(145deg,rgba(8,18,33,.96),rgba(3,8,17,.98));box-shadow:0 24px 60px rgba(0,0,0,.18);transition:transform .25s var(--ease),border-color .25s var(--ease)}
+.websites-page .cw-process-card:hover{transform:translateY(-5px);border-color:rgba(70,164,255,.32)}
+.websites-page .cw-process-image{height:250px;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.07);background:#020812}
+.websites-page .cw-process-image img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.96) contrast(1.03);transition:transform .45s var(--ease)}
+.websites-page .cw-process-card:hover img{transform:scale(1.025)}
+.websites-page .cw-process-body{padding:26px 28px 30px}
+.websites-page .cw-process-body span{font-size:.58rem;letter-spacing:.14em;color:#48A9FF;font-weight:900}
+.websites-page .cw-process-body h3{font-size:1.35rem;line-height:1.12;letter-spacing:-.025em;margin:10px 0 10px;max-width:520px}
+.websites-page .cw-process-body p{font-size:.79rem;line-height:1.58;margin:0;color:#8796A7;max-width:570px}
+.websites-page .cw-benefits{padding-top:78px;padding-bottom:82px;background:radial-gradient(circle at 18% 58%,rgba(22,140,255,.055),transparent 28%)}
+.websites-page .cw-capability-showcase{display:grid;grid-template-columns:.95fr 1.25fr;gap:20px;align-items:stretch;margin-top:40px}
+.websites-page .cw-capability-visual{position:relative;min-height:560px;border:1px solid rgba(70,164,255,.18);border-radius:24px;background:linear-gradient(145deg,#06101e,#020710);overflow:hidden;display:grid;place-items:center;padding:34px 16px}
+.websites-page .cw-capability-visual:before{content:"BUILT TO DO MORE";position:absolute;left:26px;top:25px;font-size:.55rem;letter-spacing:.16em;font-weight:900;color:#4CA9FA;z-index:2}
+.websites-page .cw-capability-glow{position:absolute;width:72%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(22,140,255,.24),rgba(22,140,255,.04) 45%,transparent 70%);filter:blur(14px)}
+.websites-page .cw-capability-visual img{position:relative;width:116%;max-width:none;z-index:1;filter:drop-shadow(0 30px 45px rgba(0,0,0,.52))}
+.websites-page .cw-capability-tag{position:absolute;z-index:3;padding:12px 14px;border:1px solid rgba(70,164,255,.24);border-radius:13px;background:rgba(3,10,20,.88);backdrop-filter:blur(12px);box-shadow:0 16px 30px rgba(0,0,0,.28)}
+.websites-page .cw-capability-tag b,.websites-page .cw-capability-tag span{display:block}.websites-page .cw-capability-tag b{font-size:.72rem}.websites-page .cw-capability-tag span{font-size:.57rem;color:#7F91A6;margin-top:2px}.websites-page .tag-a{left:22px;bottom:24px}.websites-page .tag-b{right:22px;top:72px}
+.websites-page .cw-capability-showcase .cw-benefit-grid{grid-template-columns:repeat(2,1fr);margin-top:0;gap:12px}
+.websites-page .cw-capability-showcase .cw-benefit-grid article{min-height:0;padding:24px 22px;background:linear-gradient(145deg,rgba(8,18,33,.82),rgba(3,8,17,.92));border-color:rgba(255,255,255,.085)}
+.websites-page .cw-capability-showcase .cw-benefit-grid article:hover{border-color:rgba(70,164,255,.24);transform:translateY(-3px)}
+.websites-page .cw-one-partner{padding-top:70px;padding-bottom:74px}
+.websites-page .cw-faq{padding-top:80px;padding-bottom:84px;background:radial-gradient(circle at 50% 5%,rgba(22,140,255,.055),transparent 32%)}
+.websites-page .cw-faq .faq-layout{display:block}
+.websites-page .cw-faq .faq-heading{text-align:center;max-width:900px;margin:0 auto 38px}
+.websites-page .cw-faq .faq-heading h2{font-size:clamp(2.6rem,4.6vw,4.7rem);line-height:.98;letter-spacing:-.05em;margin:12px 0 16px}
+.websites-page .cw-faq .faq-heading p{max-width:650px;margin:0 auto;color:#8C9AAD}
+.websites-page .cw-faq .faq-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start}
+.websites-page .cw-faq details{margin:0;border:1px solid rgba(70,164,255,.17);border-radius:15px;background:linear-gradient(145deg,rgba(8,18,33,.88),rgba(3,8,17,.96));overflow:hidden}
+.websites-page .cw-faq summary{min-height:72px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:.88rem;font-weight:800;color:#EEF5FD;cursor:pointer}
+.websites-page .cw-faq summary span{font-size:1.45rem;color:#39A5FF;font-weight:400;transition:transform .2s ease}
+.websites-page .cw-faq details[open] summary span{transform:rotate(45deg)}
+.websites-page .cw-faq details p{padding:0 22px 22px;margin:0;color:#8A9AAD;font-size:.78rem;line-height:1.6}
+@media(max-width:900px){.websites-page .cw-process-visual,.websites-page .cw-capability-showcase{grid-template-columns:1fr}.websites-page .cw-capability-visual{min-height:460px}.websites-page .cw-faq .faq-list{grid-template-columns:1fr}}
+@media(max-width:620px){.websites-page .cw-process-image{height:190px}.websites-page .cw-process-body{padding:22px 20px 24px}.websites-page .cw-capability-showcase .cw-benefit-grid{grid-template-columns:1fr}.websites-page .cw-capability-visual{min-height:380px}.websites-page .cw-capability-tag{display:none}.websites-page .cw-faq summary{min-height:64px;padding:0 18px;font-size:.82rem}.websites-page .cw-faq details p{padding:0 18px 18px}}
