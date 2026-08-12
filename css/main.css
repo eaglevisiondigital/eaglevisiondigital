@@ -186,3 +186,38 @@ button, input, textarea { font: inherit; }
 .founder__name{color:#fff}
 @media(max-width:62rem){.local-proof__grid{grid-template-columns:1fr}.project-banner__inner{align-items:flex-start;flex-direction:column}}
 @media(max-width:42rem){.trust-strip__inner>div{padding:.75rem 0}.project-banner{padding-block:3rem}.project-banner__inner .button{width:100%}}
+
+/* HOME PRODUCTION PASS 2 — approved visual asset restoration + spacing refinement */
+.hero{min-height:auto;padding-block:clamp(4.5rem,7vw,7rem)}
+.hero__grid{grid-template-columns:1.02fr .98fr;gap:clamp(2.25rem,5vw,5rem)}
+.hero__visual--approved{min-height:0;display:block}
+.hero__approved-image{width:min(100%,42rem);margin-inline:auto;border-radius:var(--radius-lg);filter:drop-shadow(0 30px 70px rgba(0,0,0,.42));}
+.trust-strip__inner{padding-block:1rem}
+.section{padding-block:clamp(4.75rem,7vw,7rem)}
+.section--tight{padding-block:clamp(3.5rem,5vw,5.25rem)}
+.section-heading{margin-bottom:clamp(2rem,4vw,3.25rem)}
+.service-feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.service-feature{position:relative;display:block;overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:#030817;box-shadow:var(--shadow-sm);transition:transform var(--transition),border-color var(--transition),box-shadow var(--transition)}
+.service-feature:hover{transform:translateY(-6px);border-color:var(--color-border-strong);box-shadow:var(--shadow-md),var(--shadow-glow)}
+.service-feature img{width:100%;aspect-ratio: .67/1;object-fit:cover}
+.service-feature span{display:block;padding:1rem 1.15rem;color:#8fd0ff;font-weight:850}
+.supporting-services{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.supporting-services a{padding:1.15rem 1.25rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:rgba(255,255,255,.025)}
+.supporting-services strong,.supporting-services span{display:block}.supporting-services strong{color:#fff;margin-bottom:.35rem}.supporting-services span{color:#8f9caf;font-size:.84rem;line-height:1.45}
+.why-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:1.25rem;align-items:stretch}
+.why-art{overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:#020713;box-shadow:var(--shadow-md)}
+.why-art img{width:100%;height:100%;object-fit:cover}
+.why-points{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.why-points>div{display:flex;flex-direction:column;justify-content:flex-end;min-height:11rem;padding:1.5rem;border:1px solid var(--color-border);border-radius:var(--radius-md);background:linear-gradient(145deg,rgba(15,26,49,.75),rgba(5,10,23,.72))}
+.why-points strong{color:#4bb2ff;font-size:.85rem;letter-spacing:.12em;margin-bottom:auto}.why-points span{color:#fff;font-size:1.05rem;font-weight:800}
+.process-visual-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.process-visual{margin:0;overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-md);background:#020713;box-shadow:var(--shadow-sm)}
+.process-visual img{width:100%;aspect-ratio:.54/1;object-fit:cover;object-position:center top}
+.process-visual figcaption{padding:.85rem 1rem;color:#fff;font-weight:850;text-align:center}
+.founder{grid-template-columns:.8fr 1.2fr;gap:clamp(2.5rem,6vw,5.5rem)}
+.founder__portrait{overflow:hidden;border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-md),0 0 55px rgba(22,140,255,.09)}
+.founder__portrait img{width:100%;aspect-ratio:1;object-fit:cover}
+.local-proof{padding-block:clamp(3.75rem,5vw,5.25rem)}
+.project-banner{padding-block:clamp(3rem,4vw,4.25rem)}
+@media(max-width:62rem){.service-feature-grid{grid-template-columns:1fr 1fr}.service-feature:last-child{grid-column:1/-1;max-width:32rem;margin-inline:auto}.supporting-services{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.process-visual-grid{grid-template-columns:1fr 1fr}.founder{grid-template-columns:1fr}.founder__portrait{max-width:28rem;margin-inline:auto}}
+@media(max-width:42rem){.hero{padding-block:3.5rem}.hero__grid{gap:2rem}.hero__approved-image{border-radius:1.25rem}.section{padding-block:4rem}.service-feature-grid,.process-visual-grid,.why-points{grid-template-columns:1fr}.service-feature:last-child{grid-column:auto;max-width:none}.process-visual img{aspect-ratio:.66/1}.founder__portrait{max-width:22rem}}
