@@ -640,3 +640,82 @@ p{color:var(--muted);font-size:1.05rem}
   .websites-page .cw-hero-visual img{border-radius:18px}
   .websites-page .cw-hero-art:before{width:420px;height:420px}
 }
+
+/* CUSTOM WEBSITES — APPROVED VISUAL REFINEMENT PASS 6 */
+.websites-page .cw-hero{padding-top:22px!important;padding-bottom:36px!important}
+.websites-page .cw-hero-grid{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:52px;min-height:650px;align-items:center}
+.websites-page .cw-hero-copy{position:relative;z-index:3;min-width:0}
+.websites-page .cw-hero-copy h1{font-size:clamp(3.8rem,5.25vw,5.9rem);line-height:.91;letter-spacing:-.062em;max-width:720px}
+.websites-page .cw-hero-copy h2{margin-top:15px}
+.websites-page .cw-hero-art{min-width:0;align-self:center;overflow:visible}
+.websites-page .cw-hero-art:before,.websites-page .cw-hero-art:after{display:none}
+.websites-page .cw-device-stage{position:relative;width:100%;min-height:580px;isolation:isolate}
+.websites-page .cw-orbit{position:absolute;inset:2% 0 2% 2%;border-radius:50%;background:radial-gradient(circle at 54% 50%,rgba(22,140,255,.20),rgba(22,140,255,.065) 34%,transparent 65%);border:1px solid rgba(57,157,255,.12);box-shadow:0 0 90px rgba(22,140,255,.08);z-index:-1}
+.websites-page .cw-orbit:before,.websites-page .cw-orbit:after{content:"";position:absolute;border:1px solid rgba(57,157,255,.16);border-radius:50%;inset:10%;transform:rotate(-10deg)}
+.websites-page .cw-orbit:after{inset:22%;border-style:dashed;opacity:.55;transform:rotate(14deg)}
+.websites-page .cw-desktop-device,.websites-page .cw-laptop-device,.websites-page .cw-phone-device{position:absolute;background:#050A12;border:1px solid rgba(142,204,255,.25);box-shadow:0 30px 70px rgba(0,0,0,.54),0 0 42px rgba(22,140,255,.10);overflow:hidden}
+.websites-page .cw-desktop-device{width:78%;right:3%;top:7%;border-radius:17px 17px 11px 11px;overflow:visible}
+.websites-page .cw-desktop-device>img{width:100%;aspect-ratio:1.78/1;object-fit:cover;object-position:center top;display:block;border-radius:0 0 10px 10px}
+.websites-page .cw-device-top{height:30px;display:flex;align-items:center;gap:6px;padding:0 11px;background:#101A27;border-bottom:1px solid rgba(255,255,255,.08);border-radius:16px 16px 0 0}
+.websites-page .cw-device-top i{display:block;width:6px;height:6px;border-radius:50%;background:#506074}
+.websites-page .cw-device-top span{margin-left:7px;color:#75869A;font-size:.52rem;letter-spacing:.03em}
+.websites-page .cw-monitor-neck{position:absolute;width:19%;height:48px;background:linear-gradient(#17202A,#080D13);left:40.5%;bottom:-48px;clip-path:polygon(20% 0,80% 0,100% 100%,0 100%)}
+.websites-page .cw-monitor-base{position:absolute;width:36%;height:9px;border-radius:50%;background:#17202A;left:32%;bottom:-53px;box-shadow:0 8px 20px rgba(0,0,0,.45)}
+.websites-page .cw-laptop-device{width:59%;left:1%;bottom:7%;border-radius:15px 15px 8px 8px;transform:perspective(900px) rotateY(5deg) rotateZ(-1deg);z-index:4;overflow:visible}
+.websites-page .cw-laptop-device>img{display:block;width:100%;aspect-ratio:1.7/1;object-fit:cover;object-position:center top;border-radius:0 0 7px 7px}
+.websites-page .cw-laptop-base{position:absolute;height:11px;left:-5%;right:-5%;bottom:-12px;background:linear-gradient(90deg,#39424d,#151c24 14%,#626a74 50%,#151c24 86%,#39424d);clip-path:polygon(3% 0,97% 0,100% 100%,0 100%);border-radius:0 0 10px 10px;box-shadow:0 13px 25px rgba(0,0,0,.42)}
+.websites-page .cw-phone-device{width:19%;right:0;bottom:4%;height:300px;border:6px solid #192330;border-radius:28px;z-index:5;transform:rotate(2deg);background:#04070c}
+.websites-page .cw-phone-device img{width:100%;height:100%;display:block;object-fit:cover;object-position:60% 24%;border-radius:20px}
+.websites-page .cw-phone-notch{position:absolute;z-index:2;width:46%;height:13px;top:0;left:27%;border-radius:0 0 10px 10px;background:#192330}
+.websites-page .cw-hero-badge{position:absolute;z-index:8;max-width:205px;padding:12px 14px;border:1px solid rgba(98,184,255,.32);border-radius:13px;background:rgba(3,9,18,.91);backdrop-filter:blur(14px);box-shadow:0 18px 40px rgba(0,0,0,.34)}
+.websites-page .cw-hero-badge strong,.websites-page .cw-hero-badge span{display:block}
+.websites-page .cw-hero-badge strong{font-size:.72rem;color:#F2F8FF}.websites-page .cw-hero-badge span{font-size:.56rem;line-height:1.4;color:#7F93A9;margin-top:3px}
+.websites-page .cw-hero-badge-top{top:4%;right:0}.websites-page .cw-hero-badge-bottom{left:10%;bottom:0}
+.websites-page .cw-quick-proof{padding-top:6px;padding-bottom:34px}
+
+/* Approved industry concept imagery */
+.websites-page .cw-approved-concepts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:38px}
+.websites-page .cw-approved-concept{margin:0;overflow:hidden;border:1px solid rgba(71,164,255,.20);border-radius:24px;background:#050B13;box-shadow:0 26px 64px rgba(0,0,0,.25);transition:transform .28s ease,border-color .28s ease,box-shadow .28s ease}
+.websites-page .cw-approved-concept:hover{transform:translateY(-5px);border-color:rgba(91,181,255,.38);box-shadow:0 34px 76px rgba(0,0,0,.34),0 0 50px rgba(22,140,255,.055)}
+.websites-page .cw-approved-concept img{width:100%;height:auto;display:block}
+
+/* FAQ heading must scroll normally; prevents heading/cards from colliding beneath sticky site header */
+.websites-page .cw-faq{scroll-margin-top:92px;position:relative;overflow:visible}
+.websites-page .cw-faq .faq-layout{position:relative}
+.websites-page .cw-faq .faq-heading{position:static!important;top:auto!important;z-index:auto;margin:0 auto 38px!important;padding:0 0 4px}
+.websites-page .cw-faq .faq-list{position:relative;z-index:1}
+.websites-page .cw-faq details{transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.websites-page .cw-faq details:hover{border-color:rgba(83,177,255,.34);background:linear-gradient(145deg,rgba(9,23,41,.96),rgba(3,9,18,.99));transform:translateY(-1px)}
+
+/* Keep the shared production footer complete and readable on the websites page */
+.websites-page .site-footer{position:relative;z-index:2;background:#02050B}
+.websites-page .footer-brand img{display:block;width:min(270px,100%);height:auto}
+.websites-page .footer-links{align-items:start}
+
+@media(max-width:1180px){
+  .websites-page .cw-hero-grid{grid-template-columns:1fr;gap:26px;min-height:0}
+  .websites-page .cw-hero-copy{max-width:860px}
+  .websites-page .cw-hero-art{width:min(900px,100%);margin:0 auto}
+  .websites-page .cw-device-stage{min-height:610px}
+}
+@media(max-width:800px){
+  .websites-page .cw-approved-concepts{grid-template-columns:1fr;gap:18px}
+  .websites-page .cw-device-stage{min-height:500px}
+  .websites-page .cw-desktop-device{width:82%;right:1%;top:7%}
+  .websites-page .cw-laptop-device{width:62%;left:0;bottom:8%}
+  .websites-page .cw-phone-device{width:20%;height:250px;right:0;bottom:5%}
+}
+@media(max-width:600px){
+  .websites-page .cw-hero{padding-top:16px!important}
+  .websites-page .cw-hero-copy h1{font-size:clamp(3rem,14vw,4.25rem)}
+  .websites-page .cw-device-stage{min-height:390px;margin-top:8px}
+  .websites-page .cw-desktop-device{width:86%;top:7%;right:0}
+  .websites-page .cw-device-top{height:22px;padding:0 8px}.websites-page .cw-device-top i{width:4px;height:4px}.websites-page .cw-device-top span{font-size:.4rem}
+  .websites-page .cw-monitor-neck{height:34px;bottom:-34px}.websites-page .cw-monitor-base{bottom:-38px;height:7px}
+  .websites-page .cw-laptop-device{width:64%;bottom:8%;left:0}
+  .websites-page .cw-phone-device{height:195px;width:21%;border-width:4px;border-radius:21px;bottom:4%}.websites-page .cw-phone-device img{border-radius:16px}
+  .websites-page .cw-hero-badge{display:none}
+  .websites-page .cw-approved-concepts{margin-top:26px}
+  .websites-page .cw-approved-concept{border-radius:17px}
+  .websites-page .cw-faq .faq-heading{margin-bottom:26px!important}
+}
