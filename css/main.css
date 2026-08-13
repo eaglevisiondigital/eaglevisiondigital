@@ -735,3 +735,18 @@ p{color:var(--muted);font-size:1.05rem}
 .websites-page .cw-faq details[open]{border-color:rgba(83,177,255,.42);background:linear-gradient(145deg,rgba(10,27,48,.98),rgba(3,9,18,.99));box-shadow:0 12px 30px rgba(0,0,0,.18)}
 .websites-page .cw-faq details[open] summary span{transform:rotate(45deg)}
 .websites-page .cw-faq summary span{transition:transform .2s ease}
+
+/* Pass 8 — final hero device-fit corrections */
+.websites-page .cw-laptop-device{background:#F4F7F1}
+.websites-page .cw-laptop-device>img{
+  aspect-ratio:1178/555;
+  object-fit:contain;
+  object-position:center center;
+  background:#F4F7F1;
+}
+.websites-page .cw-phone-device{background:#080A0D}
+.websites-page .cw-phone-device img{
+  object-fit:cover;
+  object-position:center top;
+  background:#080A0D;
+}
