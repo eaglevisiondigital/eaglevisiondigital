@@ -93,3 +93,14 @@ customWebsiteFaqItems.forEach(item => {
     });
   });
 });
+
+// Mobile Apps FAQ — single-open accordion behavior.
+const mobileAppFaqItems = [...document.querySelectorAll('.apps-page .ma-faq details')];
+mobileAppFaqItems.forEach(item => {
+  item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    mobileAppFaqItems.forEach(other => {
+      if (other !== item && other.open) other.removeAttribute('open');
+    });
+  });
+});
