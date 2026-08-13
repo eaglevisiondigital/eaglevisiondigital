@@ -1110,3 +1110,37 @@ p{color:var(--muted);font-size:1.05rem}
 @media(max-width:980px){.apps-page .ma-hero-approved{padding-top:30px}.apps-page .ma-approved-grid{grid-template-columns:1fr;min-height:0;gap:22px}.apps-page .ma-approved-copy{max-width:760px}.apps-page .ma-approved-visual img{width:min(820px,100%);margin:0 auto}.apps-page .ma-approved-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.apps-page .ma-approved-copy h1{font-size:clamp(3.15rem,14vw,4.35rem)}.apps-page .ma-approved-copy .lead{font-size:.96rem}.apps-page .ma-approved-proof{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:20px}.apps-page .ma-approved-proof article:nth-child(2){border-right:0}.apps-page .ma-approved-visual{overflow:hidden}.apps-page .ma-approved-visual img{width:118%;max-width:none;margin-left:-9%;margin-right:-9%}.apps-page .ma-approved-cards{grid-template-columns:1fr}.apps-page .ma-approved-cards article{min-height:0}}
 @media(max-width:520px){.apps-page .ma-approved-copy .btn-row{display:grid;grid-template-columns:1fr}.apps-page .ma-approved-copy .btn{width:100%}.apps-page .ma-approved-visual img{width:126%;margin-left:-13%;margin-right:-13%}}
+
+
+/* MOBILE APPS — REAL VALUE SECTION REFINEMENT */
+.apps-page .ma-problem{padding:84px 0 88px;position:relative}
+.apps-page .ma-problem:before{content:"";position:absolute;width:720px;height:420px;left:50%;top:48%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(0,135,255,.075),transparent 68%);pointer-events:none}
+.apps-page .ma-problem-shell{position:relative;padding:42px 44px 30px;border:1px solid rgba(63,164,255,.15);border-radius:28px;background:linear-gradient(145deg,rgba(5,20,36,.80),rgba(2,8,17,.68)),radial-gradient(circle at 82% 0%,rgba(16,126,255,.08),transparent 38%);box-shadow:inset 0 1px 0 rgba(255,255,255,.025),0 30px 80px rgba(0,0,0,.16);overflow:hidden}
+.apps-page .ma-problem-shell:after{content:"";position:absolute;width:420px;height:420px;right:-250px;top:-255px;border:1px solid rgba(42,158,255,.12);border-radius:50%;box-shadow:0 0 0 70px rgba(42,158,255,.018),0 0 0 140px rgba(42,158,255,.012);pointer-events:none}
+.apps-page .ma-problem-intro{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:end;position:relative;z-index:1}
+.apps-page .ma-problem-title h2{font-size:clamp(3rem,4.85vw,5rem);line-height:.94;letter-spacing:-.058em;margin:14px 0 0;max-width:850px}
+.apps-page .ma-problem-title h2 span{color:#58b2ff}
+.apps-page .ma-problem-copy{max-width:560px;padding:0 0 5px}
+.apps-page .ma-problem-copy p{margin:0;color:#95a3b5;font-size:.95rem;line-height:1.68}
+.apps-page .ma-problem-copy .ma-problem-lead{margin-bottom:9px;color:#f0f5fb;font-weight:750;font-size:1.12rem;letter-spacing:-.015em}
+.apps-page .ma-value-proof{display:grid;grid-template-columns:repeat(4,max-content);gap:10px;margin-top:22px}
+.apps-page .ma-value-proof span{display:flex;align-items:center;gap:7px;padding:8px 11px;border:1px solid rgba(89,178,255,.13);border-radius:999px;background:rgba(7,23,39,.72);color:#aab7c7;font-size:.62rem;font-weight:700;white-space:nowrap}
+.apps-page .ma-value-proof i{color:#52afff;font-style:normal;font-size:.52rem;font-weight:900}
+.apps-page .ma-value-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px;position:relative;z-index:1}
+.apps-page .ma-value-grid article{position:relative;min-height:245px;padding:24px 23px 56px;border:1px solid rgba(255,255,255,.075);border-radius:20px;background:linear-gradient(150deg,rgba(7,24,41,.92),rgba(3,10,19,.80));overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.apps-page .ma-value-grid article:hover{transform:translateY(-3px);border-color:rgba(64,166,255,.30);background:linear-gradient(150deg,rgba(8,30,51,.98),rgba(3,11,21,.85))}
+.apps-page .ma-value-grid article:after{content:"";position:absolute;width:110px;height:110px;right:-58px;top:-58px;border:1px solid rgba(54,164,255,.10);border-radius:50%}
+.apps-page .ma-value-top{display:flex;align-items:center;justify-content:space-between}
+.apps-page .ma-value-top>span{font-size:.56rem;letter-spacing:.15em;font-weight:900;color:#4faeff}
+.apps-page .ma-value-icon{width:44px;height:44px;margin:0;display:grid;place-items:center;border-radius:13px;border:1px solid rgba(22,140,255,.22);background:linear-gradient(145deg,rgba(22,140,255,.12),rgba(22,140,255,.035));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.apps-page .ma-value-icon svg{width:20px;height:20px;fill:none;stroke:#61b8ff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.apps-page .ma-value-grid h3{font-size:1.14rem;margin:25px 0 10px;letter-spacing:-.02em}
+.apps-page .ma-value-grid p{margin:0;color:#8797aa;font-size:.76rem;line-height:1.62;max-width:260px}
+.apps-page .ma-value-grid b{position:absolute;left:23px;bottom:20px;display:flex;gap:8px;align-items:center;font-size:.61rem;color:#62b7ff;font-weight:800;letter-spacing:.01em}
+.apps-page .ma-value-grid b em{font-style:normal;transition:transform .2s ease}
+.apps-page .ma-value-grid article:hover b em{transform:translateX(3px)}
+.apps-page .ma-problem-bottom{margin-top:18px;padding:18px 4px 2px;display:flex;align-items:center;justify-content:center;gap:15px;border-top:1px solid rgba(255,255,255,.055);position:relative;z-index:1}
+.apps-page .ma-problem-bottom span{color:#52afff;font-size:.56rem;letter-spacing:.16em;font-weight:900}
+.apps-page .ma-problem-bottom strong{color:#c5d0dd;font-size:.78rem;font-weight:650}
+@media(max-width:1100px){.apps-page .ma-problem-intro{grid-template-columns:1fr;gap:24px}.apps-page .ma-problem-copy{max-width:760px}.apps-page .ma-value-proof{grid-template-columns:repeat(4,max-content)}.apps-page .ma-value-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.apps-page .ma-problem{padding:58px 0}.apps-page .ma-problem-shell{padding:28px 20px 22px;border-radius:22px}.apps-page .ma-problem-title h2{font-size:clamp(2.6rem,12vw,3.55rem)}.apps-page .ma-value-proof{grid-template-columns:1fr 1fr;gap:8px}.apps-page .ma-value-proof span{justify-content:center}.apps-page .ma-value-grid{grid-template-columns:1fr;gap:10px;margin-top:30px}.apps-page .ma-value-grid article{min-height:0;padding:22px 20px 55px}.apps-page .ma-value-grid b{left:20px}.apps-page .ma-problem-bottom{align-items:flex-start;flex-direction:column;gap:7px;padding-top:16px}}
