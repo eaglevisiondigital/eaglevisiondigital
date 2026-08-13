@@ -719,3 +719,19 @@ p{color:var(--muted);font-size:1.05rem}
   .websites-page .cw-approved-concept{border-radius:17px}
   .websites-page .cw-faq .faq-heading{margin-bottom:26px!important}
 }
+
+/* CUSTOM WEBSITES — PASS 7 deployment-safe hero + FAQ refinements */
+@media (min-width:1181px){
+  .websites-page .cw-hero{padding-top:34px!important;padding-bottom:44px!important}
+  .websites-page .cw-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:54px;min-height:620px;align-items:center}
+  .websites-page .cw-hero-copy{max-width:720px;overflow:visible}
+  .websites-page .cw-hero-copy h1{font-size:clamp(3.55rem,4.75vw,5.35rem);line-height:.93;letter-spacing:-.058em;max-width:720px;margin-right:0;word-break:normal;overflow-wrap:normal}
+  .websites-page .cw-hero-art{width:100%;overflow:visible}
+  .websites-page .cw-device-stage{min-height:555px;width:100%;max-width:790px;margin-left:auto}
+  .websites-page .cw-desktop-device{width:76%;right:2%;top:7%}
+  .websites-page .cw-laptop-device{width:57%;left:0;bottom:8%}
+  .websites-page .cw-phone-device{width:18%;height:278px;right:0;bottom:5%}
+}
+.websites-page .cw-faq details[open]{border-color:rgba(83,177,255,.42);background:linear-gradient(145deg,rgba(10,27,48,.98),rgba(3,9,18,.99));box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.websites-page .cw-faq details[open] summary span{transform:rotate(45deg)}
+.websites-page .cw-faq summary span{transition:transform .2s ease}

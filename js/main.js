@@ -81,3 +81,15 @@ document.querySelector('#restart-finder')?.addEventListener('click', () => {
   document.querySelector('.finder-actions').style.display='flex';
   step=0; showStep();
 });
+
+// Custom Websites FAQ — single-open accordion behavior.
+// Opening a new FAQ closes any previously opened FAQ on the page.
+const customWebsiteFaqItems = [...document.querySelectorAll('.websites-page .cw-faq details')];
+customWebsiteFaqItems.forEach(item => {
+  item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    customWebsiteFaqItems.forEach(other => {
+      if (other !== item && other.open) other.removeAttribute('open');
+    });
+  });
+});
