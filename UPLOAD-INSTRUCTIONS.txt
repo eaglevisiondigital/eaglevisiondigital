@@ -1,0 +1,22 @@
+EAGLE VISION DIGITAL — APPROVED MOBILE APP MOCKUP REPLACEMENT
+
+Upload these files to the exact same repository paths shown here.
+This package intentionally uses NEW UNIQUE image filenames so the old cached
+Urban Feast / Renew / Champion Life / CoolAir artwork cannot keep loading.
+
+Approved mapping:
+1. Ember & Oak -> Restaurants & Food Service
+2. Vitalora -> Health & Wellness
+3. Foundations Church -> Churches & Ministries
+4. Haven Pro -> Home & Professional Services
+
+Updated HTML:
+services/mobile-apps/index.html
+
+New assets:
+assets/images/mobile-apps/ember-oak-app-approved-20260815.png
+assets/images/mobile-apps/vitalora-app-approved-20260815.png
+assets/images/mobile-apps/foundations-church-app-approved-20260815.png
+assets/images/mobile-apps/haven-pro-app-approved-20260815.png
+
+The previous image files can remain in the repository; this page no longer references them.
