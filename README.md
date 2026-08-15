@@ -1,48 +1,39 @@
-# Eagle Vision Capital Systems — Production Homepage V4
+# Eagle Vision Digital — Production Website V2
 
-Approved direction: light premium corporate design, technology-first positioning, integrated payments last in the ecosystem hierarchy.
+> Treat this as if Eagle Vision Digital hired a world-class agency to build its own flagship website. Every decision should reflect that standard.
 
-## Deploy
-This is a static Netlify-ready site. Publish the contents of the `site` folder.
+## Mission
+This website is not just a company website. It is the flagship demonstration of Eagle Vision Digital’s capabilities. Every page should answer: “If this is what Eagle Vision Digital built for themselves, imagine what they could build for my business.”
 
-## Public corporate information
-Eagle Vision Capital Systems, LLC
-eaglevision.biz
-info@eaglevision.biz
-(850) 812-4711
-Fort Walton Beach, Florida / Emerald Coast
-Serving businesses and organizations nationwide, with select solutions available in Canada.
+## Locked standards
+- Production rebuild of the approved prototype; do not redesign approved page flow or messaging without authorization.
+- One master CSS design system: `/css/main.css`.
+- Reusable components; no duplicated page-level CSS.
+- Use HTML/CSS for interface graphics where practical; images for cinematic scenes, photography and mockups.
+- Intentional desktop, tablet and mobile layouts.
+- SEO, accessibility and performance from day one.
+- Finish and approve one page before finalizing the next.
+- No unnecessary libraries.
+- Every section must be portfolio quality.
 
-## Homepage hierarchy
-1. High-impact connected ecosystem hero
-2. Eagle Vision ecosystem capability pillars
-3. Specialized industry solutions
-4. Better Together — Digital + Eagle Vision Payments advantage
-5. Eagle Vision Digital
-6. Propel
-7. Business Funding
-8. Dave Fowler Voice
-9. Why Eagle Vision
-10. Corporate CTA / footer
+## SEO positioning
+Primary regional focus: Fort Walton Beach, Destin, Niceville, Crestview, Navarre, Emerald Coast and Northwest Florida.
+Broader positioning: Based in Fort Walton Beach, Florida • Serving businesses across the U.S. & Canada.
+Avoid thin or duplicated city pages.
 
-No public street or home address is included.
+## Official public contact
+- Phone: (850) 812-4711
+- Email: info@eaglevision.digital
+
+## Deployment
+Static HTML5 + master CSS + ES6 JavaScript. GitHub repository deployed through Netlify.
 
 
-## V9 Updates
-- Approved high-impact homepage hero composition added.
-- Hero proof strip third message expanded to a single-line bold heading on desktop.
-- Industry cards finalized with public-facing names and approved six-color treatment.
-- Correct approved transparent Propel logo over church/ministry image.
-- Homepage payment section rebuilt as a concise Eagle Vision Payments teaser.
-- Full payments.html page added with payment methods, cost-reduction strategies, POS, integrations, invoicing, gift cards, loyalty, reporting, mobile, e-commerce, recurring payments, ACH/eCheck, business funding bridge, and free payment analysis form.
-- Public-facing payment language is written for business owners, not ISO/agent recruitment.
-
-## V10 Updates
-- Hero now uses a standalone transparent device ecosystem asset, not a screenshot of the page.
-- Hero background is native CSS so it blends seamlessly.
-- Proof strip aligned; third heading remains single-line on desktop.
-- Industry image/card overlap artifacts removed.
-- Homepage Payments feature rebuilt to match approved tighter premium layout.
-- Homepage Payment Analysis questionnaire removed.
-- Homepage CTAs now route to the dedicated Payments page / Payment Analysis.
-- Payments form reordered: business/contact info first, interests second, optional uploads/notes third.
+## Home Page Production Pass 1 — 2026-08-12
+- Preserved approved prototype messaging and section flow.
+- Corrected all internal links to permanent route architecture.
+- Added official phone and U.S./Canada positioning.
+- Strengthened Fort Walton Beach / Emerald Coast local relevance without keyword stuffing.
+- Added Organization + WebSite + WebPage JSON-LD graph.
+- Added skip link and semantic accessibility refinements.
+- Placeholder routes remain noindex until completed and approved.
