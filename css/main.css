@@ -1690,167 +1690,87 @@ p{color:var(--muted);font-size:1.05rem}
 }
 
 
-/* AI OPTIONS — FINAL CONSISTENCY + PREMIUM POLISH PASS (2026-08-16) */
-.ai-page .ai-option-grid{
-  counter-reset:aiOption;
-  gap:18px;
-}
-.ai-page .ai-option-grid article,
-.ai-page .ai-option-grid .featured-option{
-  counter-increment:aiOption;
-  min-height:292px;
-  padding:31px 31px 28px;
-  background:
-    radial-gradient(circle at 92% 0,rgba(54,162,255,.14),transparent 32%),
-    linear-gradient(150deg,#081a2c 0%,#06121f 58%,#040b13 100%);
-  border:1px solid rgba(73,171,248,.28);
-  border-radius:24px;
-  box-shadow:
-    0 24px 60px rgba(0,0,0,.24),
-    0 0 34px rgba(34,146,239,.055),
-    inset 0 1px 0 rgba(255,255,255,.035);
-  overflow:hidden;
-  isolation:isolate;
-}
-.ai-page .ai-option-grid article:before,
-.ai-page .ai-option-grid .featured-option:before{
-  content:"0" counter(aiOption);
-  position:absolute;
-  right:24px;
-  top:23px;
-  padding:0;
-  border:0;
-  background:transparent;
-  color:rgba(100,193,255,.72);
-  font-size:.62rem;
-  line-height:1;
-  letter-spacing:.16em;
-  font-weight:900;
-}
-.ai-page .ai-option-grid article:after{
-  content:"";
-  position:absolute;
-  right:-72px;
-  top:-72px;
-  width:170px;
-  height:170px;
-  border:1px solid rgba(84,180,255,.10);
-  border-radius:50%;
-  box-shadow:
-    0 0 0 32px rgba(75,172,255,.018),
-    0 0 0 64px rgba(75,172,255,.010);
-  pointer-events:none;
-  z-index:-1;
-}
-.ai-page .ai-option-grid article:hover,
-.ai-page .ai-option-grid .featured-option:hover{
-  transform:translateY(-5px);
-  border-color:rgba(80,184,255,.52);
-  box-shadow:
-    0 30px 72px rgba(0,18,42,.34),
-    0 0 46px rgba(39,154,246,.10),
-    inset 0 1px 0 rgba(255,255,255,.045);
-}
-.ai-page .ai-option-icon{
-  width:52px;
-  height:52px;
-  border-radius:15px;
-  border:1px solid rgba(79,180,255,.42);
-  background:
-    radial-gradient(circle at 35% 25%,rgba(82,185,255,.14),transparent 56%),
-    linear-gradient(145deg,#0a2843,#07192a);
-  color:#61bcff;
-  box-shadow:
-    0 0 28px rgba(41,154,245,.10),
-    inset 0 1px 0 rgba(255,255,255,.05);
-  margin-bottom:23px;
-}
-.ai-page .ai-option-icon svg{
-  width:23px;
-  height:23px;
-  fill:none;
-  stroke:currentColor;
-  stroke-width:1.8;
-  stroke-linecap:round;
-  stroke-linejoin:round;
-}
-.ai-page .ai-option-grid small{
-  margin-bottom:11px;
-  color:#5db9ff;
-  font-size:.67rem;
-  letter-spacing:.18em;
-}
-.ai-page .ai-option-grid h3{
-  font-size:1.31rem;
-  line-height:1.18;
-  margin-bottom:12px;
-  letter-spacing:-.02em;
-}
-.ai-page .ai-option-grid p{
-  color:#93a8ba;
-  font-size:.9rem;
-  line-height:1.6;
-}
-.ai-page .ai-option-grid b{
-  color:#c6d9e8;
-  border-top:1px solid rgba(139,198,242,.10);
-  padding-top:17px;
-  font-size:.79rem;
-  letter-spacing:.005em;
-}
-.ai-page .ai-option-grid article b:before{
-  width:40px;
-  height:2px;
-  background:linear-gradient(90deg,#36adff,rgba(54,173,255,.15),transparent);
-  box-shadow:0 0 12px rgba(54,173,255,.18);
-}
+/* =========================================================
+   HOMEPAGE LIGHT-CONTRAST SECTION PASS — APPROVED 2026-08-16
+   Applies only to:
+   1) Digital + Payments Advantage calculator section
+   2) 60-Second Solution Finder section
+   Dark interactive panels remain intact; the page canvas becomes light.
+   ========================================================= */
 
-/* Remove the one-off card treatment so the six-card system reads as one premium family */
-.ai-page .ai-option-grid .featured-option{
+.payments-calculator-section,
+#solution-finder{
   background:
-    radial-gradient(circle at 92% 0,rgba(54,162,255,.14),transparent 32%),
-    linear-gradient(150deg,#081a2c 0%,#06121f 58%,#040b13 100%);
-  border-color:rgba(73,171,248,.28);
-}
-.ai-page .ai-option-grid .featured-option small{
-  color:#5db9ff;
-}
-
-/* subtle rhythm behind the entire capability grid */
-.ai-page .ai-options{
+    radial-gradient(circle at 50% 12%,rgba(74,169,242,.13),transparent 36%),
+    linear-gradient(180deg,#f8fbfe 0%,#eef6fc 52%,#f8fbfe 100%);
+  border-top:1px solid rgba(22,100,155,.08);
+  border-bottom:1px solid rgba(22,100,155,.08);
+  color:#142d42;
   position:relative;
   overflow:hidden;
 }
-.ai-page .ai-options:before{
+
+.payments-calculator-section:after,
+#solution-finder:after{
   content:"";
   position:absolute;
-  width:820px;
-  height:820px;
-  left:50%;
-  top:55%;
-  transform:translate(-50%,-50%);
-  background:radial-gradient(circle,rgba(31,138,233,.055),transparent 62%);
-  filter:blur(10px);
+  inset:0;
   pointer-events:none;
+  background:radial-gradient(760px 300px at 50% 55%,rgba(20,139,235,.07),transparent 72%);
 }
-.ai-page .ai-options .container{
+.payments-calculator-section>.container,
+#solution-finder>.container{
   position:relative;
   z-index:1;
 }
 
+.payments-calculator-section .payments-calculator-intro .kicker{color:#1578ba}
+.payments-calculator-section .payments-calculator-intro h2{color:#10283b}
+.payments-calculator-section .payments-calculator-intro h2 .blue{color:#168cff}
+.payments-calculator-section .payments-calculator-intro .lead{color:#5c7082}
+.payments-calculator-section .paycalc-grid{
+  filter:drop-shadow(0 28px 44px rgba(20,55,88,.13));
+}
+.payments-calculator-section .paycalc-card{
+  box-shadow:
+    0 30px 64px rgba(15,42,68,.18),
+    0 0 42px rgba(25,145,235,.06),
+    inset 0 1px rgba(255,255,255,.025);
+}
+
+#solution-finder{
+  padding-top:clamp(72px,8vw,112px);
+  padding-bottom:clamp(72px,8vw,112px);
+}
+#solution-finder .finder-shell{
+  position:relative;
+  box-shadow:
+    0 34px 74px rgba(13,43,70,.20),
+    0 0 64px rgba(25,145,235,.11);
+}
+#solution-finder .finder-shell:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:inherit;
+  background:linear-gradient(135deg,rgba(84,183,255,.10),transparent 32%,rgba(84,183,255,.04));
+  pointer-events:none;
+}
+
+.payments-calculator-section + .section,
+#solution-finder + .section-xl{
+  border-top:1px solid rgba(255,255,255,.02);
+}
+
 @media(max-width:760px){
-  .ai-page .ai-option-grid article,
-  .ai-page .ai-option-grid .featured-option{
-    min-height:0;
-    padding:26px 24px 24px;
+  .payments-calculator-section,
+  #solution-finder{
+    background:
+      radial-gradient(circle at 50% 8%,rgba(74,169,242,.11),transparent 30%),
+      linear-gradient(180deg,#f8fbfe 0%,#eef6fc 58%,#f8fbfe 100%);
   }
-  .ai-page .ai-option-grid article:before,
-  .ai-page .ai-option-grid .featured-option:before{
-    right:20px;
-    top:21px;
-  }
-  .ai-page .ai-option-icon{
-    width:48px;
-    height:48px;
+  #solution-finder{
+    padding-top:62px;
+    padding-bottom:62px;
   }
 }
