@@ -1340,3 +1340,119 @@ p{color:var(--muted);font-size:1.05rem}
   .ai-page .ai-human-editorial{max-width:none;margin-bottom:24px}
   .ai-page .ai-human-points:after{display:none}
 }
+
+
+/* AI Automation — FINAL APPROVED LIGHT-CARD COHESION PASS (2026-08-16)
+   Supersedes the earlier dark→light card progression in the two 3-card sections.
+   All cards now use a premium ice-light treatment so each stage receives equal visual weight.
+*/
+
+/* Human + automation framework: equal premium emphasis across all three cards */
+.ai-page .ai-human-points .human-automate,
+.ai-page .ai-human-points .human-escalate,
+.ai-page .ai-human-points .human-control{
+  background:
+    radial-gradient(circle at 88% 0,rgba(79,177,248,.18),transparent 34%),
+    linear-gradient(145deg,#fbfdff 0%,#edf7ff 62%,#e6f3fc 100%);
+  border-color:rgba(76,163,225,.48);
+  box-shadow:0 26px 64px rgba(0,31,65,.22),0 0 46px rgba(49,153,235,.08);
+}
+.ai-page .ai-human-points .human-automate:before,
+.ai-page .ai-human-points .human-escalate:before,
+.ai-page .ai-human-points .human-control:before{
+  background:#e5f4ff;
+  color:#1684ca;
+  border-color:#acd6ef;
+  box-shadow:0 0 26px rgba(44,153,235,.10);
+}
+.ai-page .ai-human-points .human-automate em,
+.ai-page .ai-human-points .human-escalate em,
+.ai-page .ai-human-points .human-control em{color:#197ab9}
+.ai-page .ai-human-points .human-automate strong,
+.ai-page .ai-human-points .human-escalate strong,
+.ai-page .ai-human-points .human-control strong{color:#162d40}
+.ai-page .ai-human-points .human-automate small,
+.ai-page .ai-human-points .human-escalate small,
+.ai-page .ai-human-points .human-control small{color:#5b7184}
+.ai-page .ai-human-points span b{color:#1684ca}
+.ai-page .ai-human-points span:after{
+  content:"";
+  position:absolute;
+  width:150px;height:150px;
+  right:-78px;bottom:-82px;
+  border:1px solid rgba(32,137,211,.10);
+  border-radius:50%;
+  pointer-events:none;
+}
+.ai-page .ai-human-points span:hover{
+  transform:translateY(-5px);
+  border-color:rgba(64,160,230,.62);
+  box-shadow:0 32px 74px rgba(0,31,65,.25),0 0 58px rgba(49,153,235,.11);
+}
+
+/* Start → Connect → Expand: equal light cards, progression communicated by icons/connectors/copy */
+.ai-page .ai-scale-flow .scale-start,
+.ai-page .ai-scale-flow .scale-connect,
+.ai-page .ai-scale-flow .scale-expand{
+  background:
+    radial-gradient(circle at 88% 0,rgba(80,177,248,.18),transparent 34%),
+    linear-gradient(145deg,#fbfdff 0%,#edf7ff 62%,#e6f3fc 100%);
+  border-color:rgba(76,163,225,.50);
+  box-shadow:0 28px 68px rgba(0,31,65,.22),0 0 48px rgba(49,153,235,.08);
+}
+.ai-page .ai-scale-flow .scale-start small,
+.ai-page .ai-scale-flow .scale-connect small,
+.ai-page .ai-scale-flow .scale-expand small{
+  color:#197ab9;
+}
+.ai-page .ai-scale-flow .scale-start h3,
+.ai-page .ai-scale-flow .scale-connect h3,
+.ai-page .ai-scale-flow .scale-expand h3{
+  color:#17344a;
+}
+.ai-page .ai-scale-flow .scale-start p,
+.ai-page .ai-scale-flow .scale-connect p,
+.ai-page .ai-scale-flow .scale-expand p{
+  color:#5f7485;
+}
+.ai-page .ai-scale-flow .scale-start b,
+.ai-page .ai-scale-flow .scale-connect b,
+.ai-page .ai-scale-flow .scale-expand b{
+  color:#1878b8;
+  border-top-color:#cadfea;
+}
+.ai-page .ai-scale-flow .scale-start .scale-icon,
+.ai-page .ai-scale-flow .scale-connect .scale-icon,
+.ai-page .ai-scale-flow .scale-expand .scale-icon{
+  background:#e2f3ff;
+  border-color:#b2d9ef;
+  color:#1682c7;
+  box-shadow:0 0 26px rgba(44,153,235,.10);
+}
+.ai-page .ai-scale-flow article:after{
+  content:"";
+  position:absolute;
+  width:180px;height:180px;
+  right:-92px;bottom:-100px;
+  border:1px solid rgba(32,137,211,.10);
+  border-radius:50%;
+  pointer-events:none;
+}
+.ai-page .ai-scale-flow .scale-start:hover,
+.ai-page .ai-scale-flow .scale-connect:hover,
+.ai-page .ai-scale-flow .scale-expand:hover{
+  transform:translateY(-5px);
+  border-color:rgba(64,160,230,.64);
+  box-shadow:0 34px 80px rgba(0,31,65,.25),0 0 60px rgba(49,153,235,.11);
+}
+
+/* Keep the connectors unmistakable against the equal light cards */
+.ai-page .ai-scale-flow i{
+  color:#61bdff;
+  font-size:1.65rem;
+  text-shadow:0 0 18px rgba(73,174,255,.55);
+}
+.ai-page .ai-scale-flow:before{
+  background:linear-gradient(90deg,rgba(67,168,255,.16),rgba(67,168,255,.62),rgba(67,168,255,.16));
+  box-shadow:0 0 16px rgba(45,155,247,.20);
+}
