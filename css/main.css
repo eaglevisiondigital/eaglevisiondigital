@@ -1780,3 +1780,314 @@ p{color:var(--muted);font-size:1.05rem}
 #solution-finder .finder-intro h2 .finder-head-white{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
 #solution-finder .finder-intro h2 .finder-head-blue{color:#168CFF!important;-webkit-text-fill-color:#168CFF!important;}
 #solution-finder .finder-options .finder-option h3.finder-option-blue{color:#27A6FF!important;-webkit-text-fill-color:#27A6FF!important;}
+
+
+/* =========================================================
+   SOLUTION FINDER — COMPLETE QUIZ READABILITY LOCK 2026-08-16
+   Applies to all five questions, all answer choices, active states and results.
+   ========================================================= */
+#solution-finder .finder-modal .question h3,
+#solution-finder .finder-modal .question h2,
+#solution-finder .finder-modal .question legend,
+#solution-finder .finder-modal .question .question-title{
+  color:#ffffff !important;
+}
+#solution-finder .finder-modal .question label{
+  color:#dce8f3 !important;
+  border-color:rgba(134,174,207,.24);
+  background:rgba(255,255,255,.025);
+  transition:border-color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+#solution-finder .finder-modal .question label:hover{
+  color:#ffffff !important;
+  border-color:rgba(44,162,247,.58);
+  background:rgba(22,140,255,.08);
+  transform:translateY(-1px);
+  box-shadow:0 10px 28px rgba(0,0,0,.15);
+}
+#solution-finder .finder-modal .question label:has(input:checked){
+  color:#ffffff !important;
+  border-color:#249dff;
+  background:linear-gradient(145deg,rgba(22,140,255,.17),rgba(6,24,42,.82));
+  box-shadow:0 0 0 1px rgba(36,157,255,.15),0 14px 34px rgba(0,75,142,.18);
+}
+#solution-finder .finder-modal .question input[type="radio"]{
+  accent-color:#168cff;
+}
+#solution-finder .finder-modal .question p,
+#solution-finder .finder-modal .question small{
+  color:#a8bbcc !important;
+}
+#solution-finder .finder-result h2,
+#solution-finder .finder-result h3{
+  color:#ffffff !important;
+}
+#solution-finder .finder-result p{
+  color:#c2d0dd !important;
+}
+
+
+/* =========================================================
+   PAYMENT SOLUTIONS — PREMIUM HERO + VALUE + CALCULATOR PASS
+   APPROVED DIRECTION 2026-08-16
+   ========================================================= */
+
+/* Hero — retain dark Eagle Vision canvas, but give the right console more presence */
+.payments-page .payments-hero{
+  padding-bottom:54px;
+}
+.payments-page .payments-hero:after{
+  content:"";
+  position:absolute;
+  width:760px;height:760px;
+  right:2%;top:5%;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(23,139,241,.12),rgba(12,91,171,.035) 46%,transparent 69%);
+  filter:blur(4px);
+  pointer-events:none;
+}
+.payments-page .payments-device-card{
+  width:min(610px,94%);
+  border-color:rgba(92,190,255,.52);
+  background:
+    radial-gradient(circle at 75% 12%,rgba(63,168,255,.17),transparent 34%),
+    linear-gradient(145deg,rgba(11,48,80,.97),rgba(4,21,37,.985) 58%,rgba(2,11,20,.99));
+  box-shadow:
+    0 38px 100px rgba(0,0,0,.46),
+    0 0 84px rgba(20,123,231,.17),
+    inset 0 1px 0 rgba(255,255,255,.045);
+}
+.payments-page .payments-device-card:before{
+  content:"";
+  position:absolute;
+  inset:-18px;
+  border:1px solid rgba(63,166,239,.11);
+  border-radius:46px;
+  pointer-events:none;
+}
+.payments-page .payments-device-card>strong{
+  font-size:clamp(2.4rem,3.2vw,3rem);
+}
+.payments-page .payments-device-card>p{
+  color:#b2c3d1;
+  max-width:480px;
+}
+.payments-page .payments-mini-flow--four{
+  grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;
+  gap:7px;
+}
+.payments-page .payments-mini-flow--four span{
+  min-width:0;
+  padding:14px 8px 12px;
+  background:linear-gradient(145deg,rgba(8,31,51,.96),rgba(4,17,30,.96));
+  border-color:rgba(83,174,239,.28);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+.payments-page .payments-mini-flow--four span b{
+  display:block;
+  color:#f7fbff;
+  font-size:.72rem;
+}
+.payments-page .payments-mini-flow--four span small{
+  display:block;
+  margin-top:4px;
+  color:#63baff;
+  font-size:.48rem;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+.payments-page .payments-mini-metrics>div{
+  position:relative;
+  padding:17px 15px 16px 47px;
+  background:linear-gradient(145deg,rgba(8,31,51,.86),rgba(3,15,27,.82));
+  border-color:rgba(70,160,225,.22);
+}
+.payments-page .payments-mini-metrics svg{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  width:23px;height:23px;fill:none;stroke:#4ab4ff;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;
+}
+.payments-page .payments-mini-metrics small{color:#61b7ef}
+.payments-page .payments-mini-metrics b{color:#f4f9fd}
+
+/* Full-width 4-up hero advantage rail */
+.payments-page .payments-hero-proof--rail{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  width:100%;
+  margin:34px 0 0;
+}
+.payments-page .payments-hero-proof--rail span{
+  min-height:66px;
+  display:flex;
+  align-items:center;
+  gap:13px;
+  padding:14px 18px;
+  border:1px solid rgba(58,171,249,.44);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(41,156,247,.12),transparent 42%),
+    linear-gradient(145deg,rgba(5,25,43,.96),rgba(2,12,22,.96));
+  color:#e8f5ff;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.22),
+    0 0 22px rgba(24,148,240,.07),
+    inset 0 1px 0 rgba(255,255,255,.03);
+}
+.payments-page .payments-hero-proof--rail span:hover{
+  transform:translateY(-3px);
+  border-color:rgba(68,184,255,.7);
+  box-shadow:0 16px 38px rgba(0,0,0,.27),0 0 34px rgba(30,155,247,.12);
+}
+.payments-page .payments-hero-proof--rail svg{
+  flex:0 0 30px;
+  width:30px;height:30px;
+  fill:none;stroke:#35adff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+  filter:drop-shadow(0 0 7px rgba(53,173,255,.28));
+}
+.payments-page .payments-hero-proof--rail b{
+  color:#f2f8fd;
+  font-size:.76rem;
+  line-height:1.25;
+}
+
+/* Upgraded 4-up value system */
+.payments-page .payments-value-strip{
+  padding:24px 0 74px;
+}
+.payments-page .payments-value-grid{
+  gap:14px;
+  border:0;
+  border-radius:0;
+  background:transparent;
+  overflow:visible;
+}
+.payments-page .payments-value-grid>div{
+  min-height:230px;
+  position:relative;
+  padding:27px 25px 24px;
+  border:1px solid rgba(72,164,231,.25) !important;
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 100% 0,rgba(47,154,238,.11),transparent 36%),
+    linear-gradient(145deg,rgba(7,27,46,.96),rgba(3,14,25,.98));
+  box-shadow:0 22px 54px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.025);
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.payments-page .payments-value-grid>div:hover{
+  transform:translateY(-5px);
+  border-color:rgba(72,176,247,.53) !important;
+  box-shadow:0 30px 64px rgba(0,0,0,.27),0 0 34px rgba(36,153,240,.09);
+}
+.payments-page .payments-value-grid>div>span{
+  position:absolute;right:22px;top:22px;
+  color:#4bb5ff;font-size:.62rem;letter-spacing:.12em;
+}
+.payments-page .payments-value-icon{
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  border-radius:14px;
+  border:1px solid rgba(70,171,243,.39);
+  background:linear-gradient(145deg,#092a46,#061829);
+  color:#54b9ff;
+  font-size:1.15rem;
+  box-shadow:0 0 22px rgba(40,151,236,.08);
+  margin-bottom:23px;
+}
+.payments-page .payments-value-grid strong{
+  margin:0 0 8px;
+  color:#f3f8fc;
+  font-size:1.15rem;
+}
+.payments-page .payments-value-grid small{
+  color:#9aafc1;
+  line-height:1.55;
+  min-height:50px;
+}
+.payments-page .payments-value-grid b{
+  display:block;
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px solid rgba(91,170,225,.12);
+  color:#72c4ff;
+  font-size:.69rem;
+  line-height:1.45;
+}
+
+/* Expanded calculator sections: light page canvas + dark premium calculator tool */
+.payments-page .payment-expanded-section{
+  padding-top:clamp(78px,8vw,112px);
+  padding-bottom:clamp(82px,8vw,118px);
+  background:
+    radial-gradient(circle at 50% 10%,rgba(61,161,236,.13),transparent 38%),
+    linear-gradient(180deg,#f8fbfe 0%,#edf5fb 52%,#f8fbfe 100%);
+  color:#132d42;
+  border-top:1px solid rgba(29,111,168,.08);
+  border-bottom:1px solid rgba(29,111,168,.08);
+  overflow:hidden;
+}
+.payments-page .payment-expanded-section + .payment-expanded-section{
+  border-top:0;
+}
+.payments-page .payment-expanded-section .payment-expanded-heading .kicker{
+  color:#167abb;
+}
+.payments-page .payment-expanded-section .payment-expanded-heading h2{
+  color:#112a3e;
+}
+.payments-page .payment-expanded-section .payment-expanded-heading h2 .blue{
+  color:#168cff;
+}
+.payments-page .payment-expanded-section .payment-expanded-heading .lead{
+  color:#5e7284;
+}
+.payments-page .payment-expanded-section .paycalc-card{
+  filter:drop-shadow(0 28px 46px rgba(16,47,75,.15));
+}
+.payments-page .payment-expanded-section--advantage:before{
+  background:radial-gradient(circle,rgba(20,112,225,.09),transparent 66%);
+}
+
+/* Desktop/mobile integrity */
+@media(max-width:1100px){
+  .payments-page .payments-hero-proof--rail{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  .payments-page .payments-mini-flow--four{
+    grid-template-columns:1fr auto 1fr;
+  }
+  .payments-page .payments-mini-flow--four i:nth-of-type(2),
+  .payments-page .payments-mini-flow--four i:nth-of-type(3),
+  .payments-page .payments-mini-flow--four span:nth-of-type(3),
+  .payments-page .payments-mini-flow--four span:nth-of-type(4){
+    display:none;
+  }
+}
+@media(max-width:760px){
+  .payments-page .payments-hero-proof--rail{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:26px;
+  }
+  .payments-page .payments-hero-proof--rail span{
+    min-height:72px;
+    padding:12px;
+    align-items:flex-start;
+  }
+  .payments-page .payments-hero-proof--rail svg{
+    width:25px;height:25px;flex-basis:25px;
+  }
+  .payments-page .payments-value-grid{
+    grid-template-columns:1fr;
+  }
+  .payments-page .payments-value-grid>div{
+    min-height:0;
+  }
+}
+@media(max-width:480px){
+  .payments-page .payments-hero-proof--rail{
+    grid-template-columns:1fr;
+  }
+}
