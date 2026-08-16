@@ -1688,3 +1688,169 @@ p{color:var(--muted);font-size:1.05rem}
   .paycalc-volume>div{align-items:flex-start;flex-direction:column}
   .paycalc-volume strong{font-size:1.5rem}
 }
+
+
+/* AI OPTIONS — FINAL CONSISTENCY + PREMIUM POLISH PASS (2026-08-16) */
+.ai-page .ai-option-grid{
+  counter-reset:aiOption;
+  gap:18px;
+}
+.ai-page .ai-option-grid article,
+.ai-page .ai-option-grid .featured-option{
+  counter-increment:aiOption;
+  min-height:292px;
+  padding:31px 31px 28px;
+  background:
+    radial-gradient(circle at 92% 0,rgba(54,162,255,.14),transparent 32%),
+    linear-gradient(150deg,#081a2c 0%,#06121f 58%,#040b13 100%);
+  border:1px solid rgba(73,171,248,.28);
+  border-radius:24px;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.24),
+    0 0 34px rgba(34,146,239,.055),
+    inset 0 1px 0 rgba(255,255,255,.035);
+  overflow:hidden;
+  isolation:isolate;
+}
+.ai-page .ai-option-grid article:before,
+.ai-page .ai-option-grid .featured-option:before{
+  content:"0" counter(aiOption);
+  position:absolute;
+  right:24px;
+  top:23px;
+  padding:0;
+  border:0;
+  background:transparent;
+  color:rgba(100,193,255,.72);
+  font-size:.62rem;
+  line-height:1;
+  letter-spacing:.16em;
+  font-weight:900;
+}
+.ai-page .ai-option-grid article:after{
+  content:"";
+  position:absolute;
+  right:-72px;
+  top:-72px;
+  width:170px;
+  height:170px;
+  border:1px solid rgba(84,180,255,.10);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 32px rgba(75,172,255,.018),
+    0 0 0 64px rgba(75,172,255,.010);
+  pointer-events:none;
+  z-index:-1;
+}
+.ai-page .ai-option-grid article:hover,
+.ai-page .ai-option-grid .featured-option:hover{
+  transform:translateY(-5px);
+  border-color:rgba(80,184,255,.52);
+  box-shadow:
+    0 30px 72px rgba(0,18,42,.34),
+    0 0 46px rgba(39,154,246,.10),
+    inset 0 1px 0 rgba(255,255,255,.045);
+}
+.ai-page .ai-option-icon{
+  width:52px;
+  height:52px;
+  border-radius:15px;
+  border:1px solid rgba(79,180,255,.42);
+  background:
+    radial-gradient(circle at 35% 25%,rgba(82,185,255,.14),transparent 56%),
+    linear-gradient(145deg,#0a2843,#07192a);
+  color:#61bcff;
+  box-shadow:
+    0 0 28px rgba(41,154,245,.10),
+    inset 0 1px 0 rgba(255,255,255,.05);
+  margin-bottom:23px;
+}
+.ai-page .ai-option-icon svg{
+  width:23px;
+  height:23px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.ai-page .ai-option-grid small{
+  margin-bottom:11px;
+  color:#5db9ff;
+  font-size:.67rem;
+  letter-spacing:.18em;
+}
+.ai-page .ai-option-grid h3{
+  font-size:1.31rem;
+  line-height:1.18;
+  margin-bottom:12px;
+  letter-spacing:-.02em;
+}
+.ai-page .ai-option-grid p{
+  color:#93a8ba;
+  font-size:.9rem;
+  line-height:1.6;
+}
+.ai-page .ai-option-grid b{
+  color:#c6d9e8;
+  border-top:1px solid rgba(139,198,242,.10);
+  padding-top:17px;
+  font-size:.79rem;
+  letter-spacing:.005em;
+}
+.ai-page .ai-option-grid article b:before{
+  width:40px;
+  height:2px;
+  background:linear-gradient(90deg,#36adff,rgba(54,173,255,.15),transparent);
+  box-shadow:0 0 12px rgba(54,173,255,.18);
+}
+
+/* Remove the one-off card treatment so the six-card system reads as one premium family */
+.ai-page .ai-option-grid .featured-option{
+  background:
+    radial-gradient(circle at 92% 0,rgba(54,162,255,.14),transparent 32%),
+    linear-gradient(150deg,#081a2c 0%,#06121f 58%,#040b13 100%);
+  border-color:rgba(73,171,248,.28);
+}
+.ai-page .ai-option-grid .featured-option small{
+  color:#5db9ff;
+}
+
+/* subtle rhythm behind the entire capability grid */
+.ai-page .ai-options{
+  position:relative;
+  overflow:hidden;
+}
+.ai-page .ai-options:before{
+  content:"";
+  position:absolute;
+  width:820px;
+  height:820px;
+  left:50%;
+  top:55%;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(31,138,233,.055),transparent 62%);
+  filter:blur(10px);
+  pointer-events:none;
+}
+.ai-page .ai-options .container{
+  position:relative;
+  z-index:1;
+}
+
+@media(max-width:760px){
+  .ai-page .ai-option-grid article,
+  .ai-page .ai-option-grid .featured-option{
+    min-height:0;
+    padding:26px 24px 24px;
+  }
+  .ai-page .ai-option-grid article:before,
+  .ai-page .ai-option-grid .featured-option:before{
+    right:20px;
+    top:21px;
+  }
+  .ai-page .ai-option-icon{
+    width:48px;
+    height:48px;
+  }
+}
