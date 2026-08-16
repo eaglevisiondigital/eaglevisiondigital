@@ -1774,3 +1774,9 @@ p{color:var(--muted);font-size:1.05rem}
     padding-bottom:62px;
   }
 }
+
+
+/* SOLUTION FINDER TEXT CONTRAST FIX V2 — 2026-08-16 */
+#solution-finder .finder-intro h2 .finder-head-white{color:#ffffff!important;-webkit-text-fill-color:#ffffff!important;}
+#solution-finder .finder-intro h2 .finder-head-blue{color:#168CFF!important;-webkit-text-fill-color:#168CFF!important;}
+#solution-finder .finder-options .finder-option h3.finder-option-blue{color:#27A6FF!important;-webkit-text-fill-color:#27A6FF!important;}
