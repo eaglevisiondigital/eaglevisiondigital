@@ -2091,3 +2091,35 @@ p{color:var(--muted);font-size:1.05rem}
     grid-template-columns:1fr;
   }
 }
+
+/* =========================================================
+   PAYMENT SOLUTIONS — FINAL VISUAL / CONTRAST PASS 2026-08-16
+   ========================================================= */
+@media(min-width:1101px){
+  .payments-page .payments-hero-grid{grid-template-columns:minmax(0,.82fr) minmax(560px,1.18fr);gap:54px}
+  .payments-page .payments-hero-visual{min-height:610px}
+  .payments-page .payments-device-card{width:min(700px,98%);padding:44px;transform:scale(1.06)}
+  .payments-page .payments-orbit{width:680px;height:680px}
+  .payments-page .payments-hero-proof--rail{margin-top:22px;gap:18px}
+  .payments-page .payments-hero-proof--rail span{min-height:88px;padding:18px 22px;border-radius:22px}
+  .payments-page .payments-hero-proof--rail svg{width:34px;height:34px;flex-basis:34px}
+  .payments-page .payments-hero-proof--rail b{font-size:.86rem}
+}
+
+/* Make all small calculator information genuinely readable on the dark tools. */
+.payments-page .paycalc-card .paycalc-volume span,
+.payments-page .paycalc-card .paycalc-scale span,
+.payments-page .paycalc-card .paycalc-results span,
+.payments-page .paycalc-card .paycalc-results small,
+.payments-page .paycalc-card .paycalc-note,
+.payments-page .paycalc-card .paycalc-note strong,
+.payments-page .paycalc-card .paycalc-explainer strong,
+.payments-page .paycalc-card .paycalc-explainer p,
+.payments-page .paycalc-card .paycalc-tier-note span,
+.payments-page .paycalc-card .paycalc-tier-note small,
+.payments-page .paycalc-card .paycalc-advantage-full-results span,
+.payments-page .paycalc-card .paycalc-solutions{
+  color:#f3f8fc !important;
+}
+.payments-page .paycalc-card .paycalc-scale span{opacity:.82}
+.payments-page .paycalc-card .btn-primary{color:#fff !important}
