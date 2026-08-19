@@ -316,3 +316,35 @@ mobileAppFaqItems.forEach(item => {
     if (event.key === 'Escape' && !popover.hidden) hide();
   });
 })();
+
+
+// Solutions mega menu — desktop hover/focus + mobile click, with Escape/outside-click support.
+document.querySelectorAll('.nav-mega').forEach(mega => {
+  const toggle = mega.querySelector('.nav-mega-toggle');
+  const panel = mega.querySelector('.solutions-mega-panel');
+  if (!toggle || !panel) return;
+
+  const setOpen = (open) => {
+    mega.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+  };
+
+  toggle.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setOpen(!mega.classList.contains('open'));
+  });
+
+  panel.addEventListener('click', event => event.stopPropagation());
+
+  document.addEventListener('click', event => {
+    if (!mega.contains(event.target)) setOpen(false);
+  });
+
+  mega.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+});
