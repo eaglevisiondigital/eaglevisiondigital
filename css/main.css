@@ -2835,3 +2835,448 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
     padding:22px 18px !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE QA PASS 2 — SITEWIDE HERO / SECTION / FOOTER POLISH
+   2026-08-19
+   Targets live iPhone screenshots only. Desktop/tablet untouched.
+   ========================================================= */
+
+@media(max-width:760px){
+
+  /* Mobile Safari: let content scroll naturally instead of disappearing
+     underneath a persistent desktop-style sticky header. */
+  .site-header{
+    position:relative !important;
+    top:auto !important;
+  }
+
+  .nav{
+    min-height:78px !important;
+    height:78px !important;
+  }
+
+  .brand img{
+    width:176px !important;
+    max-height:56px !important;
+  }
+
+  /* Global mobile vertical rhythm */
+  .section,
+  .section-md,
+  .section-lg,
+  .section-xl{
+    scroll-margin-top:18px !important;
+  }
+
+  /* SOLUTIONS HUB */
+  .solutions-hub-hero{
+    padding:56px 0 58px !important;
+  }
+
+  .solutions-hub-hero h1{
+    font-size:clamp(2.75rem,11.5vw,3.45rem) !important;
+    line-height:.98 !important;
+    letter-spacing:-.05em !important;
+    margin-bottom:22px !important;
+  }
+
+  .solutions-hub-hero .lead{
+    font-size:1rem !important;
+    line-height:1.6 !important;
+  }
+
+  .solutions-hub-hero .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+  .solutions-hub-hero .hero-actions .btn{
+    width:100% !important;
+    min-height:52px !important;
+  }
+
+  .solutions-hub-section{
+    padding-top:52px !important;
+    padding-bottom:52px !important;
+  }
+
+  .solutions-hub-section .section-head h2{
+    font-size:clamp(2.25rem,10vw,3rem) !important;
+    line-height:1 !important;
+  }
+
+  .solutions-hub-grid{
+    gap:12px !important;
+  }
+
+  .solutions-hub-card{
+    min-height:0 !important;
+    padding:21px 18px !important;
+    gap:15px !important;
+    border-radius:19px !important;
+  }
+
+  .solutions-hub-card h3{
+    font-size:1.18rem !important;
+  }
+
+  .solutions-hub-card p{
+    font-size:.9rem !important;
+    line-height:1.5 !important;
+  }
+
+  .solution-detail-outcome-panel{
+    padding:28px 22px !important;
+    border-radius:22px !important;
+    gap:22px !important;
+  }
+
+  .solution-detail-outcome-panel h2{
+    font-size:clamp(2.1rem,9.2vw,2.8rem) !important;
+    line-height:1.02 !important;
+  }
+
+  .solution-detail-outcome-panel p{
+    font-size:.95rem !important;
+    line-height:1.55 !important;
+  }
+
+  .solution-detail-outcome-panel .btn{
+    width:100% !important;
+  }
+
+  /* RESOURCE CENTER HERO */
+  .resource-hero{
+    padding:58px 0 62px !important;
+  }
+
+  .resource-hero-grid{
+    gap:34px !important;
+  }
+
+  .resource-hero h1{
+    font-size:clamp(2.8rem,11.8vw,3.55rem) !important;
+    line-height:.98 !important;
+    letter-spacing:-.05em !important;
+    margin:18px 0 22px !important;
+  }
+
+  .resource-hero .lead{
+    font-size:1rem !important;
+    line-height:1.6 !important;
+  }
+
+  .resource-hero .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+  .resource-hero .hero-actions .btn{
+    width:100% !important;
+  }
+
+  .resource-hero-tags{
+    gap:8px !important;
+    margin-top:20px !important;
+  }
+
+  .resource-hero-tags span{
+    font-size:.59rem !important;
+    padding:7px 10px !important;
+  }
+
+  .resource-orbit{
+    min-height:330px !important;
+  }
+
+  .resource-orbit-ring{
+    width:285px !important;
+    height:285px !important;
+    right:50% !important;
+    transform:translateX(50%) !important;
+    top:16px !important;
+  }
+
+  .resource-core{
+    width:178px !important;
+    height:178px !important;
+    left:50% !important;
+    top:50% !important;
+    transform:translate(-50%,-50%) !important;
+  }
+
+  .resource-core strong{
+    font-size:1.35rem !important;
+  }
+
+  .resource-float{
+    padding:8px 9px !important;
+  }
+
+  .resource-float b{
+    font-size:.43rem !important;
+  }
+
+  .rf-1{top:8px !important;left:0 !important}
+  .rf-2{top:92px !important;right:0 !important}
+  .rf-3{bottom:72px !important;left:0 !important}
+  .rf-4{bottom:20px !important;right:8px !important}
+
+  /* Resource calculators / tools */
+  .resource-tools{
+    padding-top:54px !important;
+    padding-bottom:54px !important;
+  }
+
+  .resource-tool-card{
+    padding:24px 20px !important;
+    border-radius:22px !important;
+  }
+
+  .resource-tool-card h3{
+    font-size:1.45rem !important;
+    margin:22px 0 10px !important;
+  }
+
+  .resource-tool-card p{
+    font-size:.92rem !important;
+    line-height:1.55 !important;
+  }
+
+  .tool-metric{
+    margin:22px 0 !important;
+    padding:17px !important;
+  }
+
+  .resource-tool-card .btn{
+    width:100% !important;
+    min-height:50px !important;
+    padding:13px 15px !important;
+    font-size:.78rem !important;
+  }
+
+  /* MOBILE APPS — value/problem section */
+  .apps-page .ma-problem{
+    padding:50px 0 !important;
+  }
+
+  .apps-page .ma-problem-shell{
+    padding:25px 18px 22px !important;
+  }
+
+  .apps-page .ma-problem-title h2{
+    font-size:clamp(2.25rem,10vw,2.95rem) !important;
+    line-height:1.01 !important;
+    letter-spacing:-.045em !important;
+  }
+
+  .apps-page .ma-problem-title p,
+  .apps-page .ma-problem-shell>p{
+    font-size:.96rem !important;
+    line-height:1.6 !important;
+  }
+
+  .apps-page .ma-value-proof{
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+  }
+
+  .apps-page .ma-value-proof span{
+    min-height:39px !important;
+    padding:8px 8px !important;
+    font-size:.62rem !important;
+  }
+
+  .apps-page .ma-value-grid article{
+    padding:21px 18px 52px !important;
+  }
+
+  /* FLAGSHIP SOLUTION PAGES:
+     Digital Platforms / Ecosystems / Coaching + six related solution pages */
+  .trio-hero{
+    padding:56px 0 62px !important;
+  }
+
+  .trio-hero-grid{
+    gap:38px !important;
+  }
+
+  .trio-hero h1{
+    font-size:clamp(2.7rem,11.2vw,3.35rem) !important;
+    line-height:.98 !important;
+    letter-spacing:-.05em !important;
+    margin:20px 0 22px !important;
+  }
+
+  .trio-hero .lead{
+    font-size:1rem !important;
+    line-height:1.62 !important;
+  }
+
+  .trio-hero .hero-actions{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+  }
+
+  .trio-hero .hero-actions .btn{
+    width:100% !important;
+    min-height:51px !important;
+  }
+
+  .trio-proof{
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:8px !important;
+    margin-top:22px !important;
+  }
+
+  .trio-proof span{
+    text-align:center !important;
+    font-size:.6rem !important;
+    padding:8px 8px !important;
+  }
+
+  .trio-ui{
+    padding:20px 16px !important;
+    border-radius:22px !important;
+  }
+
+  .trio-ui-top b{
+    font-size:1rem !important;
+  }
+
+  .trio-ui-top em{
+    font-size:.5rem !important;
+  }
+
+  .trio-ui-main{
+    padding:19px !important;
+  }
+
+  .trio-ui-main strong{
+    font-size:1.55rem !important;
+  }
+
+  .trio-ui-side{
+    padding:14px !important;
+  }
+
+  .trio-ui-side span{
+    font-size:.65rem !important;
+  }
+
+  .trio-cap{
+    min-height:0 !important;
+    padding:24px 20px !important;
+    border-radius:20px !important;
+  }
+
+  .trio-cap h3{
+    font-size:1.3rem !important;
+    margin:22px 0 10px !important;
+  }
+
+  .trio-cap p{
+    font-size:.92rem !important;
+  }
+
+  .trio-system-panel{
+    padding:26px 20px !important;
+    border-radius:22px !important;
+  }
+
+  .trio-system-panel h2{
+    font-size:clamp(2.25rem,10vw,3rem) !important;
+    line-height:1 !important;
+  }
+
+  .trio-network{
+    min-height:300px !important;
+  }
+
+  .network-core{
+    width:145px !important;
+    height:145px !important;
+  }
+
+  .trio-ai-visual{
+    padding:25px 20px !important;
+  }
+
+  .trio-process-grid article{
+    padding:22px 18px !important;
+  }
+
+  .trio-cta{
+    padding-top:52px !important;
+    padding-bottom:52px !important;
+  }
+
+  .trio-cta-panel{
+    padding:28px 20px !important;
+    border-radius:22px !important;
+  }
+
+  .trio-cta-panel h2{
+    font-size:clamp(2.2rem,9.8vw,2.9rem) !important;
+    line-height:1 !important;
+  }
+
+  .trio-cta-panel p{
+    font-size:.95rem !important;
+    line-height:1.6 !important;
+  }
+
+  .trio-cta-panel .btn{
+    width:100% !important;
+  }
+
+  /* Footer: ensure Safari's bottom toolbar never visually swallows the final line. */
+  .site-footer{
+    padding-bottom:calc(92px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .footer-brand img{
+    max-width:250px !important;
+  }
+
+  .footer-grid{
+    gap:34px !important;
+  }
+
+  .footer-grid h3{
+    font-size:1.15rem !important;
+    margin-bottom:15px !important;
+  }
+
+  .footer-links{
+    gap:12px !important;
+  }
+
+  .footer-links a,
+  .footer-brand p{
+    font-size:.92rem !important;
+    line-height:1.55 !important;
+  }
+}
+
+@media(max-width:420px){
+  .solutions-hub-hero h1,
+  .resource-hero h1,
+  .trio-hero h1{
+    font-size:2.65rem !important;
+  }
+
+  .apps-page .ma-problem-title h2{
+    font-size:2.3rem !important;
+  }
+
+  .trio-proof span{
+    font-size:.56rem !important;
+  }
+}
