@@ -3280,3 +3280,257 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
     font-size:.56rem !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE QA PASS 3 — FLAGSHIP SOLUTION PAGE COMPACTION
+   2026-08-19
+   Mobile-only refinements from live iPhone review.
+   ========================================================= */
+
+@media(max-width:760px){
+
+  .trio-page .section-md{
+    padding-top:42px !important;
+    padding-bottom:42px !important;
+  }
+
+  .trio-problem,
+  .trio-possibilities,
+  .trio-system,
+  .trio-ai,
+  .trio-process,
+  .trio-cta{
+    margin:0 !important;
+  }
+
+  .trio-hero{
+    padding:48px 0 50px !important;
+  }
+
+  .trio-hero-grid{
+    gap:26px !important;
+  }
+
+  .trio-hero h1{
+    font-size:clamp(2.45rem,10.4vw,3.05rem) !important;
+    line-height:.98 !important;
+    margin:16px 0 18px !important;
+  }
+
+  .trio-hero .lead{
+    font-size:.94rem !important;
+    line-height:1.55 !important;
+  }
+
+  .trio-proof{
+    margin-top:18px !important;
+    gap:7px !important;
+  }
+
+  .trio-proof span,
+  .trio-chips span{
+    padding:7px 10px !important;
+    font-size:.56rem !important;
+    letter-spacing:.07em !important;
+  }
+
+  .trio-system-panel{
+    grid-template-columns:1fr !important;
+    gap:22px !important;
+    padding:22px 18px !important;
+    border-radius:22px !important;
+  }
+
+  .trio-system-panel h2{
+    font-size:clamp(2rem,8.8vw,2.55rem) !important;
+    line-height:1 !important;
+    margin:10px 0 14px !important;
+  }
+
+  .trio-system-panel p{
+    font-size:.92rem !important;
+    line-height:1.55 !important;
+    margin-bottom:0 !important;
+  }
+
+  .trio-chips{
+    gap:7px !important;
+    margin-top:18px !important;
+  }
+
+  .trio-network{
+    width:min(100%,300px) !important;
+    min-height:0 !important;
+    height:300px !important;
+    justify-self:center !important;
+    margin:2px auto 0 !important;
+  }
+
+  .network-core{
+    width:122px !important;
+    height:122px !important;
+    font-size:.48rem !important;
+  }
+
+  .network-core strong{
+    font-size:1rem !important;
+  }
+
+  .trio-network>span{
+    padding:6px 9px !important;
+    font-size:.48rem !important;
+  }
+
+  .trio-network>span:nth-of-type(1){top:7% !important;left:42% !important}
+  .trio-network>span:nth-of-type(2){top:24% !important;right:3% !important}
+  .trio-network>span:nth-of-type(3){bottom:24% !important;right:4% !important}
+  .trio-network>span:nth-of-type(4){bottom:6% !important;left:42% !important}
+  .trio-network>span:nth-of-type(5){bottom:24% !important;left:3% !important}
+  .trio-network>span:nth-of-type(6){top:24% !important;left:3% !important}
+
+  .trio-ai{
+    padding-top:38px !important;
+    padding-bottom:40px !important;
+  }
+
+  .trio-ai .trio-split{
+    gap:24px !important;
+  }
+
+  .trio-ai-visual{
+    padding:20px 16px !important;
+    border-radius:20px !important;
+  }
+
+  .trio-ai-visual>div{
+    gap:6px !important;
+    margin:20px 0 !important;
+  }
+
+  .trio-ai-visual b{
+    padding:11px 9px !important;
+    border-radius:11px !important;
+    font-size:.8rem !important;
+    flex:1 1 0 !important;
+    text-align:center !important;
+  }
+
+  .trio-ai-visual i{
+    font-size:.8rem !important;
+  }
+
+  .trio-ai-visual p{
+    font-size:.78rem !important;
+    line-height:1.5 !important;
+  }
+
+  .trio-ai h2{
+    font-size:clamp(2rem,8.7vw,2.6rem) !important;
+    line-height:1 !important;
+    margin:12px 0 16px !important;
+  }
+
+  .trio-ai p{
+    font-size:.92rem !important;
+    line-height:1.55 !important;
+  }
+
+  .trio-cap-grid{
+    gap:10px !important;
+  }
+
+  .trio-cap{
+    min-height:0 !important;
+    padding:20px 17px !important;
+  }
+
+  .trio-cap h3{
+    font-size:1.12rem !important;
+    margin:16px 0 8px !important;
+  }
+
+  .trio-cap p{
+    font-size:.86rem !important;
+    line-height:1.5 !important;
+  }
+
+  .trio-process-grid{
+    gap:9px !important;
+  }
+
+  .trio-process-grid article{
+    padding:18px 16px !important;
+  }
+
+  .trio-process-grid h3{
+    margin:14px 0 7px !important;
+  }
+
+  .trio-cta{
+    padding-top:34px !important;
+    padding-bottom:34px !important;
+  }
+
+  .trio-cta-panel{
+    padding:24px 18px !important;
+    border-radius:21px !important;
+  }
+
+  .trio-cta-panel .kicker{
+    font-size:.58rem !important;
+    line-height:1.4 !important;
+  }
+
+  .trio-cta-panel h2{
+    font-size:clamp(2rem,8.7vw,2.55rem) !important;
+    line-height:1 !important;
+    margin:14px 0 16px !important;
+  }
+
+  .trio-cta-panel p{
+    font-size:.9rem !important;
+    line-height:1.55 !important;
+  }
+
+  .trio-cta-panel .btn{
+    margin-top:20px !important;
+    min-height:50px !important;
+    padding:13px 16px !important;
+  }
+
+  .trio-page .site-footer{
+    margin-top:18px !important;
+    padding-top:34px !important;
+  }
+
+  .trio-page main,
+  .trio-page section,
+  .trio-page .container,
+  .trio-system-panel,
+  .trio-network{
+    max-width:100% !important;
+    overflow-x:hidden !important;
+  }
+}
+
+@media(max-width:420px){
+  .trio-network{
+    width:272px !important;
+    height:272px !important;
+  }
+
+  .network-core{
+    width:112px !important;
+    height:112px !important;
+  }
+
+  .trio-proof span,
+  .trio-chips span{
+    font-size:.53rem !important;
+  }
+
+  .trio-hero h1{
+    font-size:2.42rem !important;
+  }
+}
