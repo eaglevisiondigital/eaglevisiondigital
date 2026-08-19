@@ -253,3 +253,66 @@ mobileAppFaqItems.forEach(item => {
     });
   });
 })();
+
+// =========================================================
+// Eagle Vision Digital — Contact form conditional fields
+// =========================================================
+(() => {
+  const pairs = [
+    ['contact-industry', 'contact-industry-other', 'industry_other'],
+    ['contact-interest', 'contact-interest-other', 'interest_other']
+  ];
+
+  pairs.forEach(([selectId, wrapperId, inputName]) => {
+    const select = document.getElementById(selectId);
+    const wrapper = document.getElementById(wrapperId);
+    if (!select || !wrapper) return;
+    const input = wrapper.querySelector(`[name="${inputName}"]`);
+
+    const sync = () => {
+      const show = select.value === 'Other';
+      wrapper.hidden = !show;
+      if (input) {
+        input.required = show;
+        if (!show) input.value = '';
+      }
+      if (show && input) window.setTimeout(() => input.focus({preventScroll:true}), 50);
+    };
+
+    select.addEventListener('change', sync);
+    sync();
+  });
+})();
+
+
+// =========================================================
+// Homepage — New Client Result center-screen proof notification
+// =========================================================
+(() => {
+  const popover = document.getElementById('client-result-popover');
+  if (!popover) return;
+  const close = popover.querySelector('.client-result-popover-close');
+  const link = popover.querySelector('.client-result-popover-link');
+  const storageKey = 'evd-client-result-aug-2026-seen';
+
+  const hide = () => {
+    popover.classList.remove('is-visible');
+    window.setTimeout(() => { popover.hidden = true; }, 280);
+    try { sessionStorage.setItem(storageKey, '1'); } catch (e) {}
+  };
+
+  let seen = false;
+  try { seen = sessionStorage.getItem(storageKey) === '1'; } catch (e) {}
+  if (!seen) {
+    window.setTimeout(() => {
+      popover.hidden = false;
+      requestAnimationFrame(() => popover.classList.add('is-visible'));
+    }, 5500);
+  }
+
+  close?.addEventListener('click', hide);
+  link?.addEventListener('click', hide);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !popover.hidden) hide();
+  });
+})();
