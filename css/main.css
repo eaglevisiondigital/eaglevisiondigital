@@ -3534,3 +3534,75 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
     font-size:2.42rem !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE CALCULATOR SCALE — NONLINEAR POSITION LOCK
+   2026-08-19
+   Matches visible labels to the actual slider mapping:
+   $3K=0%, $25K=34%, $100K=72%, $1M=100%.
+   ========================================================= */
+
+@media(max-width:760px){
+  .payments-calculator-section .paycalc-scale{
+    position:relative !important;
+    display:block !important;
+    width:100% !important;
+    height:24px !important;
+    margin-top:14px !important;
+  }
+
+  .payments-calculator-section .paycalc-scale span{
+    display:none !important;
+    position:absolute !important;
+    top:0 !important;
+    width:max-content !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-size:.57rem !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    color:#c8d6e3 !important;
+    -webkit-text-fill-color:#c8d6e3 !important;
+    opacity:.9 !important;
+  }
+
+  /* $3K — slider position 0% */
+  .payments-calculator-section .paycalc-scale span:first-child{
+    display:block !important;
+    left:0 !important;
+    transform:none !important;
+    text-align:left !important;
+  }
+
+  /* $25K — slider position 34% */
+  .payments-calculator-section .paycalc-scale span:nth-child(3){
+    display:block !important;
+    left:34% !important;
+    transform:translateX(-50%) !important;
+    text-align:center !important;
+  }
+
+  /* $100K — slider position 72% */
+  .payments-calculator-section .paycalc-scale span:nth-child(5){
+    display:block !important;
+    left:72% !important;
+    transform:translateX(-50%) !important;
+    text-align:center !important;
+  }
+
+  /* $1M — slider position 100% */
+  .payments-calculator-section .paycalc-scale span:last-child{
+    display:block !important;
+    right:0 !important;
+    left:auto !important;
+    transform:none !important;
+    text-align:right !important;
+  }
+}
+
+@media(max-width:420px){
+  .payments-calculator-section .paycalc-scale span{
+    font-size:.53rem !important;
+  }
+}
