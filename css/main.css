@@ -3606,3 +3606,55 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
     font-size:.53rem !important;
   }
 }
+
+
+/* =========================================================
+   SITEWIDE NAVIGATION + FOOTER LOCK — 2026-08-19
+   One persistent header system across every production page.
+   ========================================================= */
+
+.site-header{
+  position:sticky !important;
+  top:0 !important;
+  z-index:1000 !important;
+  width:100% !important;
+}
+
+.brand,
+.footer-brand-home{
+  display:inline-flex;
+  align-items:center;
+}
+
+.brand img,
+.footer-brand-home img{
+  display:block;
+}
+
+@media(max-width:760px){
+  /* Override older mobile QA rule that temporarily made the header relative. */
+  .site-header{
+    position:sticky !important;
+    top:0 !important;
+    z-index:1000 !important;
+    background:rgba(1,3,11,.96) !important;
+    backdrop-filter:blur(18px) saturate(125%) !important;
+    -webkit-backdrop-filter:blur(18px) saturate(125%) !important;
+  }
+
+  .nav{
+    min-height:78px !important;
+  }
+
+  .nav-toggle{
+    position:relative;
+    z-index:1002;
+  }
+
+  .nav-links.open{
+    max-height:calc(100vh - 78px) !important;
+    overflow-y:auto !important;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+}

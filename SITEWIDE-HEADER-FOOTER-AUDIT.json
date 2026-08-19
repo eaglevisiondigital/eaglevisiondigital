@@ -1,0 +1,134 @@
+[
+  {
+    "page": "index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "404.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "case-studies/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "contact/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "industries/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "service-areas/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "resources/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "about/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/digital-ecosystems/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/coaching-platforms/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/ecommerce/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/digital-platforms/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/membership-platforms/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/forms-workflows/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/custom-technology/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/customer-portals/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/custom-websites/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/mobile-apps/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/ai-automation/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "services/payment-solutions/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  },
+  {
+    "page": "contact/thank-you/index.html",
+    "header": true,
+    "footer": true,
+    "home_logo": true
+  }
+]

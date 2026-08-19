@@ -348,3 +348,14 @@ document.querySelectorAll('.nav-mega').forEach(mega => {
     }
   });
 });
+
+
+// Sitewide mobile navigation polish: close the menu after a destination is selected.
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.matchMedia('(max-width: 760px)').matches) {
+      navLinks?.classList.remove('open');
+      navToggle?.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
