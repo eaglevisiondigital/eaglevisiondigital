@@ -2513,3 +2513,325 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
 .trio-process{background:#06121f}.trio-process-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.trio-process-grid article{padding:28px 22px;border-top:2px solid #1d8fd5;background:#081827;border-radius:0 0 18px 18px}.trio-process-grid span{color:#3bb5ff;font-weight:900}.trio-process-grid h3{margin:24px 0 10px}.trio-process-grid p{color:#99afc0;font-size:14px;line-height:1.55}.trio-cta{background:#020711}.trio-cta-panel{display:flex;justify-content:space-between;gap:50px;align-items:center;border:1px solid #1a608b;border-radius:30px;padding:55px;background:radial-gradient(circle at 90% 20%,rgba(28,149,235,.16),transparent 35%),#071522}.trio-cta-panel h2{font-size:clamp(38px,4vw,62px);line-height:1.02;max-width:900px}.trio-cta-panel p{color:#a9bdcc;max-width:800px;font-size:18px}
 @media(max-width:900px){.trio-hero{padding:110px 0 70px}.trio-hero-grid,.trio-split,.trio-system-panel{grid-template-columns:1fr}.trio-cap-grid{grid-template-columns:1fr 1fr}.trio-process-grid{grid-template-columns:1fr 1fr}.trio-cta-panel{display:block}.trio-cta-panel .btn{margin-top:25px}.trio-ui{transform:none}.trio-system-panel{padding:30px}.trio-system-panel h2{font-size:44px}}
 @media(max-width:600px){.trio-cap-grid,.trio-process-grid,.trio-before-after{grid-template-columns:1fr}.trio-hero h1{font-size:50px}.trio-ui-grid{grid-template-columns:1fr}.trio-ui-flow{flex-wrap:wrap}.trio-network{min-height:330px}.trio-cta-panel{padding:32px 24px}}
+
+
+/* =========================================================
+   HOMEPAGE MOBILE QA PASS — CALCULATORS / LOCAL / FINAL CTA
+   2026-08-19
+   Mobile-only overrides. Desktop/tablet remain unchanged.
+   ========================================================= */
+
+@media(max-width:760px){
+
+  .payments-calculator-section,
+  #solution-finder,
+  .final-cta,
+  .location-band{
+    scroll-margin-top:88px;
+  }
+
+  .payments-calculator-section{
+    padding-top:48px !important;
+    padding-bottom:48px !important;
+  }
+
+  .payments-calculator-section .paycalc-grid--home{
+    gap:20px !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact{
+    padding:20px !important;
+    border-radius:22px !important;
+    min-height:0 !important;
+    height:auto !important;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:0 !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    height:auto !important;
+    min-height:0 !important;
+    margin:0 0 18px !important;
+    gap:12px !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline h3{
+    min-height:0 !important;
+    height:auto !important;
+    font-size:clamp(1.6rem,7.4vw,2.15rem) !important;
+    line-height:1.05 !important;
+    letter-spacing:-.035em !important;
+    margin:8px 0 0 !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-badge{
+    margin:0 !important;
+    font-size:.58rem !important;
+    padding:9px 12px !important;
+    align-self:flex-start !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume{
+    margin:0 !important;
+    padding:18px 16px 16px !important;
+    min-height:0 !important;
+    height:auto !important;
+    display:block !important;
+    border-radius:18px !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume>div{
+    display:flex !important;
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:9px !important;
+    margin-bottom:18px !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume>div>span{
+    font-size:.73rem !important;
+    line-height:1.35 !important;
+    letter-spacing:.045em !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume strong{
+    font-size:clamp(1.85rem,9vw,2.55rem) !important;
+    line-height:1 !important;
+  }
+
+  .payments-calculator-section .paycalc-slider{
+    width:100% !important;
+    margin:3px 0 0 !important;
+  }
+
+  .payments-calculator-section .paycalc-scale{
+    display:grid !important;
+    grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+    align-items:center !important;
+    gap:0 !important;
+    width:100% !important;
+    margin-top:14px !important;
+  }
+
+  .payments-calculator-section .paycalc-scale span{
+    display:none !important;
+    width:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    font-size:.57rem !important;
+    line-height:1 !important;
+    white-space:nowrap !important;
+    color:#c8d6e3 !important;
+    -webkit-text-fill-color:#c8d6e3 !important;
+    opacity:.88 !important;
+  }
+
+  .payments-calculator-section .paycalc-scale span:first-child,
+  .payments-calculator-section .paycalc-scale span:nth-child(3),
+  .payments-calculator-section .paycalc-scale span:nth-child(5),
+  .payments-calculator-section .paycalc-scale span:last-child{
+    display:block !important;
+  }
+
+  .payments-calculator-section .paycalc-scale span:nth-child(3),
+  .payments-calculator-section .paycalc-scale span:nth-child(5){
+    text-align:center !important;
+  }
+
+  .payments-calculator-section .paycalc-scale span:last-child{
+    text-align:right !important;
+  }
+
+  .payments-calculator-section .paycalc-results,
+  .payments-calculator-section .paycalc-advantage-results{
+    margin-top:14px !important;
+    gap:10px !important;
+  }
+
+  .payments-calculator-section .paycalc-results>div,
+  .payments-calculator-section .paycalc-advantage-results>div{
+    min-height:0 !important;
+    padding:18px 16px !important;
+    border-radius:17px !important;
+  }
+
+  .payments-calculator-section .paycalc-results>div{
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) auto !important;
+    align-items:center !important;
+    gap:6px 12px !important;
+  }
+
+  .payments-calculator-section .paycalc-results span{
+    font-size:.68rem !important;
+    line-height:1.28 !important;
+  }
+
+  .payments-calculator-section .paycalc-results strong{
+    grid-column:2 !important;
+    grid-row:1 !important;
+    font-size:1.65rem !important;
+    margin:0 !important;
+    white-space:nowrap !important;
+  }
+
+  .payments-calculator-section .paycalc-results small{
+    grid-column:2 !important;
+    grid-row:2 !important;
+    text-align:right !important;
+    font-size:.61rem !important;
+  }
+
+  .payments-calculator-section .paycalc-advantage-results strong{
+    font-size:clamp(1.9rem,9vw,2.55rem) !important;
+  }
+
+  .payments-calculator-section .paycalc-advantage-results span{
+    font-size:.66rem !important;
+    line-height:1.35 !important;
+  }
+
+  .payments-calculator-section .paycalc-first-year{
+    margin-top:10px !important;
+    padding:17px 16px !important;
+    min-height:0 !important;
+    border-radius:17px !important;
+    gap:8px !important;
+  }
+
+  .payments-calculator-section .paycalc-first-year strong{
+    font-size:1.8rem !important;
+  }
+
+  .payments-calculator-section .paycalc-solutions{
+    margin:14px 0 0 !important;
+    font-size:.64rem !important;
+    line-height:1.55 !important;
+  }
+
+  .payments-calculator-section .paycalc-note{
+    min-height:0 !important;
+    margin:13px 0 0 !important;
+    font-size:.61rem !important;
+    line-height:1.5 !important;
+  }
+
+  .payments-calculator-section .paycalc-cta{
+    height:auto !important;
+    min-height:0 !important;
+    margin-top:18px !important;
+    padding-top:16px !important;
+    gap:12px !important;
+  }
+
+  .payments-calculator-section .paycalc-cta>span{
+    font-size:.68rem !important;
+  }
+
+  .payments-calculator-section .paycalc-cta .btn{
+    min-height:50px !important;
+    padding:13px 16px !important;
+    font-size:.76rem !important;
+    line-height:1.25 !important;
+  }
+
+  .location-band{
+    padding:25px 22px !important;
+    border-radius:22px !important;
+  }
+
+  .location-band .kicker{
+    font-size:.64rem !important;
+    line-height:1.4 !important;
+    letter-spacing:.13em !important;
+    margin-bottom:17px !important;
+  }
+
+  .location-band h3{
+    font-size:clamp(1.45rem,6.8vw,1.9rem) !important;
+    line-height:1.12 !important;
+    letter-spacing:-.025em !important;
+    margin-bottom:14px !important;
+  }
+
+  .location-band p{
+    font-size:.94rem !important;
+    line-height:1.62 !important;
+    color:#aebaca !important;
+  }
+
+  .location-band .btn{
+    width:100% !important;
+    min-height:48px !important;
+    margin-top:20px !important;
+    padding:12px 16px !important;
+    font-size:.78rem !important;
+    justify-content:center !important;
+  }
+
+  .final-cta{
+    padding-top:52px !important;
+    padding-bottom:48px !important;
+  }
+
+  .final-cta .kicker{
+    font-size:.65rem !important;
+    letter-spacing:.15em !important;
+  }
+
+  .final-cta h2{
+    font-size:clamp(2.35rem,11.5vw,3.3rem) !important;
+    line-height:.98 !important;
+    letter-spacing:-.045em !important;
+    margin:15px auto 17px !important;
+    max-width:560px !important;
+  }
+
+  .final-cta .lead{
+    font-size:.94rem !important;
+    line-height:1.58 !important;
+    max-width:520px !important;
+  }
+
+  .final-cta .btn-row{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:10px !important;
+    margin-top:20px !important;
+  }
+
+  .final-cta .btn{
+    width:100% !important;
+    min-height:50px !important;
+    justify-content:center !important;
+    padding:13px 16px !important;
+  }
+
+  .final-cta .contact-inline{
+    gap:8px 16px !important;
+    margin-top:18px !important;
+    font-size:.72rem !important;
+  }
+}
+
+@media(max-width:420px){
+  .payments-calculator-section .paycalc-card--compact{
+    padding:16px !important;
+  }
+
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume{
+    padding:16px 13px 14px !important;
+  }
+
+  .payments-calculator-section .paycalc-scale span{
+    font-size:.53rem !important;
+  }
+
+  .location-band{
+    padding:22px 18px !important;
+  }
+}
