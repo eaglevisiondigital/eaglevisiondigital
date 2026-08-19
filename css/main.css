@@ -2123,3 +2123,58 @@ p{color:var(--muted);font-size:1.05rem}
 }
 .payments-page .paycalc-card .paycalc-scale span{opacity:.82}
 .payments-page .paycalc-card .btn-primary{color:#fff !important}
+
+
+/* =========================================================
+   HOMEPAGE PAYMENTS CALCULATORS — ALIGNMENT + CONTRAST LOCK
+   2026-08-18
+   ========================================================= */
+.payments-calculator-section .paycalc-card .paycalc-topline h3{
+  color:#ffffff !important;
+  opacity:1 !important;
+  text-shadow:0 1px 0 rgba(255,255,255,.02);
+}
+.payments-calculator-section .paycalc-card .paycalc-eyebrow{color:#58baff !important}
+.payments-calculator-section .paycalc-card .paycalc-badge{color:#8fd1ff !important}
+.payments-calculator-section .paycalc-card .paycalc-badge--green{color:#7ff1be !important}
+@media(min-width:1101px){
+  .payments-calculator-section .paycalc-grid--home{
+    grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch
+  }
+  .payments-calculator-section .paycalc-card--compact{min-height:720px;height:100%;padding:30px}
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline{min-height:132px;align-items:flex-start}
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline>div{display:flex;flex-direction:column;min-width:0}
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline h3{min-height:76px;display:flex;align-items:flex-start}
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume{margin-top:20px;min-height:184px;display:flex;flex-direction:column;justify-content:center}
+  .payments-calculator-section .paycalc-card--compact .paycalc-results,
+  .payments-calculator-section .paycalc-card--compact .paycalc-advantage-results{margin-top:18px}
+  .payments-calculator-section .paycalc-card--compact .paycalc-results--three>div{min-height:174px;display:flex;flex-direction:column;justify-content:center}
+  .payments-calculator-section .paycalc-card--compact .paycalc-advantage-results>div{min-height:138px;display:flex;flex-direction:column;justify-content:center}
+  .payments-calculator-section .paycalc-card--compact .paycalc-first-year{min-height:72px}
+  .payments-calculator-section .paycalc-card--compact .paycalc-note{min-height:42px}
+  .payments-calculator-section .paycalc-card--advantage .paycalc-note{margin-top:14px}
+  .payments-calculator-section .paycalc-card--compact .paycalc-cta{min-height:76px;margin-top:auto}
+}
+.payments-calculator-section .paycalc-card .paycalc-volume span,
+.payments-calculator-section .paycalc-card .paycalc-scale span,
+.payments-calculator-section .paycalc-card .paycalc-results span,
+.payments-calculator-section .paycalc-card .paycalc-results small,
+.payments-calculator-section .paycalc-card .paycalc-advantage-results span,
+.payments-calculator-section .paycalc-card .paycalc-first-year span,
+.payments-calculator-section .paycalc-card .paycalc-solutions,
+.payments-calculator-section .paycalc-card .paycalc-note,
+.payments-calculator-section .paycalc-card .paycalc-cta>span{color:#dce8f2 !important}
+.payments-calculator-section .paycalc-card .paycalc-scale span{color:#b8c9d8 !important;opacity:.86}
+.payments-calculator-section .paycalc-card .btn-primary,
+.payments-calculator-section .paycalc-card .btn-primary:visited,
+.payments-calculator-section .paycalc-card .btn-primary:hover,
+.payments-calculator-section .paycalc-card .btn-primary:focus{color:#ffffff !important}
+@media(max-width:1100px){
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline,
+  .payments-calculator-section .paycalc-card--compact .paycalc-topline h3,
+  .payments-calculator-section .paycalc-card--compact .paycalc-volume,
+  .payments-calculator-section .paycalc-card--compact .paycalc-results--three>div,
+  .payments-calculator-section .paycalc-card--compact .paycalc-advantage-results>div,
+  .payments-calculator-section .paycalc-card--compact .paycalc-note,
+  .payments-calculator-section .paycalc-card--compact .paycalc-cta{min-height:0}
+}
