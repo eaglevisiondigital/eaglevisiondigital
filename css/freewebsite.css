@@ -430,32 +430,6 @@ img { max-width: 100%; display: block; }
   color: #b9cadb;
   font-size: 1.12rem;
 }
-.faq-jump-wrap {
-  display:flex;
-  justify-content:center;
-  margin-top: 22px;
-}
-.faq-jump-pill {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 14px 24px;
-  border-radius: 999px;
-  text-align:center;
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-  color: #eef7ff;
-  background: linear-gradient(180deg, rgba(20,102,201,0.28), rgba(5,28,58,0.88));
-  border: 1px solid rgba(95,183,255,0.72);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.05) inset, 0 0 24px rgba(45,150,255,0.24), 0 10px 28px rgba(0,0,0,0.28);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
-.faq-jump-pill:hover {
-  transform: translateY(-1px);
-  border-color: rgba(130,205,255,0.95);
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 28px rgba(45,150,255,0.34), 0 14px 34px rgba(0,0,0,0.32);
-}
 .form-grid { align-items: start; }
 .form-shell.light { padding: 36px; }
 .form-panel h2 { margin-top: 16px; }
@@ -1072,356 +1046,70 @@ img { max-width: 100%; display: block; }
   .hero-conversion-note { text-align: left; }
 }
 
-/* =========================================================
-   FREE WEBSITE HERO — APPROVED ASSET REBUILD — 2026-08-25
-   Uses the user's approved standalone hero artwork exactly as provided.
-   ========================================================= */
-.campaign-hero {
-  position: relative;
-  overflow: hidden;
-  padding: 28px 0 38px;
-  background:
-    linear-gradient(rgba(21,63,103,.19) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(21,63,103,.19) 1px, transparent 1px),
-    radial-gradient(circle at 76% 34%, rgba(39,145,255,.22), transparent 30%),
-    radial-gradient(circle at 18% 16%, rgba(30,125,220,.10), transparent 24%),
-    linear-gradient(180deg,#03101c 0%,#06182a 100%);
-  background-size: 56px 56px,56px 56px,auto,auto,auto;
+/* --- Approved logo + hero pill consistency pass — 2026-08-25 --- */
+.brand,
+.logo-row {
+  background: transparent !important;
 }
-.campaign-hero::before {
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  background:linear-gradient(105deg,rgba(0,0,0,.06),transparent 48%,rgba(22,122,225,.06));
+.brand img,
+.logo-row img {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
 }
-.campaign-hero-container { position:relative; z-index:1; }
-
-.campaign-trust-row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin:0 0 14px;
+.brand img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
-.campaign-trust-row span,
-.campaign-offer-kicker {
-  display:inline-flex;
-  align-items:center;
-  min-height:42px;
-  border:1px solid rgba(58,164,255,.52);
-  border-radius:999px;
-  background:linear-gradient(180deg,rgba(7,31,53,.92),rgba(5,18,32,.96));
-  box-shadow:0 0 22px rgba(20,132,255,.12), inset 0 0 22px rgba(41,143,255,.04);
-  color:#f1f7ff;
-  font-size:.86rem;
-  font-weight:800;
+.logo-row img {
+  max-width: 390px;
+  width: min(100%, 390px);
+  height: auto;
+  object-fit: contain;
 }
-.campaign-trust-row span { padding:0 18px; }
-.campaign-trust-row span::first-letter { color:#38a9ff; }
-.campaign-offer-kicker {
-  padding:0 22px;
-  margin-bottom:14px;
-  color:#45b0ff;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  font-size:.78rem;
+.hero-top-pills {
+  align-items: stretch;
 }
-
-.campaign-hero-grid {
-  display:grid;
-  grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);
-  gap:24px;
-  align-items:center;
+.hero-top-pills .stat-pill {
+  min-height: 48px;
+  padding: 12px 18px;
+  border-color: rgba(83, 178, 255, 0.42);
+  background: linear-gradient(135deg, rgba(21, 67, 105, 0.78), rgba(9, 29, 49, 0.88));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 12px 24px rgba(0,12,24,.16);
 }
-.campaign-hero-copy { min-width:0; }
-.campaign-hero-copy h1 {
-  max-width:none;
-  margin:0 0 14px;
-  font-size:clamp(3.2rem,5.55vw,5.25rem);
-  line-height:.96;
-  letter-spacing:-.055em;
-  color:#fff;
-  text-shadow:0 10px 28px rgba(0,0,0,.34);
+.hero-copy .offer-chip {
+  min-height: 50px;
+  padding: 14px 22px;
+  border-color: rgba(91, 185, 255, 0.5);
+  background: linear-gradient(135deg, rgba(35, 116, 186, 0.34), rgba(9, 32, 54, 0.86));
+  color: #eaf6ff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 14px 30px rgba(0,13,25,.18);
 }
-.campaign-hero-copy h1 .highlight {
-  background:linear-gradient(180deg,#40b7ff 0%,#148aff 52%,#0565e8 100%);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-  text-shadow:0 0 28px rgba(35,145,255,.24);
+.float-pill {
+  min-width: 238px;
+  min-height: 96px;
+  align-content: center;
+  padding: 18px 20px;
+  border-color: rgba(101, 190, 255, 0.46);
+  background: linear-gradient(145deg, rgba(16, 56, 90, 0.94), rgba(7, 25, 43, 0.96));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 20px 42px rgba(0, 9, 18, 0.34), 0 0 28px rgba(45,150,255,.08);
 }
-.campaign-hero-lead {
-  margin:0;
-  max-width:61ch;
-  color:#d7e5f3;
-  font-size:clamp(1rem,1.22vw,1.12rem);
-  line-height:1.55;
+.float-pill strong {
+  font-size: 1.22rem;
+  color: #ffffff;
 }
-.campaign-hero-lead strong { color:#fff; }
-
-.campaign-benefits-art {
-  margin-top:18px;
-  width:100%;
-  max-width:690px;
+.float-pill span {
+  color: #bcd3e9;
+  font-size: .98rem;
+  line-height: 1.35;
 }
-.campaign-benefits-art img,
-.campaign-offer-art img,
-.campaign-hero-art img {
-  width:100%;
-  height:auto;
-  display:block;
-}
-.campaign-benefits-art img,
-.campaign-offer-art img {
-  filter:drop-shadow(0 12px 28px rgba(0,79,180,.18));
-}
-
-.campaign-hero-art {
-  min-width:0;
-  width:112%;
-  margin-left:-5%;
-  margin-top:-10px;
-  margin-bottom:-6px;
-  filter:drop-shadow(0 26px 45px rgba(0,28,68,.32));
-}
-
-.campaign-hero-bottom {
-  display:grid;
-  grid-template-columns:minmax(0,1.28fr) minmax(330px,.9fr);
-  gap:22px;
-  align-items:center;
-  margin-top:0;
-}
-.campaign-offer-art {
-  width:100%;
-  min-width:0;
-}
-.campaign-hero-actions {
-  display:grid;
-  gap:11px;
-}
-.campaign-action-row {
-  display:grid;
-  grid-template-columns:minmax(0,1.1fr) minmax(220px,.9fr);
-  gap:12px;
-}
-.campaign-action-row .btn {
-  width:100%;
-  min-height:58px;
-  padding:15px 20px;
-  font-size:.96rem;
-  white-space:nowrap;
-}
-.campaign-action-note {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:nowrap;
-  gap:10px;
-  min-width:0;
-  white-space:nowrap;
-  text-align:center;
-  color:#b8cadd;
-  font-size:clamp(.62rem, 1.15vw, .92rem);
-  line-height:1;
-  letter-spacing:-0.01em;
-}
-.campaign-action-note .note-part {
-  color:#b8cadd;
-  white-space:nowrap;
-}
-.campaign-action-note .note-sep {
-  color:#69baff;
-  padding:0;
-  flex:0 0 auto;
-}
-
-@media (max-width:1180px) {
-  .campaign-hero-grid { grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr); gap:12px; }
-  .campaign-hero-art { width:108%; margin-left:-2%; }
-  .campaign-hero-bottom { grid-template-columns:1fr; gap:12px; }
-  .campaign-offer-art { max-width:930px; margin-inline:auto; }
-  .campaign-hero-actions { max-width:760px; width:100%; margin-inline:auto; }
-}
-
-@media (max-width:860px) {
-  .campaign-hero { padding:26px 0 30px; }
-  .campaign-trust-row { justify-content:center; }
-  .campaign-hero-grid { grid-template-columns:1fr; gap:12px; }
-  .campaign-hero-copy { text-align:center; }
-  .campaign-offer-kicker { margin-inline:auto; }
-  .campaign-hero-copy h1 { font-size:clamp(3rem,10vw,4.45rem); }
-  .campaign-hero-lead { margin-inline:auto; max-width:680px; }
-  .campaign-hero-art {
-    width:100%;
-    margin:2px auto 0;
-    max-width:760px;
-    order:2;
-  }
-  .campaign-benefits-art {
-    max-width:760px;
-    margin:12px auto 0;
-  }
-  .campaign-hero-bottom { margin-top:8px; }
-  .campaign-action-row { grid-template-columns:1fr 1fr; }
-}
-
-@media (max-width:640px) {
-  .campaign-hero { padding:20px 0 24px; }
-  .campaign-trust-row { gap:7px; margin-bottom:12px; }
-  .campaign-trust-row span {
-    min-height:36px;
-    padding:0 11px;
-    font-size:.74rem;
-  }
-  .campaign-offer-kicker {
-    min-height:38px;
-    padding:0 15px;
-    font-size:.67rem;
-    letter-spacing:.105em;
-  }
-  .campaign-hero-copy h1 {
-    font-size:clamp(2.85rem,14vw,3.8rem);
-    line-height:.95;
-    margin-bottom:14px;
-  }
-  .campaign-hero-lead {
-    font-size:.96rem;
-    line-height:1.52;
-    padding-inline:3px;
-  }
-  .campaign-hero-art {
-    max-width:540px;
-    width:108%;
-    margin-left:-4%;
-  }
-  .campaign-benefits-art {
-    width:100%;
-    margin-top:8px;
-  }
-  .campaign-offer-art {
-    width:106%;
-    margin-left:-3%;
-  }
-  .campaign-action-row { grid-template-columns:1fr; }
-  .campaign-action-row .btn { min-height:54px; font-size:.92rem; }
-  .campaign-action-note { font-size:clamp(.58rem, 2.45vw, .78rem); gap:7px; }
-}
-
-@media (max-width: 640px) {
-  .faq-jump-pill { width: min(100%, 360px); padding: 13px 18px; font-size: .94rem; }
-}
-
-
-/* =========================================================
-   Mobile polish pass — tighten alignment/fit for mobile-only areas
-   ========================================================= */
-@media (max-width: 640px) {
-  .campaign-trust-row {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-    align-items: center;
-    justify-items: stretch;
-    max-width: 520px;
-    margin: 0 auto 14px;
-  }
-  .campaign-trust-row span {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    padding: 0 12px;
-    min-height: 40px;
-    font-size: 0.78rem;
-  }
-  .campaign-trust-row span:last-child {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: min(100%, 240px);
-  }
-  .campaign-offer-kicker {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-    min-height: 42px;
-    padding: 0 16px;
-    font-size: 0.72rem;
-    line-height: 1.15;
-  }
-
-  .industry-line {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 6px 10px;
-    margin-top: 22px;
-    font-size: clamp(0.92rem, 3.8vw, 1rem);
-    line-height: 1.45;
-    text-wrap: balance;
-  }
-  .industry-line span {
-    padding: 0 2px;
-    flex: 0 0 auto;
-  }
-
-  .callout-grid .callout-card:nth-child(2) p:last-of-type {
-    font-size: 0.96rem;
-    line-height: 1.45;
-    text-wrap: balance;
-  }
-  .callout-grid .callout-card:nth-child(2) .button-row .btn {
-    font-size: 0.84rem;
-    line-height: 1.18;
-    letter-spacing: 0.01em;
-    white-space: normal;
-    padding: 16px 18px;
-  }
-
-  .trust-card {
-    padding: 24px 20px;
-    gap: 16px;
-  }
-  .logo-row {
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .logo-row img {
-    max-width: 250px;
-  }
-  .logo-row > div {
-    width: 100%;
-  }
-  .logo-row .subline {
-    font-size: 0.9rem;
-    line-height: 1.45;
-    text-wrap: balance;
-  }
-  .contact-strip {
-    gap: 10px;
-  }
-  .contact-chip {
-    padding: 11px 14px;
-    font-size: 0.95rem;
-  }
-  .contact-chip[href^="mailto:"] {
-    font-size: 0.9rem;
-    overflow-wrap: anywhere;
-  }
-  .trust-card p {
-    font-size: 0.98rem;
-    line-height: 1.68;
-  }
-  .trust-card p:last-child {
-    font-size: 0.92rem;
-    line-height: 1.7;
-    text-wrap: balance;
+.pill-one { border-left: 3px solid #45b4ff; }
+.pill-two { border-left: 3px solid #37e0b8; }
+.pill-three { border-left: 3px solid #7cc6ff; }
+@media (max-width: 900px) {
+  .float-pill {
+    min-width: 0;
+    min-height: 0;
   }
 }
-
-
-/* Facebook social link */
-.facebook-chip{border-color:rgba(71,151,255,.45)!important;background:rgba(24,119,242,.12)!important;color:#d8ebff!important}
-.facebook-chip:hover{background:rgba(24,119,242,.22)!important;border-color:rgba(98,172,255,.72)!important}
