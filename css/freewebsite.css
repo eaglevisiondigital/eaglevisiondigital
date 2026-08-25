@@ -1420,3 +1420,8 @@ img { max-width: 100%; display: block; }
     text-wrap: balance;
   }
 }
+
+
+/* Facebook social link */
+.facebook-chip{border-color:rgba(71,151,255,.45)!important;background:rgba(24,119,242,.12)!important;color:#d8ebff!important}
+.facebook-chip:hover{background:rgba(24,119,242,.22)!important;border-color:rgba(98,172,255,.72)!important}

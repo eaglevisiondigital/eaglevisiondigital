@@ -3685,3 +3685,13 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
   .hero-meta-reach{padding-left:15px}
   .industry-section{padding:12px 0 32px}
 }
+
+
+/* Sitewide Facebook link */
+.footer-links .footer-facebook{
+  display:inline-flex;align-items:center;justify-content:flex-start;gap:8px;
+  width:max-content;max-width:100%;padding:9px 14px;border-radius:999px;
+  border:1px solid rgba(45,150,255,.28);background:rgba(45,150,255,.08);
+  color:#8cc9ff;font-weight:800;transition:.2s ease;
+}
+.footer-links .footer-facebook:hover{color:#fff;border-color:rgba(75,170,255,.55);background:rgba(45,150,255,.16);transform:translateY(-1px)}
