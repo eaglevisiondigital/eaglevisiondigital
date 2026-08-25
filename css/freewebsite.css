@@ -1311,3 +1311,112 @@ img { max-width: 100%; display: block; }
 @media (max-width: 640px) {
   .faq-jump-pill { width: min(100%, 360px); padding: 13px 18px; font-size: .94rem; }
 }
+
+
+/* =========================================================
+   Mobile polish pass — tighten alignment/fit for mobile-only areas
+   ========================================================= */
+@media (max-width: 640px) {
+  .campaign-trust-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    align-items: center;
+    justify-items: stretch;
+    max-width: 520px;
+    margin: 0 auto 14px;
+  }
+  .campaign-trust-row span {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 0 12px;
+    min-height: 40px;
+    font-size: 0.78rem;
+  }
+  .campaign-trust-row span:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 240px);
+  }
+  .campaign-offer-kicker {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 42px;
+    padding: 0 16px;
+    font-size: 0.72rem;
+    line-height: 1.15;
+  }
+
+  .industry-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px 10px;
+    margin-top: 22px;
+    font-size: clamp(0.92rem, 3.8vw, 1rem);
+    line-height: 1.45;
+    text-wrap: balance;
+  }
+  .industry-line span {
+    padding: 0 2px;
+    flex: 0 0 auto;
+  }
+
+  .callout-grid .callout-card:nth-child(2) p:last-of-type {
+    font-size: 0.96rem;
+    line-height: 1.45;
+    text-wrap: balance;
+  }
+  .callout-grid .callout-card:nth-child(2) .button-row .btn {
+    font-size: 0.84rem;
+    line-height: 1.18;
+    letter-spacing: 0.01em;
+    white-space: normal;
+    padding: 16px 18px;
+  }
+
+  .trust-card {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+  .logo-row {
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .logo-row img {
+    max-width: 250px;
+  }
+  .logo-row > div {
+    width: 100%;
+  }
+  .logo-row .subline {
+    font-size: 0.9rem;
+    line-height: 1.45;
+    text-wrap: balance;
+  }
+  .contact-strip {
+    gap: 10px;
+  }
+  .contact-chip {
+    padding: 11px 14px;
+    font-size: 0.95rem;
+  }
+  .contact-chip[href^="mailto:"] {
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+  }
+  .trust-card p {
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+  .trust-card p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    text-wrap: balance;
+  }
+}
