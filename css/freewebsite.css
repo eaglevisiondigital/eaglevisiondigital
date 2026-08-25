@@ -430,6 +430,32 @@ img { max-width: 100%; display: block; }
   color: #b9cadb;
   font-size: 1.12rem;
 }
+.faq-jump-wrap {
+  display:flex;
+  justify-content:center;
+  margin-top: 22px;
+}
+.faq-jump-pill {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-align:center;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: #eef7ff;
+  background: linear-gradient(180deg, rgba(20,102,201,0.28), rgba(5,28,58,0.88));
+  border: 1px solid rgba(95,183,255,0.72);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.05) inset, 0 0 24px rgba(45,150,255,0.24), 0 10px 28px rgba(0,0,0,0.28);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.faq-jump-pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(130,205,255,0.95);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset, 0 0 28px rgba(45,150,255,0.34), 0 14px 34px rgba(0,0,0,0.32);
+}
 .form-grid { align-items: start; }
 .form-shell.light { padding: 36px; }
 .form-panel h2 { margin-top: 16px; }
@@ -1187,12 +1213,28 @@ img { max-width: 100%; display: block; }
   white-space:nowrap;
 }
 .campaign-action-note {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:nowrap;
+  gap:10px;
+  min-width:0;
+  white-space:nowrap;
   text-align:center;
   color:#b8cadd;
-  font-size:.92rem;
-  line-height:1.45;
+  font-size:clamp(.62rem, 1.15vw, .92rem);
+  line-height:1;
+  letter-spacing:-0.01em;
 }
-.campaign-action-note span { color:#69baff; padding:0 9px; }
+.campaign-action-note .note-part {
+  color:#b8cadd;
+  white-space:nowrap;
+}
+.campaign-action-note .note-sep {
+  color:#69baff;
+  padding:0;
+  flex:0 0 auto;
+}
 
 @media (max-width:1180px) {
   .campaign-hero-grid { grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr); gap:12px; }
@@ -1263,6 +1305,9 @@ img { max-width: 100%; display: block; }
   }
   .campaign-action-row { grid-template-columns:1fr; }
   .campaign-action-row .btn { min-height:54px; font-size:.92rem; }
-  .campaign-action-note { font-size:.82rem; }
-  .campaign-action-note span { padding:0 5px; }
+  .campaign-action-note { font-size:clamp(.58rem, 2.45vw, .78rem); gap:7px; }
+}
+
+@media (max-width: 640px) {
+  .faq-jump-pill { width: min(100%, 360px); padding: 13px 18px; font-size: .94rem; }
 }
