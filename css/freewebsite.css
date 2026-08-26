@@ -1045,3 +1045,139 @@ img { max-width: 100%; display: block; }
   .hero-proof-card { grid-column: auto; }
   .hero-conversion-note { text-align: left; }
 }
+
+/* =========================================================
+   HERO PIECE RESTORE — use approved prebuilt hero components exactly
+   2026-08-25
+   ========================================================= */
+.hero-piece {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+}
+
+.hero-piece-wrap {
+  margin: 22px 0 0;
+  width: 100%;
+}
+
+.hero-benefits-piece {
+  max-width: 100%;
+  filter: drop-shadow(0 18px 36px rgba(0, 10, 25, .26));
+}
+
+.premium-hero-grid {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) !important;
+  gap: 34px !important;
+  align-items: center !important;
+}
+
+.hero-piece-visual {
+  padding: 0 !important;
+  min-height: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.hero-device-piece {
+  width: 112%;
+  max-width: none;
+  margin-left: -6%;
+  filter: drop-shadow(0 24px 44px rgba(0, 12, 32, .34));
+}
+
+.hero-piece-conversion {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.28fr) minmax(330px, .72fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+  margin-top: 18px !important;
+}
+
+.hero-offer-piece-wrap {
+  min-width: 0;
+}
+
+.hero-offer-piece {
+  width: 100%;
+  filter: drop-shadow(0 18px 34px rgba(0, 12, 32, .28));
+}
+
+.hero-piece-cta {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+  align-items: center;
+}
+
+.hero-piece-cta .btn {
+  width: 100%;
+  min-height: 60px;
+  padding: 16px 20px;
+}
+
+.hero-piece-cta .hero-conversion-note {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2px;
+  padding-top: 0;
+  font-size: .98rem;
+  line-height: 1.45;
+}
+
+.early-faq-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.early-faq-cta .btn {
+  min-width: 310px;
+  border-color: rgba(76, 174, 255, .38);
+  background: linear-gradient(180deg, rgba(13, 42, 67, .94), rgba(6, 24, 40, .98));
+  box-shadow: 0 16px 34px rgba(0, 10, 24, .22), inset 0 1px 0 rgba(255,255,255,.03);
+}
+
+#faq {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 1180px) {
+  .premium-hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-device-piece {
+    width: 100%;
+    margin-left: 0;
+  }
+  .hero-piece-conversion {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-piece-cta {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-piece-wrap {
+    margin-top: 18px;
+  }
+  .hero-device-piece {
+    width: 108%;
+    margin-left: -4%;
+  }
+  .hero-piece-cta {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-piece-cta .hero-conversion-note {
+    text-align: left;
+  }
+  .early-faq-cta .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}
