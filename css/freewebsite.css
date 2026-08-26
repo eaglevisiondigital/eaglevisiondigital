@@ -2214,3 +2214,105 @@ img { max-width: 100%; display: block; }
     font-size: 0.9rem !important;
   }
 }
+
+/* =========================================================
+   FINAL DESKTOP SYMMETRY + EDGE ALIGNMENT PASS
+   2026-08-26
+   ========================================================= */
+@media (min-width: 981px) {
+  /* Make the left and right hero columns share the same bottom edge. */
+  .premium-hero-grid {
+    align-items: stretch !important;
+  }
+
+  .hero-copy {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+  }
+
+  /* Keep text exactly where it is; pull the approved benefits artwork
+     to the same visible left edge and let its bottom align with the
+     device artwork's bottom feature pills. */
+  .hero-piece-wrap {
+    margin-top: auto !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    padding-top: 20px !important;
+    width: min(104%, 740px) !important;
+    max-width: none !important;
+    overflow: visible !important;
+  }
+
+  .hero-benefits-piece {
+    width: 104% !important;
+    max-width: none !important;
+    transform: translateX(-4%) !important;
+    transform-origin: left bottom !important;
+  }
+
+  .hero-piece-visual {
+    align-self: stretch !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    min-width: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Keep the approved hero size, but shift it left enough that the
+     108%-wide artwork never clips on the right edge. */
+  .hero-device-piece {
+    width: 108% !important;
+    max-width: 108% !important;
+    margin: 0 !important;
+    transform: translateX(-7.4%) !important;
+    transform-origin: center bottom !important;
+  }
+
+  /* Offer strip and primary CTA buttons share one clean top line. */
+  .hero-piece-conversion {
+    align-items: start !important;
+    margin-top: 10px !important;
+  }
+
+  .hero-offer-piece-wrap {
+    align-self: start !important;
+    transform: translateY(-14px) !important;
+  }
+
+  .hero-piece-cta {
+    align-self: start !important;
+    padding-top: 0 !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    font-size: 0.92rem !important;
+    line-height: 1.15 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Keep FAQ centered to the full page and give it a little more air. */
+  .hero-faq-row {
+    margin-top: 34px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1280px) {
+  .hero-benefits-piece {
+    width: 102% !important;
+    transform: translateX(-2%) !important;
+  }
+
+  .hero-device-piece {
+    width: 106% !important;
+    max-width: 106% !important;
+    transform: translateX(-5.7%) !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    font-size: 0.88rem !important;
+  }
+}
