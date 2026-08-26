@@ -1,35 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You | Eagle Vision Digital</title>
-  <link rel="icon" href="../../assets/logos/ev-icon.png">
-  <link rel="stylesheet" href="../../css/freewebsite.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Eligibility Request Received | Eagle Vision Digital</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/assets/logos/eagle-vision-icon.png">
+<link rel="stylesheet" href="/css/main.css"><link rel="stylesheet" href="/css/freewebsite.css">
 </head>
-<body>
-  <header class="min-header">
-    <div class="container inner">
-      <a href="https://eaglevision.digital" class="brand"><img src="../../assets/logos/eagle-vision-digital-logo-approved-transparent-v2.png" alt="Eagle Vision Digital"></a>
-    </div>
-  </header>
-  <main>
-    <section class="section section-dark final-cta" style="min-height: calc(100vh - 90px); display:flex; align-items:center;">
-      <div class="container">
-        <div class="kicker">Thank You</div>
-        <h2>We Received Your <span class="highlight">Eligibility Request</span></h2>
-        <p>An Eagle Vision representative will review your information and contact you regarding the promotional options your business may qualify for. If your business processes under $20,000/month, you may still qualify for one of our digital-upgrade incentives.</p>
-        <p>If you uploaded a processing statement, thank you — that may help us complete your review more quickly.</p>
-        <div class="button-row" style="justify-content:center; margin-top:24px;">
-          <a class="btn btn-primary" href="/freewebsite/">BACK TO OFFER</a>
-          <a class="btn btn-secondary" href="https://eaglevision.digital">EXPLORE EAGLE VISION DIGITAL</a>
-        </div>
-        <div class="contact-strip" style="justify-content:center; margin-top:28px;">
-          <a class="contact-chip" href="tel:8508124711">850-812-4711</a>
-          <a class="contact-chip" href="mailto:info@eaglevision.digital">info@eaglevision.digital</a>
-        </div>
-      </div>
-    </section>
-  </main>
-</body>
-</html>
+<body class="freewebsite-page fw-thankyou-page">
+<header class="campaign-header"><div class="campaign-wrap campaign-header-inner"><a class="campaign-brand" href="/"><img src="/assets/logos/eagle-vision-digital-horizontal.png" alt="Eagle Vision Digital"></a><a class="campaign-home-link" href="/">Main Site →</a></div></header>
+<main class="fw-thankyou-main">
+<div class="campaign-wrap"><section class="fw-thankyou-card">
+<div class="fw-success-icon">✓</div><div class="fw-eyebrow center">ELIGIBILITY REQUEST RECEIVED</div>
+<h1>Thank You — We Received Your Eligibility Request</h1>
+<p>An Eagle Vision representative will review your information and contact you regarding the promotional options your business may qualify for.</p>
+<div id="statement-thanks" class="fw-thanks-extra" hidden><strong>Thank you for including your processing statement.</strong><span>That may help us complete your review more quickly.</span></div>
+<div id="under20-thanks" class="fw-thanks-extra" hidden><strong>Your business may still qualify for one of our digital-upgrade incentives.</strong><span>We will review your information and let you know which options may be available.</span></div>
+<div class="fw-thankyou-actions"><a class="fw-btn fw-btn-primary" href="/">Explore Eagle Vision Digital →</a><a class="fw-btn fw-btn-secondary" href="tel:+18508124711">Call (850) 812-4711</a></div>
+</section></div></main>
+<script>const q=new URLSearchParams(location.search);if(q.get('statement')==='yes')document.getElementById('statement-thanks').hidden=false;if(['Under $10,000','$10,000–$19,999'].includes(q.get('volume')))document.getElementById('under20-thanks').hidden=false;</script>
+</body></html>
