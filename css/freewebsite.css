@@ -1402,3 +1402,269 @@ img { max-width: 100%; display: block; }
     text-align: left;
   }
 }
+
+/* =========================================================
+   HERO LAYOUT HOTFIX — restore mockup-style balance and containment
+   2026-08-26
+   ========================================================= */
+.min-header .inner {
+  width: min(calc(100% - 48px), 1680px);
+  margin: 0 auto;
+  min-height: 84px;
+}
+
+.brand img {
+  height: 52px;
+}
+
+.header-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.hero {
+  padding-top: 52px;
+  padding-bottom: 64px;
+}
+
+.hero .container {
+  width: min(calc(100% - 48px), 1680px);
+}
+
+.hero-top-pills {
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.hero-copy {
+  padding-top: 6px;
+}
+
+.hero-copy .offer-chip {
+  margin-bottom: 20px;
+}
+
+.hero-copy h1 {
+  max-width: 9.2ch;
+  margin-bottom: 16px;
+}
+
+.hero-copy .lead {
+  max-width: 32ch;
+  margin-bottom: 0;
+}
+
+.hero-piece-wrap {
+  width: min(100%, 610px);
+  margin-top: 22px;
+}
+
+.hero-benefits-piece {
+  width: 100%;
+  max-width: 100%;
+}
+
+.premium-hero-grid {
+  grid-template-columns: minmax(420px, 0.92fr) minmax(620px, 1.08fr) !important;
+  gap: 26px !important;
+  align-items: start !important;
+}
+
+.hero-piece-visual {
+  align-self: start;
+  justify-content: flex-start;
+  overflow: visible;
+  min-width: 0;
+}
+
+.hero-device-piece {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  filter: drop-shadow(0 28px 50px rgba(0, 12, 32, .34));
+}
+
+.hero-piece-conversion {
+  grid-template-columns: minmax(620px, 1.12fr) minmax(420px, 0.88fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+  margin-top: 10px !important;
+}
+
+.hero-offer-piece-wrap {
+  min-width: 0;
+  align-self: center;
+}
+
+.hero-piece-cta {
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-areas:
+    "eligibility call"
+    ". faq"
+    "note note" !important;
+  gap: 14px 16px !important;
+  align-items: center;
+  width: min(100%, 660px);
+  margin-left: auto;
+  padding-bottom: 0;
+}
+
+.hero-piece-cta .btn {
+  width: 100%;
+  min-height: 64px;
+}
+
+.btn-faq {
+  min-height: 48px !important;
+}
+
+.hero-piece-cta .hero-conversion-note {
+  margin-top: 4px;
+  text-align: center;
+}
+
+@media (max-width: 1460px) {
+  .hero .container,
+  .min-header .inner {
+    width: min(calc(100% - 40px), 1500px);
+  }
+
+  .premium-hero-grid {
+    grid-template-columns: minmax(390px, 0.96fr) minmax(520px, 1.04fr) !important;
+    gap: 22px !important;
+  }
+
+  .hero-copy .lead {
+    max-width: 30ch;
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: minmax(540px, 1.08fr) minmax(380px, 0.92fr) !important;
+  }
+}
+
+@media (max-width: 1240px) {
+  .premium-hero-grid {
+    grid-template-columns: minmax(360px, 1fr) minmax(420px, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .hero-copy .lead {
+    max-width: 28ch;
+  }
+
+  .hero-piece-wrap {
+    width: min(100%, 560px);
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr) !important;
+    gap: 18px !important;
+  }
+
+  .hero-piece-cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .min-header .inner,
+  .hero .container {
+    width: min(calc(100% - 28px), 100%);
+  }
+
+  .premium-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .hero-copy h1,
+  .hero-copy .lead {
+    max-width: none;
+  }
+
+  .hero-piece-wrap {
+    width: min(100%, 720px);
+  }
+
+  .hero-piece-visual {
+    justify-content: center;
+  }
+
+  .hero-device-piece {
+    width: min(100%, 900px);
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    margin-top: 14px !important;
+  }
+
+  .hero-piece-cta {
+    grid-template-areas:
+      "eligibility call"
+      "faq faq"
+      "note note" !important;
+    width: min(100%, 760px);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .min-header .inner,
+  .hero .container {
+    width: min(calc(100% - 20px), 100%);
+  }
+
+  .min-header .inner {
+    min-height: 72px;
+  }
+
+  .brand img {
+    height: 40px;
+  }
+
+  .header-link {
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 40px;
+    padding-bottom: 44px;
+  }
+
+  .hero-top-pills {
+    gap: 12px;
+  }
+
+  .hero-top-pills .stat-pill {
+    padding: 12px 16px;
+  }
+
+  .hero-piece-wrap {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .hero-device-piece {
+    width: 100%;
+  }
+
+  .hero-piece-cta {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "eligibility"
+      "call"
+      "faq"
+      "note" !important;
+    width: 100%;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    text-align: left;
+  }
+}
