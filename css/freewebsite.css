@@ -2316,3 +2316,110 @@ img { max-width: 100%; display: block; }
     font-size: 0.88rem !important;
   }
 }
+
+/* =========================================================
+   FINAL DESKTOP ALIGNMENT — 2026-08-26 5PM PASS
+   Requested: exact left alignment, hero up/right without clipping,
+   offer strip aligned to CTAs, tighter FAQ spacing.
+   ========================================================= */
+@media (min-width: 981px) {
+  /* Keep all left-side hero assets on the exact text edge. */
+  .hero-piece-wrap {
+    margin-left: -18px !important;
+    margin-right: auto !important;
+    transform: none !important;
+  }
+
+  .hero-benefits-piece {
+    transform: none !important;
+    transform-origin: left bottom !important;
+  }
+
+  /* Give the right visual column slightly more room. This lets the
+     approved hero move right while keeping the same apparent size and
+     still guarantees that its right edge remains inside the viewport. */
+  .premium-hero-grid {
+    grid-template-columns: minmax(0, .39fr) minmax(0, .61fr) !important;
+    align-items: stretch !important;
+  }
+
+  .hero-piece-visual {
+    align-self: stretch !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    overflow: visible !important;
+  }
+
+  .hero-device-piece {
+    width: 106.25% !important;
+    max-width: 106.25% !important;
+    margin: 0 0 -72px 0 !important;
+    transform: translate(-5.9%, -72px) !important;
+    transform-origin: center bottom !important;
+  }
+
+  /* Pull the offer strip up to the same visual top line as the two CTAs.
+     Negative bottom margin prevents the transformed artwork from leaving
+     a large empty layout box below it. */
+  .hero-piece-conversion {
+    align-items: start !important;
+    margin-top: 4px !important;
+  }
+
+  .hero-offer-piece-wrap {
+    align-self: start !important;
+    margin-left: -18px !important;
+    margin-bottom: -48px !important;
+    transform: translateY(-48px) !important;
+  }
+
+  .hero-piece-cta {
+    align-self: start !important;
+    padding-top: 0 !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    white-space: nowrap !important;
+    overflow: visible !important;
+    margin-top: 0 !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Tighten the blank space around the centered FAQ shortcut. */
+  .hero-faq-row {
+    margin-top: 12px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .hero {
+    padding-bottom: 28px !important;
+  }
+}
+
+/* Keep the same relationships throughout smaller desktop widths. */
+@media (min-width: 981px) and (max-width: 1280px) {
+  .premium-hero-grid {
+    grid-template-columns: minmax(0, .41fr) minmax(0, .59fr) !important;
+  }
+
+  .hero-piece-wrap,
+  .hero-offer-piece-wrap {
+    margin-left: -12px !important;
+  }
+
+  .hero-device-piece {
+    width: 104.2% !important;
+    max-width: 104.2% !important;
+    margin-bottom: -60px !important;
+    transform: translate(-4.05%, -60px) !important;
+  }
+
+  .hero-offer-piece-wrap {
+    margin-bottom: -40px !important;
+    transform: translateY(-40px) !important;
+  }
+
+  .hero-faq-row {
+    margin-top: 10px !important;
+  }
+}
