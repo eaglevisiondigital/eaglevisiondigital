@@ -2137,3 +2137,80 @@ img { max-width: 100%; display: block; }
     width: 100% !important;
   }
 }
+
+/* =========================================================
+   DESKTOP HERO ALIGNMENT TWEAKS
+   2026-08-26 FINAL PASS
+   ========================================================= */
+
+/* Desktop and large tablet: enlarge hero visual, keep full image visible,
+   bring offer strip + CTA buttons into stronger alignment, and prevent
+   CTA support copy from breaking to a second line on desktop. */
+@media (min-width: 981px) {
+  .premium-hero-grid {
+    grid-template-columns: minmax(0, .40fr) minmax(0, .60fr) !important;
+    gap: clamp(24px, 2vw, 40px) !important;
+  }
+
+  .hero-piece-visual {
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+  }
+
+  .hero-device-piece {
+    width: 108% !important;
+    max-width: 108% !important;
+    transform: translateX(-2%) !important;
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: clamp(20px, 1.8vw, 30px) !important;
+    margin-top: 8px !important;
+  }
+
+  .hero-offer-piece-wrap {
+    align-self: start !important;
+    transform: translateY(-8px) !important;
+  }
+
+  .hero-piece-cta {
+    align-self: start !important;
+    gap: 12px 18px !important;
+  }
+
+  .hero-piece-cta .btn {
+    align-self: start !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    white-space: nowrap !important;
+    font-size: 0.94rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.01em !important;
+    padding-top: 0 !important;
+    text-align: center !important;
+  }
+
+  .hero-faq-row {
+    margin-top: 28px !important;
+  }
+}
+
+/* Medium desktop tuning */
+@media (min-width: 981px) and (max-width: 1280px) {
+  .premium-hero-grid {
+    grid-template-columns: minmax(0, .42fr) minmax(0, .58fr) !important;
+  }
+
+  .hero-device-piece {
+    width: 106% !important;
+    max-width: 106% !important;
+    transform: translateX(-1%) !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    font-size: 0.9rem !important;
+  }
+}
