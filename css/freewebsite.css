@@ -1914,3 +1914,226 @@ img { max-width: 100%; display: block; }
     width: 100% !important;
   }
 }
+
+/* =========================================================
+   SECTION-BY-SECTION HERO FINAL ALIGNMENT
+   2026-08-26
+   ========================================================= */
+
+/* Header: push approved logo to far left and Main Website to far right */
+.min-header .inner {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-inline: clamp(18px, 2vw, 36px) !important;
+}
+.min-header .brand { margin-right: auto !important; }
+.min-header .header-link {
+  margin-left: auto !important;
+  text-align: right !important;
+  justify-content: flex-end !important;
+}
+
+/* Hero overall proportions */
+.hero .container {
+  width: min(calc(100% - 48px), 1900px) !important;
+  max-width: none !important;
+}
+.premium-hero-grid {
+  grid-template-columns: minmax(0, .42fr) minmax(0, .58fr) !important;
+  gap: clamp(22px, 2vw, 38px) !important;
+  align-items: start !important;
+}
+.hero-copy {
+  min-width: 0;
+  padding-top: 2px !important;
+}
+.hero-copy h1 {
+  max-width: 100% !important;
+  margin-bottom: 16px !important;
+}
+.hero-copy .lead {
+  width: 100% !important;
+  max-width: 100% !important;
+  line-height: 1.42 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Benefits asset: cropped approved artwork now visibly aligns with text left edge */
+.hero-piece-wrap {
+  width: min(100%, 720px) !important;
+  max-width: 100% !important;
+  margin: 20px auto 0 0 !important;
+}
+.hero-benefits-piece {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Device hero: fill the visual column, but never exceed it or clip right */
+.hero-piece-visual {
+  min-width: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+.hero-device-piece {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+  object-position: center top !important;
+}
+
+/* Offer strip and the two primary CTA buttons return to the SAME top line */
+.hero-piece-conversion {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.16fr) minmax(0, .84fr) !important;
+  gap: clamp(20px, 2vw, 34px) !important;
+  align-items: start !important;
+  margin-top: 16px !important;
+}
+.hero-offer-piece-wrap {
+  min-width: 0 !important;
+  align-self: start !important;
+  margin: 0 !important;
+}
+.hero-offer-piece {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  object-fit: contain !important;
+}
+.hero-piece-cta {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-areas:
+    "eligibility call"
+    "note note" !important;
+  gap: 12px 18px !important;
+  align-content: start !important;
+  align-items: start !important;
+}
+.btn-eligibility { grid-area: eligibility !important; }
+.btn-call { grid-area: call !important; }
+.hero-piece-cta .btn {
+  width: 100% !important;
+  min-height: 64px !important;
+  margin: 0 !important;
+}
+.hero-piece-cta .hero-conversion-note {
+  grid-area: note !important;
+  margin: 0 !important;
+  padding-top: 2px !important;
+  text-align: center !important;
+}
+
+/* FAQ button is centered against the FULL PAGE, not the right CTA column */
+.hero-faq-row {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 20px !important;
+}
+.hero-faq-wide {
+  width: min(420px, 100%) !important;
+  min-height: 58px !important;
+  padding: 14px 30px !important;
+  margin: 0 auto !important;
+  font-size: 1.02rem !important;
+}
+
+@media (max-width: 1500px) {
+  .hero .container {
+    width: min(calc(100% - 36px), 1520px) !important;
+  }
+  .premium-hero-grid {
+    grid-template-columns: minmax(0, .44fr) minmax(0, .56fr) !important;
+  }
+  .hero-piece-conversion {
+    grid-template-columns: minmax(0, 1.10fr) minmax(0, .90fr) !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .hero .container {
+    width: min(calc(100% - 28px), 100%) !important;
+  }
+  .premium-hero-grid {
+    grid-template-columns: minmax(0, .46fr) minmax(0, .54fr) !important;
+    gap: 18px !important;
+  }
+  .hero-piece-wrap {
+    width: 100% !important;
+  }
+  .hero-piece-conversion {
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr) !important;
+    gap: 18px !important;
+  }
+  .hero-piece-cta .btn {
+    padding-inline: 18px !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .premium-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .hero-copy h1,
+  .hero-copy .lead,
+  .hero-piece-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .hero-device-piece {
+    width: min(100%, 900px) !important;
+    max-width: 100% !important;
+  }
+  .hero-piece-conversion {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 16px !important;
+  }
+  .hero-piece-cta {
+    width: min(100%, 760px) !important;
+    margin-inline: auto !important;
+  }
+  .hero-faq-row {
+    margin-top: 18px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .min-header .inner {
+    padding-inline: 14px !important;
+  }
+  .hero .container {
+    width: min(calc(100% - 18px), 100%) !important;
+  }
+  .hero-piece-cta {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "eligibility"
+      "call"
+      "note" !important;
+  }
+  .hero-piece-cta .hero-conversion-note {
+    text-align: left !important;
+  }
+  .hero-faq-wide {
+    width: 100% !important;
+  }
+}
