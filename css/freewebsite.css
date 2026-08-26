@@ -1668,3 +1668,249 @@ img { max-width: 100%; display: block; }
     text-align: left;
   }
 }
+
+
+/* =========================================================
+   FINAL HERO BALANCE + HEADER ALIGNMENT FIX
+   2026-08-26
+   ========================================================= */
+.min-header .inner {
+  width: min(calc(100% - 24px), 1760px) !important;
+  padding-inline: 0 !important;
+}
+
+.brand {
+  margin-right: auto;
+}
+
+.brand img {
+  height: 52px;
+}
+
+.header-link {
+  margin-left: auto !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.hero {
+  padding-top: 48px !important;
+  padding-bottom: 60px !important;
+}
+
+.hero .container {
+  width: min(calc(100% - 32px), 1740px) !important;
+}
+
+.hero-top-pills {
+  margin-bottom: 18px !important;
+}
+
+.hero-copy {
+  padding-top: 4px !important;
+}
+
+.hero-copy h1 {
+  max-width: 10.2ch !important;
+  margin-bottom: 14px !important;
+}
+
+.hero-copy .lead {
+  max-width: 40ch !important;
+  width: 100%;
+  line-height: 1.42 !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-piece-wrap {
+  width: min(100%, 700px) !important;
+  margin-top: 18px !important;
+}
+
+.premium-hero-grid {
+  grid-template-columns: minmax(520px, 0.98fr) minmax(760px, 1.02fr) !important;
+  gap: clamp(20px, 2vw, 40px) !important;
+  align-items: start !important;
+}
+
+.hero-piece-visual {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hero-device-piece {
+  width: min(100%, 940px) !important;
+  max-width: 100% !important;
+  margin-inline: auto !important;
+  filter: drop-shadow(0 28px 50px rgba(0, 12, 32, .34));
+}
+
+.hero-piece-conversion {
+  grid-template-columns: minmax(640px, 1.15fr) minmax(420px, 0.85fr) !important;
+  gap: clamp(18px, 2vw, 34px) !important;
+  align-items: start !important;
+  margin-top: 12px !important;
+}
+
+.hero-offer-piece-wrap {
+  align-self: start !important;
+}
+
+.hero-piece-cta {
+  width: min(100%, 720px) !important;
+  align-self: start;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-areas:
+    "eligibility call"
+    "note note"
+    "faq faq" !important;
+  gap: 14px 18px !important;
+}
+
+.btn-eligibility { grid-area: eligibility; }
+.btn-call { grid-area: call; }
+
+.hero-piece-cta .btn {
+  width: 100%;
+}
+
+.hero-piece-cta .hero-conversion-note {
+  grid-area: note;
+  margin-top: 2px !important;
+  text-align: center !important;
+}
+
+.btn-faq {
+  grid-area: faq;
+  justify-self: center;
+  width: min(100%, 360px) !important;
+  min-height: 54px !important;
+  padding-inline: 30px !important;
+}
+
+@media (max-width: 1460px) {
+  .min-header .inner,
+  .hero .container {
+    width: min(calc(100% - 28px), 1500px) !important;
+  }
+
+  .premium-hero-grid {
+    grid-template-columns: minmax(460px, 0.98fr) minmax(620px, 1.02fr) !important;
+  }
+
+  .hero-copy .lead {
+    max-width: 37ch !important;
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: minmax(560px, 1.08fr) minmax(380px, 0.92fr) !important;
+  }
+}
+
+@media (max-width: 1240px) {
+  .premium-hero-grid {
+    grid-template-columns: minmax(420px, 1fr) minmax(500px, 1fr) !important;
+    gap: 18px !important;
+  }
+
+  .hero-copy .lead {
+    max-width: 34ch !important;
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: minmax(0, 1.06fr) minmax(340px, 0.94fr) !important;
+    gap: 18px !important;
+  }
+
+  .hero-piece-cta {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .min-header .inner,
+  .hero .container {
+    width: min(calc(100% - 24px), 100%) !important;
+  }
+
+  .premium-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .hero-copy h1,
+  .hero-copy .lead,
+  .hero-piece-wrap {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  .hero-piece-visual {
+    justify-content: center !important;
+  }
+
+  .hero-device-piece {
+    width: min(100%, 920px) !important;
+  }
+
+  .hero-piece-conversion {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-top: 14px !important;
+  }
+
+  .hero-piece-cta {
+    width: min(100%, 760px) !important;
+    margin-inline: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .min-header .inner,
+  .hero .container {
+    width: min(calc(100% - 16px), 100%) !important;
+  }
+
+  .min-header .inner {
+    min-height: 72px !important;
+  }
+
+  .brand img {
+    height: 38px !important;
+  }
+
+  .header-link {
+    font-size: 0.84rem !important;
+  }
+
+  .hero {
+    padding-top: 36px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .hero-copy .lead {
+    max-width: none !important;
+  }
+
+  .hero-piece-cta {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "eligibility"
+      "call"
+      "note"
+      "faq" !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    text-align: left !important;
+  }
+
+  .btn-faq {
+    width: 100% !important;
+  }
+}
