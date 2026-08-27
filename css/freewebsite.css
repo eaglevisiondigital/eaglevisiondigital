@@ -2498,3 +2498,15 @@ img { max-width: 100%; display: block; }
     font-size: 0.88rem !important;
   }
 }
+
+/* =========================================================
+   DESKTOP ROW GAP TUNING — 2026-08-26
+   Increase the vertical space between the benefits row and the
+   offer/CTA row while keeping the offer strip and CTA buttons
+   aligned with each other across desktop widths.
+   ========================================================= */
+@media (min-width: 981px) {
+  .hero-piece-conversion {
+    margin-top: 36px !important;
+  }
+}
