@@ -2423,3 +2423,78 @@ img { max-width: 100%; display: block; }
     margin-top: 10px !important;
   }
 }
+
+/* =========================================================
+   DESKTOP MICRO-ALIGNMENT PASS — 2026-08-26
+   Final requested nudges: hero slightly up/right, stronger left-edge
+   alignment, and offer/CTA top-line alignment across desktop widths.
+   ========================================================= */
+@media (min-width: 981px) {
+  /* Bring the approved benefits artwork to the same visible left edge
+     as the text above it. */
+  .hero-piece-wrap {
+    margin-left: -30px !important;
+  }
+
+  /* Keep current hero size; move it a little farther UP and RIGHT.
+     The right-side column remains wide enough to keep the full artwork visible. */
+  .hero-device-piece {
+    width: 106.25% !important;
+    max-width: 106.25% !important;
+    margin: 0 0 -90px 0 !important;
+    transform: translate(-4.35%, -90px) !important;
+    transform-origin: center bottom !important;
+  }
+
+  /* Raise the offer strip so its top edge visually matches the CTA row. */
+  .hero-piece-conversion {
+    align-items: start !important;
+    margin-top: 0 !important;
+  }
+
+  .hero-offer-piece-wrap {
+    margin-left: -4px !important;
+    margin-bottom: -72px !important;
+    transform: translateY(-72px) !important;
+  }
+
+  .hero-piece-cta {
+    padding-top: 0 !important;
+    align-self: start !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    white-space: nowrap !important;
+    font-size: 0.92rem !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Keep FAQ tight to the hero conversion row. */
+  .hero-faq-row {
+    margin-top: 8px !important;
+    margin-bottom: 2px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1280px) {
+  .hero-piece-wrap {
+    margin-left: -24px !important;
+  }
+
+  .hero-device-piece {
+    width: 104.2% !important;
+    max-width: 104.2% !important;
+    margin-bottom: -72px !important;
+    transform: translate(-2.75%, -72px) !important;
+  }
+
+  .hero-offer-piece-wrap {
+    margin-left: -2px !important;
+    margin-bottom: -58px !important;
+    transform: translateY(-58px) !important;
+  }
+
+  .hero-piece-cta .hero-conversion-note {
+    font-size: 0.88rem !important;
+  }
+}
