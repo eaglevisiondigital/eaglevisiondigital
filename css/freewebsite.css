@@ -2510,3 +2510,16 @@ img { max-width: 100%; display: block; }
     margin-top: 36px !important;
   }
 }
+
+/* =========================================================
+   DESKTOP HALF-INCH HERO ROW GAP — 2026-08-27
+   Increase the vertical separation between the upper hero row
+   and the lower offer/CTA row to approximately 1/2 inch at
+   standard desktop CSS pixel density, while preserving the
+   current horizontal alignment of the offer strip and CTAs.
+   ========================================================= */
+@media (min-width: 981px) {
+  .hero-piece-conversion {
+    margin-top: 48px !important;
+  }
+}
