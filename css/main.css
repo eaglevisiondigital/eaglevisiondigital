@@ -3686,12 +3686,22 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
   .industry-section{padding:12px 0 32px}
 }
 
-
-/* Sitewide Facebook link */
-.footer-links .footer-facebook{
-  display:inline-flex;align-items:center;justify-content:flex-start;gap:8px;
-  width:max-content;max-width:100%;padding:9px 14px;border-radius:999px;
-  border:1px solid rgba(45,150,255,.28);background:rgba(45,150,255,.08);
-  color:#8cc9ff;font-weight:800;transition:.2s ease;
+/* =========================================================
+   HOMEPAGE HERO TRANSPARENT BLEND FIX — DESKTOP ONLY
+   Approved 2026-08-27
+   Keeps current visual size, removes the boxed background via the
+   transparent asset, softens the left edge, and shifts the artwork
+   left enough that the right side never clips on desktop.
+   ========================================================= */
+@media (min-width:901px){
+  .hero-art-wrap{
+    overflow:visible;
+  }
+  .hero-art{
+    width:114% !important;
+    max-width:none !important;
+    margin-left:0 !important;
+    margin-right:0 !important;
+    transform:translateX(-11%) !important;
+  }
 }
-.footer-links .footer-facebook:hover{color:#fff;border-color:rgba(75,170,255,.55);background:rgba(45,150,255,.16);transform:translateY(-1px)}
