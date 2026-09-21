@@ -144,6 +144,14 @@
           <div class="ex-fields">
             <div class="ex-field full"><label for="one_line_description">What do you do? <small>One sentence is enough.</small></label><input id="one_line_description" name="one_line_description" placeholder="Example: Residential HVAC repair and replacement across the Emerald Coast."></div>
             <div class="ex-field full"><label for="current_website">Current Website</label><input id="current_website" name="current_website" type="url" placeholder="https://"></div>
+            <div class="ex-field full"><label for="public_contact_same">Can we use the Step 1 phone and email as the public website contact? *</label><select id="public_contact_same" name="public_contact_same" required><option value="">Choose one</option><option value="yes">Yes - use the same phone and email</option><option value="no">No - I will provide different public contact information</option></select></div>
+            <div class="ex-fields ex-conditional-grid full" id="publicContactFields">
+              <div class="ex-field"><label for="public_phone">Public Phone *</label><input id="public_phone" name="public_phone" type="tel"></div>
+              <div class="ex-field"><label for="public_email">Public Email *</label><input id="public_email" name="public_email" type="email"></div>
+            </div>
+            <div class="ex-field full"><label for="public_street">Public Street Address / Location <small>Optional unless customers visit you.</small></label><input id="public_street" name="public_street" autocomplete="street-address" placeholder="123 Main Street, Suite 100"></div>
+            <div class="ex-field full"><label for="public_hours">Business / Office Hours <small>Optional</small></label><textarea id="public_hours" name="public_hours" placeholder="Mon-Fri 8:00 AM-5:00 PM&#10;Saturday by appointment"></textarea></div>
+            <div class="ex-field full"><label for="social_links">Social Media Links <small>Optional - one per line</small></label><textarea id="social_links" name="social_links" placeholder="https://facebook.com/...&#10;https://instagram.com/...&#10;https://youtube.com/..."></textarea></div>
           </div>
         </div>
 
