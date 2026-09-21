@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Start Your Express Build | Eagle Vision Digital</title>
+  <meta name="description" content="Start your Eagle Vision Express custom website or app build with a short intelligent intake designed for fast, professional production.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://eaglevision.digital/express/start/">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/express-intake.css">
+</head>
+<body class="express-intake-page">
+<header class="ex-intake-header">
+  <div class="container inner">
+    <a class="brand" href="/" aria-label="Eagle Vision Digital home"><img src="/assets/logos/eagle-vision-digital-horizontal.png" alt="Eagle Vision Digital"></a>
+    <a class="exit-link" href="/express/">← Back to Express</a>
+  </div>
+</header>
+
+<main class="ex-intake-shell">
+  <div class="container ex-intake-grid">
+    <aside class="ex-sidebar" aria-label="Express intake progress">
+      <div class="ex-sidebar-kicker">Eagle Vision Express</div>
+      <h1>Tell us what to build.</h1>
+      <p>Most businesses finish in about 3–10 minutes. We only show questions that matter to your project.</p>
+      <div class="ex-progress" aria-hidden="true"><span id="progressBar"></span></div>
+      <div class="ex-step-nav">
+        <div class="ex-step-tab active" data-nav-step="1"><span class="num">1</span><div><b>Your Business</b><small>Basics + package</small></div></div>
+        <div class="ex-step-tab" data-nav-step="2"><span class="num">2</span><div><b>Goals + Needs</b><small>What it should do</small></div></div>
+        <div class="ex-step-tab" data-nav-step="3"><span class="num">3</span><div><b>Brand + Story</b><small>Look + messaging</small></div></div>
+        <div class="ex-step-tab" data-nav-step="4"><span class="num">4</span><div><b>People + Pages</b><small>Media + structure</small></div></div>
+        <div class="ex-step-tab" data-nav-step="5"><span class="num">5</span><div><b>Review</b><small>Confirm + submit</small></div></div>
+      </div>
+      <div class="ex-save-status" id="saveStatus">Draft saves on this device</div>
+      <div class="ex-sidebar-help">Need help? <a href="tel:+18508124711">(850) 812-4711</a></div>
+    </aside>
+
+    <form id="expressIntakeForm" class="ex-form-card" name="express-intake" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/express/thank-you/">
+      <input type="hidden" name="form-name" value="express-intake">
+      <p class="sr-only"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+      <input type="hidden" name="source" id="source" value="self_service">
+      <input type="hidden" name="utm_source" id="utm_source">
+      <input type="hidden" name="utm_medium" id="utm_medium">
+      <input type="hidden" name="utm_campaign" id="utm_campaign">
+      <input type="hidden" name="utm_content" id="utm_content">
+      <input type="hidden" name="referrer" id="referrer">
+      <input type="hidden" name="submission_timestamp" id="submission_timestamp">
+      <input type="hidden" name="pages_selected" id="pages_selected">
+      <input type="hidden" name="capabilities_selected" id="capabilities_selected">
+      <input type="hidden" name="intake_json" id="intake_json">
+      <input type="hidden" name="review_summary" id="review_summary">
+
+      <div class="ex-form-top">
+        <div>
+          <div class="eyebrow" id="stepEyebrow">STEP 1 OF 5</div>
+          <h2 id="stepTitle">Your Business</h2>
+          <p id="stepDescription">Start with the basics. We will use these answers to personalize the rest of the intake.</p>
+        </div>
+        <div class="ex-time-pill">About 3–10 minutes</div>
+      </div>
+
+      <!-- STEP 1 -->
+      <section class="ex-step-panel active" data-step="1">
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>What are we building?</h3><p>Choose the path you want to start with. You can still adjust scope with Eagle Vision before production begins.</p></div></div>
+          <div class="ex-choice-grid">
+            <div class="ex-choice"><input type="radio" id="pkgWebsite" name="package_product" value="website" required><label for="pkgWebsite"><span class="choice-mark"></span><strong>Express Website</strong><span>Custom website with the 3–24 hour qualifying first-build guarantee.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="pkgBoth" name="package_product" value="website_app"><label for="pkgBoth"><span class="choice-mark"></span><strong>Website + App</strong><span>One intake for a connected website and branded mobile app.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="pkgApp" name="package_product" value="app"><label for="pkgApp"><span class="choice-mark"></span><strong>Express App</strong><span>Start with a custom branded app and selected certified features.</span></label></div>
+          </div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Business basics</h3><p>Use the public business name you want customers to see.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field full"><label for="business_name">Business / Organization Name *</label><input id="business_name" name="business_name" autocomplete="organization" required><span class="ex-error">Please enter your business or organization name.</span></div>
+            <div class="ex-field"><label for="contact_first">First Name *</label><input id="contact_first" name="contact_first" autocomplete="given-name" required></div>
+            <div class="ex-field"><label for="contact_last">Last Name *</label><input id="contact_last" name="contact_last" autocomplete="family-name" required></div>
+            <div class="ex-field"><label for="contact_role">Your Role</label><input id="contact_role" name="contact_role" placeholder="Owner, Pastor, Manager, Director..."></div>
+            <div class="ex-field"><label for="contact_phone">Phone *</label><input id="contact_phone" name="contact_phone" type="tel" autocomplete="tel" required></div>
+            <div class="ex-field"><label for="contact_email">Email *</label><input id="contact_email" name="contact_email" type="email" autocomplete="email" required></div>
+            <div class="ex-field"><label for="industry">Industry *</label><select id="industry" name="industry" required>
+              <option value="">Choose one</option>
+              <option value="local_service">Local Service Business</option>
+              <option value="church_ministry">Church / Ministry</option>
+              <option value="restaurant">Restaurant / Food Service</option>
+              <option value="coach_consultant">Coach / Consultant</option>
+              <option value="salon_spa_beauty">Salon / Spa / Beauty</option>
+              <option value="fitness_gym">Fitness / Gym</option>
+              <option value="real_estate">Real Estate</option>
+              <option value="automotive_repair">Automotive / Repair</option>
+              <option value="retail_boutique">Retail / Boutique</option>
+              <option value="nonprofit">Nonprofit</option>
+              <option value="professional_services">Professional Services</option>
+              <option value="other">Other</option>
+            </select></div>
+            <div class="ex-field ex-conditional" id="industryOtherWrap"><label for="industry_other">Industry / Business Type</label><input id="industry_other" name="industry_other" placeholder="Tell us what kind of organization this is."></div>
+            <div class="ex-field full"><label for="one_line_description">What do you do? <small>One sentence is enough.</small></label><input id="one_line_description" name="one_line_description" placeholder="Example: Residential HVAC repair and replacement across the Emerald Coast."></div>
+            <div class="ex-field"><label for="business_city">Primary City *</label><input id="business_city" name="business_city" autocomplete="address-level2" required></div>
+            <div class="ex-field"><label for="business_region">State / Province *</label><input id="business_region" name="business_region" autocomplete="address-level1" placeholder="FL" required></div>
+            <div class="ex-field"><label for="business_country">Country *</label><select id="business_country" name="business_country" required><option value="US">United States</option><option value="CA">Canada</option><option value="OTHER">Other</option></select></div>
+            <div class="ex-field"><label for="current_website">Current Website</label><input id="current_website" name="current_website" type="url" placeholder="https://"></div>
+          </div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Existing source material</h3><p>If you already have a website, brochure, menu, bulletin, service sheet or brand guide, give us something to work from instead of retyping everything.</p></div><span class="ex-optional">Optional</span></div>
+          <div class="ex-fields">
+            <div class="ex-field full"><label for="source_files">Upload PDFs, menus, brochures or source documents</label><input id="source_files" name="source_files" type="file" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp"><span class="ex-help">We can use supplied source material to prefill and organize your build. Important imported facts still require confirmation before publication.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="ex-step-panel" data-step="2">
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>What is the #1 action you want a visitor to take?</h3><p>This answer influences the homepage, navigation, calls to action and app experience.</p></div></div>
+          <div class="ex-pill-group" id="primaryActionGroup">
+            <div class="ex-pill"><input type="radio" id="actCall" name="primary_action" value="call" required><label for="actCall">Call</label></div>
+            <div class="ex-pill"><input type="radio" id="actQuote" name="primary_action" value="request_quote"><label for="actQuote">Request a Quote</label></div>
+            <div class="ex-pill"><input type="radio" id="actBook" name="primary_action" value="book"><label for="actBook">Book</label></div>
+            <div class="ex-pill"><input type="radio" id="actVisit" name="primary_action" value="visit"><label for="actVisit">Visit</label></div>
+            <div class="ex-pill"><input type="radio" id="actOrder" name="primary_action" value="order"><label for="actOrder">Order</label></div>
+            <div class="ex-pill"><input type="radio" id="actRegister" name="primary_action" value="register"><label for="actRegister">Register</label></div>
+            <div class="ex-pill"><input type="radio" id="actDonate" name="primary_action" value="donate"><label for="actDonate">Donate / Give</label></div>
+            <div class="ex-pill"><input type="radio" id="actJoin" name="primary_action" value="join"><label for="actJoin">Join</label></div>
+            <div class="ex-pill"><input type="radio" id="actWatch" name="primary_action" value="watch"><label for="actWatch">Watch</label></div>
+            <div class="ex-pill"><input type="radio" id="actContact" name="primary_action" value="contact"><label for="actContact">Contact</label></div>
+            <div class="ex-pill"><input type="radio" id="actShop" name="primary_action" value="shop"><label for="actShop">Shop</label></div>
+            <div class="ex-pill"><input type="radio" id="actOther" name="primary_action" value="other"><label for="actOther">Other</label></div>
+          </div>
+          <div class="ex-field ex-conditional" id="primaryOtherWrap" style="margin-top:12px"><label for="primary_action_other">What action?</label><input id="primary_action_other" name="primary_action_other"></div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Your offers, customers and advantage</h3><p>Bullet points are perfect. We can professionally rewrite them later if you want.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field full"><label for="top_offerings">Top Services / Products / Ministries / Offers *</label><textarea id="top_offerings" name="top_offerings" required placeholder="One per line. Example:&#10;AC repair&#10;System replacement&#10;Preventive maintenance"></textarea><span class="ex-help">One per line works best.</span></div>
+            <div class="ex-field"><label for="target_audience">Who are you trying to reach?</label><textarea id="target_audience" name="target_audience" placeholder="Homeowners, first-time church visitors, families, local businesses..."></textarea></div>
+            <div class="ex-field"><label for="customer_problem">What problem do they come to you to solve?</label><textarea id="customer_problem" name="customer_problem"></textarea></div>
+            <div class="ex-field full"><label for="differentiators">Why do people choose you?</label><textarea id="differentiators" name="differentiators" placeholder="One point per line. Tell us what makes you different, what you are proud of, or why customers trust you."></textarea></div>
+            <div class="ex-field full"><label for="proof_points">Credentials, guarantees, years, awards or proof we may publish <small>Only include facts you can verify.</small></label><textarea id="proof_points" name="proof_points" placeholder="Example: Licensed Florida contractor #..., 20+ years in business, 4.9 Google rating..."></textarea></div>
+          </div>
+        </div>
+
+        <div class="ex-section ex-conditional" id="localServiceQuestions">
+          <div class="ex-section-head"><div><h3>Local service details</h3><p>A few details help us structure service areas, trust and calls to action correctly.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field full"><label for="service_areas">Service Areas</label><input id="service_areas" name="service_areas" placeholder="Fort Walton Beach, Destin, Niceville..."></div>
+            <div class="ex-field"><label for="emergency_service">Emergency / Same-Day Service?</label><select id="emergency_service" name="emergency_service"><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+            <div class="ex-field"><label for="free_estimates">Free Estimates?</label><select id="free_estimates" name="free_estimates"><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+            <div class="ex-field"><label for="financing_available">Financing Available?</label><select id="financing_available" name="financing_available"><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+            <div class="ex-field"><label for="licenses_credentials">Licenses / Credentials We May Publish</label><input id="licenses_credentials" name="licenses_credentials"></div>
+          </div>
+        </div>
+
+        <div class="ex-section ex-conditional" id="churchQuestions">
+          <div class="ex-section-head"><div><h3>Church / ministry details</h3><p>We preserve doctrinal language carefully and only publish beliefs you provide or approve.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field"><label for="service_times">Service / Gathering Times</label><textarea id="service_times" name="service_times" placeholder="Sunday 10:30 AM&#10;Wednesday 6:30 PM"></textarea></div>
+            <div class="ex-field"><label for="pastor_leader">Lead Pastor / Ministry Leader</label><input id="pastor_leader" name="pastor_leader"></div>
+            <div class="ex-field"><label for="ministries">Key Ministries</label><textarea id="ministries" name="ministries" placeholder="Kids, Youth, Small Groups, Outreach..."></textarea></div>
+            <div class="ex-field"><label for="giving_url">Current Giving Link</label><input id="giving_url" name="giving_url" type="url" placeholder="https://"></div>
+          </div>
+        </div>
+
+        <div class="ex-section ex-conditional" id="restaurantQuestions">
+          <div class="ex-section-head"><div><h3>Restaurant systems</h3><p>Your website and app can move forward even while ordering or POS decisions are being finalized.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field"><label for="cuisine">Cuisine / Concept</label><input id="cuisine" name="cuisine" placeholder="Italian, seafood, coffee shop..."></div>
+            <div class="ex-field"><label for="has_online_ordering">Do you currently have online ordering?</label><select id="has_online_ordering" name="has_online_ordering"><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+            <div class="ex-field ex-conditional" id="orderingProviderWrap"><label for="ordering_provider">Ordering Provider</label><input id="ordering_provider" name="ordering_provider" placeholder="Toast, Square, Clover, other..."></div>
+            <div class="ex-field"><label for="has_pos">Do you currently have a POS?</label><select id="has_pos" name="has_pos"><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+            <div class="ex-field ex-conditional" id="posProviderWrap"><label for="pos_provider">POS Provider</label><input id="pos_provider" name="pos_provider" placeholder="Toast, Square, Clover, Linga..."></div>
+            <div class="ex-field ex-conditional" id="keepPosWrap"><label for="keep_existing_pos">Do you want to keep it?</label><select id="keep_existing_pos" name="keep_existing_pos"><option value="">Choose one</option><option value="yes">Yes</option><option value="no">No / Open to changing</option><option value="unsure">Not sure</option></select></div>
+            <div class="ex-field"><label for="menu_source">Where should menu information come from?</label><select id="menu_source" name="menu_source"><option value="">Choose one</option><option value="existing_url">Existing Website / URL</option><option value="uploaded_pdf">Uploaded Menu / PDF</option><option value="pos">POS / Ordering System</option><option value="manual">I will enter it</option><option value="unknown">Not sure yet</option></select></div>
+            <div class="ex-field"><label for="restaurant_needs">Anything else to integrate?</label><input id="restaurant_needs" name="restaurant_needs" placeholder="Reservations, delivery, loyalty, customer data..."></div>
+          </div>
+        </div>
+
+        <div class="ex-section ex-conditional" id="appNeedsSection">
+          <div class="ex-section-head"><div><h3>What should the app help people do?</h3><p>Choose business outcomes. Eagle Vision will determine the certified implementation behind the scenes.</p></div></div>
+          <div class="ex-choice-grid four" id="capabilityChoices">
+            <div class="ex-choice"><input type="checkbox" id="capPush" name="cap_push" value="push_notifications"><label for="capPush"><span class="choice-mark"></span><strong>Push Notifications</strong><span>Updates, reminders and offers.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capLogin" name="cap_login" value="member_only_content"><label for="capLogin"><span class="choice-mark"></span><strong>Login / Private Content</strong><span>Different access by user or group.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capLoyalty" name="cap_loyalty" value="loyalty"><label for="capLoyalty"><span class="choice-mark"></span><strong>Loyalty / Rewards</strong><span>Earn and redeem customer benefits.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capBooking" name="cap_booking" value="booking"><label for="capBooking"><span class="choice-mark"></span><strong>Booking</strong><span>Appointments or reservations.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capOrdering" name="cap_ordering" value="online_ordering"><label for="capOrdering"><span class="choice-mark"></span><strong>Ordering</strong><span>Menu, cart or existing ordering link.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capGiving" name="cap_giving" value="giving"><label for="capGiving"><span class="choice-mark"></span><strong>Giving / Donations</strong><span>Connect or build the giving path.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capCourses" name="cap_courses" value="courses"><label for="capCourses"><span class="choice-mark"></span><strong>Courses / Training</strong><span>Lessons, resources or programs.</span></label></div>
+            <div class="ex-choice"><input type="checkbox" id="capChat" name="cap_chat" value="chat_messaging"><label for="capChat"><span class="choice-mark"></span><strong>Chat / Messaging</strong><span>Communication inside the app.</span></label></div>
+          </div>
+          <div class="ex-fields" style="margin-top:16px">
+            <div class="ex-field"><label for="app_requires_login">Will users need to log in?</label><select id="app_requires_login" name="app_requires_login"><option value="no">No</option><option value="yes">Yes</option><option value="unsure">Not sure</option></select></div>
+            <div class="ex-field ex-conditional" id="accessGroupsWrap"><label for="app_access_groups">Who needs different access?</label><input id="app_access_groups" name="app_access_groups" placeholder="Member, Volunteer, Staff, VIP..."></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 3 -->
+      <section class="ex-step-panel" data-step="3">
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Brand assets</h3><p>Upload what you have. If you do not have a complete brand system, Eagle Vision can recommend the direction.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field"><label for="logo_upload">Logo</label><input id="logo_upload" name="logo_upload" type="file" accept=".png,.jpg,.jpeg,.webp,.svg,.pdf"></div>
+            <div class="ex-field"><label for="brand_guide_upload">Brand Guide / Alternate Logo</label><input id="brand_guide_upload" name="brand_guide_upload" type="file" accept=".pdf,.png,.jpg,.jpeg,.webp,.svg"></div>
+            <div class="ex-field"><label for="existing_colors">Existing Brand Colors</label><input id="existing_colors" name="existing_colors" placeholder="Blue, silver, white or #168CFF..."></div>
+            <div class="ex-field"><label for="inspiration_urls">Websites You Like</label><input id="inspiration_urls" name="inspiration_urls" placeholder="Paste one or more URLs"></div>
+          </div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>How should it feel?</h3><p>Choose up to three. This gives us direction without forcing you to become the designer.</p></div></div>
+          <div class="ex-pill-group" id="visualDescriptors">
+            <div class="ex-pill"><input type="checkbox" id="visProfessional" name="visual_descriptors" value="professional"><label for="visProfessional">Professional</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visPremium" name="visual_descriptors" value="premium"><label for="visPremium">Premium</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visFriendly" name="visual_descriptors" value="friendly"><label for="visFriendly">Friendly</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visModern" name="visual_descriptors" value="modern"><label for="visModern">Modern</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visBold" name="visual_descriptors" value="bold"><label for="visBold">Bold</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visTraditional" name="visual_descriptors" value="traditional"><label for="visTraditional">Traditional</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visWarm" name="visual_descriptors" value="warm"><label for="visWarm">Warm</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visElegant" name="visual_descriptors" value="elegant"><label for="visElegant">Elegant</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visFun" name="visual_descriptors" value="fun"><label for="visFun">Fun</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visRugged" name="visual_descriptors" value="rugged"><label for="visRugged">Rugged</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visMinimal" name="visual_descriptors" value="minimal"><label for="visMinimal">Minimal</label></div>
+            <div class="ex-pill"><input type="checkbox" id="visFamily" name="visual_descriptors" value="family_oriented"><label for="visFamily">Family-Oriented</label></div>
+          </div>
+          <span class="ex-help" id="descriptorHelp">Choose up to 3.</span>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Color and design direction</h3><p>You can make the call or let Eagle Vision choose what fits your brand best.</p></div></div>
+          <div class="ex-choice-grid two">
+            <div class="ex-choice"><input type="radio" id="colorBrand" name="color_strategy" value="use_brand_colors"><label for="colorBrand"><span class="choice-mark"></span><strong>Use My Brand Colors</strong><span>Stay close to existing brand standards.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="colorLogo" name="color_strategy" value="pull_from_logo"><label for="colorLogo"><span class="choice-mark"></span><strong>Pull From My Logo</strong><span>Build the palette from supplied artwork.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="colorEV" name="color_strategy" value="eagle_vision_recommends" checked><label for="colorEV"><span class="choice-mark"></span><strong>Eagle Vision Recommends</strong><span>We choose the strongest palette.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="colorCurated" name="color_strategy" value="curated_palette"><label for="colorCurated"><span class="choice-mark"></span><strong>Show Me a Curated Direction</strong><span>Give me a polished recommended option.</span></label></div>
+          </div>
+          <div class="ex-fields" style="margin-top:16px">
+            <div class="ex-field"><label for="appearance_preference">Light or Dark?</label><select id="appearance_preference" name="appearance_preference"><option value="eagle_vision_chooses">Eagle Vision Chooses</option><option value="light">Light</option><option value="dark">Dark</option></select></div>
+            <div class="ex-field"><label for="design_direction">Who chooses the final design direction?</label><select id="design_direction" name="design_direction"><option value="eagle_vision_selects">Let Eagle Vision Choose</option><option value="client_selected">I Want to Choose a Direction</option></select></div>
+          </div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>How should we handle your wording?</h3><p>Set one default. You can still tell us to preserve specific text exactly.</p></div></div>
+          <div class="ex-choice-grid">
+            <div class="ex-choice"><input type="radio" id="contentExact" name="content_handling" value="exact"><label for="contentExact"><span class="choice-mark"></span><strong>Use Exactly as Written</strong><span>Do not rewrite my supplied wording.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="contentPolish" name="content_handling" value="light_polish"><label for="contentPolish"><span class="choice-mark"></span><strong>Professionally Clean Up</strong><span>Improve grammar and wording while preserving meaning.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="contentRewrite" name="content_handling" value="professional_rewrite" checked><label for="contentRewrite"><span class="choice-mark"></span><strong>Rewrite Professionally</strong><span>Use my facts and bullet points to create finished copy.</span></label></div>
+          </div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Your story</h3><p>You do not need polished prose. Facts and bullet points are enough.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field full"><label for="about_notes">About / Founder / Story Notes</label><textarea id="about_notes" name="about_notes" class="tall" placeholder="What should people know about you, why you started, what you value, or what makes your story worth telling?"></textarea></div>
+            <div class="ex-field"><label for="mission_notes">Mission / Purpose Notes</label><textarea id="mission_notes" name="mission_notes"></textarea></div>
+            <div class="ex-field"><label for="history_notes">History / Milestones</label><textarea id="history_notes" name="history_notes"></textarea></div>
+            <div class="ex-field full ex-conditional" id="beliefsWrap"><label for="beliefs_text">Beliefs / Statement of Faith <small>For churches and ministries, we preserve this exactly or use light grammar polish only.</small></label><textarea id="beliefs_text" name="beliefs_text" class="tall"></textarea><div style="margin-top:8px"><label for="beliefs_handling">Beliefs handling</label><select id="beliefs_handling" name="beliefs_handling"><option value="exact">Use exactly as written</option><option value="light_polish">Grammar / light polish only</option></select></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 4 -->
+      <section class="ex-step-panel" data-step="4">
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>People / leadership</h3><p>If people need to appear on the site, give us their names, roles and any bio notes. One person per line is perfect.</p></div><span class="ex-optional">Optional</span></div>
+          <div class="ex-field full"><label for="people_notes">People to Feature</label><textarea id="people_notes" name="people_notes" placeholder="Jane Smith | Owner | 18 years in HVAC, loves serving local families&#10;Pastor John Doe | Lead Pastor | Bio notes..."></textarea><span class="ex-help">Format: Name | Role | Bio or bullet notes</span></div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Photos and media</h3><p>Upload and label the images you most want us to use. Each slot lets you tell us exactly what the image is and where it belongs.</p></div><span class="ex-optional">Optional</span></div>
+          <div id="mediaRows">
+            <div class="ex-file-row" data-media-row="1">
+                <div class="ex-field"><label for="media_file_1">Image 1</label><input id="media_file_1" name="media_file_1" type="file" accept=".png,.jpg,.jpeg,.webp,.heic"></div>
+                <div class="ex-field"><label for="media_label_1">What is it?</label><select id="media_label_1" name="media_label_1"><option value="">Choose label</option><option value="owner_founder">Owner / Founder</option><option value="team_member">Team Member</option><option value="staff_group">Staff Group</option><option value="location">Location</option><option value="facility">Facility</option><option value="project_work">Project / Work</option><option value="product">Product</option><option value="food_menu_item">Food / Menu Item</option><option value="event">Event</option><option value="other">Other</option></select></div>
+                <div class="ex-field"><label for="media_subject_1">Who / What is shown?</label><input id="media_subject_1" name="media_subject_1" placeholder="Jane Smith, storefront, kitchen remodel..."></div>
+                <div class="ex-field"><label for="media_placement_1">Preferred placement</label><select id="media_placement_1" name="media_placement_1"><option value="anywhere">Anywhere Appropriate</option><option value="homepage">Homepage</option><option value="about">About</option><option value="team">Team</option><option value="gallery">Gallery</option><option value="specific_service">Specific Service</option><option value="website_only">Website Only</option><option value="app_only">App Only</option></select></div>
+              </div><div class="ex-file-row" data-media-row="2">
+                <div class="ex-field"><label for="media_file_2">Image 2</label><input id="media_file_2" name="media_file_2" type="file" accept=".png,.jpg,.jpeg,.webp,.heic"></div>
+                <div class="ex-field"><label for="media_label_2">What is it?</label><select id="media_label_2" name="media_label_2"><option value="">Choose label</option><option value="owner_founder">Owner / Founder</option><option value="team_member">Team Member</option><option value="staff_group">Staff Group</option><option value="location">Location</option><option value="facility">Facility</option><option value="project_work">Project / Work</option><option value="product">Product</option><option value="food_menu_item">Food / Menu Item</option><option value="event">Event</option><option value="other">Other</option></select></div>
+                <div class="ex-field"><label for="media_subject_2">Who / What is shown?</label><input id="media_subject_2" name="media_subject_2" placeholder="Jane Smith, storefront, kitchen remodel..."></div>
+                <div class="ex-field"><label for="media_placement_2">Preferred placement</label><select id="media_placement_2" name="media_placement_2"><option value="anywhere">Anywhere Appropriate</option><option value="homepage">Homepage</option><option value="about">About</option><option value="team">Team</option><option value="gallery">Gallery</option><option value="specific_service">Specific Service</option><option value="website_only">Website Only</option><option value="app_only">App Only</option></select></div>
+              </div><div class="ex-file-row hidden" data-media-row="3">
+                <div class="ex-field"><label for="media_file_3">Image 3</label><input id="media_file_3" name="media_file_3" type="file" accept=".png,.jpg,.jpeg,.webp,.heic"></div>
+                <div class="ex-field"><label for="media_label_3">What is it?</label><select id="media_label_3" name="media_label_3"><option value="">Choose label</option><option value="owner_founder">Owner / Founder</option><option value="team_member">Team Member</option><option value="staff_group">Staff Group</option><option value="location">Location</option><option value="facility">Facility</option><option value="project_work">Project / Work</option><option value="product">Product</option><option value="food_menu_item">Food / Menu Item</option><option value="event">Event</option><option value="other">Other</option></select></div>
+                <div class="ex-field"><label for="media_subject_3">Who / What is shown?</label><input id="media_subject_3" name="media_subject_3" placeholder="Jane Smith, storefront, kitchen remodel..."></div>
+                <div class="ex-field"><label for="media_placement_3">Preferred placement</label><select id="media_placement_3" name="media_placement_3"><option value="anywhere">Anywhere Appropriate</option><option value="homepage">Homepage</option><option value="about">About</option><option value="team">Team</option><option value="gallery">Gallery</option><option value="specific_service">Specific Service</option><option value="website_only">Website Only</option><option value="app_only">App Only</option></select></div>
+              </div><div class="ex-file-row hidden" data-media-row="4">
+                <div class="ex-field"><label for="media_file_4">Image 4</label><input id="media_file_4" name="media_file_4" type="file" accept=".png,.jpg,.jpeg,.webp,.heic"></div>
+                <div class="ex-field"><label for="media_label_4">What is it?</label><select id="media_label_4" name="media_label_4"><option value="">Choose label</option><option value="owner_founder">Owner / Founder</option><option value="team_member">Team Member</option><option value="staff_group">Staff Group</option><option value="location">Location</option><option value="facility">Facility</option><option value="project_work">Project / Work</option><option value="product">Product</option><option value="food_menu_item">Food / Menu Item</option><option value="event">Event</option><option value="other">Other</option></select></div>
+                <div class="ex-field"><label for="media_subject_4">Who / What is shown?</label><input id="media_subject_4" name="media_subject_4" placeholder="Jane Smith, storefront, kitchen remodel..."></div>
+                <div class="ex-field"><label for="media_placement_4">Preferred placement</label><select id="media_placement_4" name="media_placement_4"><option value="anywhere">Anywhere Appropriate</option><option value="homepage">Homepage</option><option value="about">About</option><option value="team">Team</option><option value="gallery">Gallery</option><option value="specific_service">Specific Service</option><option value="website_only">Website Only</option><option value="app_only">App Only</option></select></div>
+              </div><div class="ex-file-row hidden" data-media-row="5">
+                <div class="ex-field"><label for="media_file_5">Image 5</label><input id="media_file_5" name="media_file_5" type="file" accept=".png,.jpg,.jpeg,.webp,.heic"></div>
+                <div class="ex-field"><label for="media_label_5">What is it?</label><select id="media_label_5" name="media_label_5"><option value="">Choose label</option><option value="owner_founder">Owner / Founder</option><option value="team_member">Team Member</option><option value="staff_group">Staff Group</option><option value="location">Location</option><option value="facility">Facility</option><option value="project_work">Project / Work</option><option value="product">Product</option><option value="food_menu_item">Food / Menu Item</option><option value="event">Event</option><option value="other">Other</option></select></div>
+                <div class="ex-field"><label for="media_subject_5">Who / What is shown?</label><input id="media_subject_5" name="media_subject_5" placeholder="Jane Smith, storefront, kitchen remodel..."></div>
+                <div class="ex-field"><label for="media_placement_5">Preferred placement</label><select id="media_placement_5" name="media_placement_5"><option value="anywhere">Anywhere Appropriate</option><option value="homepage">Homepage</option><option value="about">About</option><option value="team">Team</option><option value="gallery">Gallery</option><option value="specific_service">Specific Service</option><option value="website_only">Website Only</option><option value="app_only">App Only</option></select></div>
+              </div><div class="ex-file-row hidden" data-media-row="6">
+                <div class="ex-field"><label for="media_file_6">Image 6</label><input id="media_file_6" name="media_file_6" type="file" accept=".png,.jpg,.jpeg,.webp,.heic"></div>
+                <div class="ex-field"><label for="media_label_6">What is it?</label><select id="media_label_6" name="media_label_6"><option value="">Choose label</option><option value="owner_founder">Owner / Founder</option><option value="team_member">Team Member</option><option value="staff_group">Staff Group</option><option value="location">Location</option><option value="facility">Facility</option><option value="project_work">Project / Work</option><option value="product">Product</option><option value="food_menu_item">Food / Menu Item</option><option value="event">Event</option><option value="other">Other</option></select></div>
+                <div class="ex-field"><label for="media_subject_6">Who / What is shown?</label><input id="media_subject_6" name="media_subject_6" placeholder="Jane Smith, storefront, kitchen remodel..."></div>
+                <div class="ex-field"><label for="media_placement_6">Preferred placement</label><select id="media_placement_6" name="media_placement_6"><option value="anywhere">Anywhere Appropriate</option><option value="homepage">Homepage</option><option value="about">About</option><option value="team">Team</option><option value="gallery">Gallery</option><option value="specific_service">Specific Service</option><option value="website_only">Website Only</option><option value="app_only">App Only</option></select></div>
+              </div>
+          </div>
+          <button class="ex-add-btn" type="button" id="addMediaBtn">+ Add another labeled image</button>
+        </div>
+
+        <div class="ex-section ex-conditional" id="websitePagesSection">
+          <div class="ex-section-head"><div><h3>Your website pages</h3><p>We recommend five pages based on your industry. Accept them or swap from the available choices.</p></div></div>
+          <div class="ex-recommend-box"><b id="pageRecommendationTitle">Recommended 5</b><p id="pageRecommendationCopy">Choose your industry in Step 1 and we will load the recommended page architecture here.</p></div>
+          <div class="ex-page-grid" id="pageChoices"></div>
+          <div class="ex-page-count"><span><strong id="pageCount">0</strong> marketing pages selected</span><span id="pageAddOnNote">The standard Express website begins with 5 pages.</span></div>
+          <div class="ex-callout info" style="margin-top:14px"><strong>Utility pages do not automatically count against the five.</strong> Privacy, confirmation and similar support pages are handled separately where appropriate.</div>
+        </div>
+
+        <div class="ex-section ex-conditional" id="appSetupSection">
+          <div class="ex-section-head"><div><h3>App setup preferences</h3><p>These answers help us choose the right shell, navigation and publishing path without making you choose technical features.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field"><label for="app_experience">Preferred App Experience</label><select id="app_experience" name="app_experience"><option value="eagle_vision_chooses">Let Eagle Vision Choose</option><option value="classic">Classic App – bottom navigation</option><option value="menu">Menu App – larger navigation</option><option value="directory">Directory App – grid / category experience</option></select></div>
+            <div class="ex-field"><label for="developer_account">Apple / Google Developer Account Path</label><select id="developer_account" name="developer_account"><option value="eagle_vision_guidance_needed">I Need Eagle Vision Guidance</option><option value="client_owned">We Have / Will Use Our Own Accounts</option><option value="unknown">Not Sure Yet</option></select></div>
+          </div>
+          <div class="ex-callout warn" style="margin-top:14px"><strong>App build timing and app-store approval are different.</strong> The Express app target is for the initial build and device testing. Apple and Google control their own publication review timelines.</div>
+        </div>
+      </section>
+
+      <!-- STEP 5 -->
+      <section class="ex-step-panel" data-step="5">
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Here is what we understand</h3><p>Review the summary below. If anything is wrong, use Back to change it before submitting.</p></div></div>
+          <div class="ex-review-grid" id="reviewGrid"></div>
+        </div>
+
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Confirm and submit</h3><p>Your submission starts Eagle Vision's scope review. The Express timing window begins only after Eagle Vision accepts the required information and assets for the build.</p></div></div>
+          <div class="ex-consents">
+            <label class="ex-consent"><input type="checkbox" id="confirm_accuracy" name="confirm_accuracy" required><span>I confirm the information I supplied is accurate to the best of my knowledge, and I understand Eagle Vision will not invent credentials, guarantees, years, pricing, beliefs or other factual claims.</span></label>
+            <label class="ex-consent"><input type="checkbox" id="confirm_rights" name="confirm_rights" required><span>I confirm I have permission to use the logos, photos, testimonials, text and other materials I am providing for this project.</span></label>
+            <label class="ex-consent"><input type="checkbox" id="confirm_authority" name="confirm_authority" required><span>I am authorized to submit this information and approve website/app content for this business or organization.</span></label>
+          </div>
+          <div class="ex-submit-status" id="submitStatus">Preparing your Express build brief...</div>
+          <div class="ex-required-note">Submission does not guarantee that every requested feature qualifies for standard Express scope. Eagle Vision will identify any custom or manual-review requirements before the Express timing commitment begins.</div>
+        </div>
+      </section>
+
+      <div class="ex-form-actions">
+        <button class="ex-btn-quiet ex-btn-hidden" type="button" id="backBtn">← Back</button>
+        <div class="right">
+          <button class="btn btn-secondary" type="button" id="saveExitBtn">Save & Exit</button>
+          <button class="btn btn-primary" type="button" id="nextBtn">Continue →</button>
+          <button class="btn btn-primary" type="submit" id="submitBtn" style="display:none">Submit for Eagle Vision Review →</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer class="ex-intake-footer">
+  <div class="container inner">
+    <span>© 2026 Eagle Vision Digital • Your Vision. Our Technology. Your Future.</span>
+    <span><a href="tel:+18508124711">(850) 812-4711</a> • <a href="mailto:info@eaglevision.digital">info@eaglevision.digital</a></span>
+  </div>
+</footer>
+<script src="/js/express-intake.js" defer></script>
+</body>
+</html>
