@@ -71,6 +71,21 @@
     .ex-list{list-style:none;margin:0;padding:0;display:grid;gap:13px}.ex-list li{position:relative;padding-left:27px;color:#AEB8C6;font-size:.94rem}.ex-list li::before{content:"";position:absolute;left:0;top:.48em;width:14px;height:14px;border-radius:50%;border:1px solid #556579}
     .ex-compare .express .ex-list li::before{border-color:#168CFF;background:radial-gradient(circle,#168CFF 0 34%,transparent 38%)}
 
+    .ex-fit-section{background:linear-gradient(180deg,#030814,#02060E)}
+    .ex-fit-heading{margin-bottom:34px}
+    .ex-fit-keyline{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:10px 14px;border:1px solid rgba(22,140,255,.23);border-radius:999px;background:rgba(22,140,255,.06);color:#A9D7FB;font-size:.78rem}
+    .ex-fit-keyline strong{color:#FFFFFF}.ex-fit-keyline span{color:#8FC8F5}
+    .ex-fit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
+    .ex-fit-card{position:relative;padding:26px;border:1px solid rgba(255,255,255,.09);border-radius:23px;background:linear-gradient(150deg,#08111E,#040A13);display:flex;flex-direction:column;box-shadow:0 18px 46px rgba(0,0,0,.19)}
+    .ex-fit-card--featured{border-color:rgba(22,140,255,.42);background:radial-gradient(500px circle at 50% 0%,rgba(22,140,255,.16),transparent 56%),linear-gradient(150deg,#091A2E,#06101D);box-shadow:0 22px 56px rgba(0,0,0,.26),0 0 38px rgba(22,140,255,.08)}
+    .ex-fit-card small{color:#69819A;font-size:.64rem;font-weight:900;letter-spacing:.1em}.ex-fit-card--featured small{color:#68B9F8}
+    .ex-fit-card h3{font-size:1.45rem;margin:10px 0 10px}.ex-fit-card p{font-size:.88rem;color:#8192A7}
+    .ex-fit-card .ex-list{margin-top:8px;margin-bottom:24px}.ex-fit-card .ex-list li{font-size:.82rem}
+    .ex-fit-card .btn{margin-top:auto;width:100%}
+    .ex-fit-badge{position:absolute;right:18px;top:18px;padding:6px 9px;border-radius:999px;background:rgba(22,140,255,.14);border:1px solid rgba(22,140,255,.25);color:#8DCCFF;font-size:.57rem;font-weight:900;letter-spacing:.09em}
+    .ex-fit-link{margin-top:auto;display:flex;justify-content:center;align-items:center;min-height:45px;color:#9ED2FF;font-size:.78rem;font-weight:850}
+    .ex-fit-link:hover{color:#FFFFFF}
+
     .ex-process-shell{position:relative}.ex-process-line{position:absolute;left:8%;right:8%;top:29px;height:1px;background:linear-gradient(90deg,transparent,rgba(22,140,255,.75),transparent)}
     .ex-process{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
     .ex-step{text-align:center;padding:0 8px}.ex-step b{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin:0 auto 19px;background:#071426;border:1px solid rgba(22,140,255,.38);box-shadow:0 0 28px rgba(22,140,255,.10);color:#91CEFF;font-size:.9rem}
@@ -173,7 +188,8 @@
       .ex-hero-grid,.ex-split,.ex-ai-shell,.ex-guarantee-grid{grid-template-columns:1fr}
       .ex-hero-copy{max-width:880px}.ex-hero-console{max-width:760px}
       .ex-trust-grid{grid-template-columns:repeat(3,1fr)}
-      .ex-value-grid,.ex-product-grid,.ex-industry-grid{grid-template-columns:repeat(2,1fr)}\n      .ex-mini-industry-grid{grid-template-columns:repeat(2,1fr)}\n      .ex-more-industries-head{grid-template-columns:1fr}
+      .ex-value-grid,.ex-product-grid,.ex-industry-grid{grid-template-columns:repeat(2,1fr)}
+      .ex-fit-grid{grid-template-columns:1fr}\n      .ex-mini-industry-grid{grid-template-columns:repeat(2,1fr)}\n      .ex-more-industries-head{grid-template-columns:1fr}
       .ex-product.best{grid-column:span 2}
       .ex-process{grid-template-columns:repeat(3,1fr)}.ex-process-line{display:none}
     }
@@ -321,36 +337,56 @@
   </div>
 </section>
 
-<section class="section-xl">
-  <div class="container ex-split">
-    <div>
-      <div class="kicker">NO TEMPLATES ALLOWED</div>
-      <h2 class="ex-heading">Fast Should Never Mean <span>Cookie-Cutter.</span></h2>
-      <p>Traditional website production often makes you choose between fast and custom. Eagle Vision Express is built to remove that tradeoff for standard business websites.</p>
-      <p>Behind the scenes, our system knows the proven building blocks a local service company, church, ministry, restaurant and future industries commonly need. In front of the customer, the final site should still look and feel like your organization.</p>
+<section class="section-xl ex-fit-section">
+  <div class="container">
+    <div class="ex-center ex-fit-heading">
+      <div class="kicker">WHERE EXPRESS FITS</div>
+      <h2>The Middle Ground Businesses Have Been <span>Missing.</span></h2>
+      <p>You should not have to choose between a generic do-it-yourself builder and a large custom development engagement when your business needs something professional, focused and fast.</p>
+      <div class="ex-fit-keyline"><strong>Express is not lower-quality custom.</strong><span>It is lower-complexity custom.</span></div>
     </div>
-    <div class="ex-compare">
-      <article>
-        <small>TYPICAL TEMPLATE BUILDER</small>
-        <h3>Pick a theme.<br>Fill in the blanks.</h3>
+
+    <div class="ex-fit-grid">
+      <article class="ex-fit-card">
+        <small>DO-IT-YOURSELF / AI-ONLY</small>
+        <h3>Fast Tools. More Work on You.</h3>
+        <p>Useful when budget and speed matter most and you are comfortable handling strategy, content, refinement and final polish yourself.</p>
         <ul class="ex-list">
-          <li>Layout dictates the business</li>
-          <li>Generic page structure</li>
-          <li>Same visual patterns as competitors</li>
-          <li>Copy treated as filler</li>
-          <li>Future technology added later</li>
+          <li>Lowest-cost path</li>
+          <li>Fast starting point</li>
+          <li>Business owner drives strategy and content</li>
+          <li>More manual refinement may be needed</li>
+          <li>Best for very simple needs or DIY users</li>
         </ul>
       </article>
-      <article class="express">
+
+      <article class="ex-fit-card ex-fit-card--featured">
+        <div class="ex-fit-badge">THE EXPRESS SWEET SPOT</div>
         <small>EAGLE VISION EXPRESS</small>
-        <h3>Understand the business.<br>Compose the right experience.</h3>
+        <h3>Custom Quality. Streamlined Scope.</h3>
+        <p>For businesses that want a polished professional website or app without the complexity, timeline or investment of a large custom engagement.</p>
         <ul class="ex-list">
-          <li>Industry-aware page architecture</li>
-          <li>Brand-specific visual direction</li>
-          <li>Professional copy from verified facts</li>
-          <li>Conversion and SEO considered from day one</li>
-          <li>Website and app planned to work together</li>
+          <li>Custom brand composition</li>
+          <li>Professional writing from verified facts</li>
+          <li>Industry-aware page and feature architecture</li>
+          <li>Human QA and version approval</li>
+          <li>Qualifying websites ready for review in 3-24 hours</li>
         </ul>
+        <a class="btn btn-primary" href="/express/start/">Start My Express Build →</a>
+      </article>
+
+      <article class="ex-fit-card">
+        <small>FULL CUSTOM DEVELOPMENT</small>
+        <h3>Maximum Strategy and Complexity.</h3>
+        <p>Best when the project needs deeper discovery, larger architecture, specialized workflows, custom software or advanced integrations.</p>
+        <ul class="ex-list">
+          <li>Extensive strategy and discovery</li>
+          <li>Large or specialized websites</li>
+          <li>Advanced ecommerce or portals</li>
+          <li>Custom databases, APIs and workflows</li>
+          <li>Broader digital ecosystem development</li>
+        </ul>
+        <a class="ex-fit-link" href="/services/custom-websites/">Explore Full Custom Websites →</a>
       </article>
     </div>
   </div>
