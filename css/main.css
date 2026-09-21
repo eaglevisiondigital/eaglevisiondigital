@@ -3709,50 +3709,51 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
 
 /* HOME EXPRESS CTA */
 .home-express-cta{
-  padding:28px 0 10px;
+  padding:34px 0 28px;
   position:relative;
   background:
-    radial-gradient(900px circle at 78% 50%,rgba(22,140,255,.10),transparent 60%),
-    linear-gradient(180deg,#02050D,#03101B);
-  border-top:1px solid rgba(255,255,255,.04)
+    radial-gradient(780px circle at 18% 10%,rgba(22,140,255,.08),transparent 62%),
+    linear-gradient(180deg,#F7FAFD,#EDF4FA);
+  border-top:1px solid #D9E4EE;
+  border-bottom:1px solid #D9E4EE
 }
 .home-express-shell{
   display:grid;
-  grid-template-columns:minmax(0,1.35fr) minmax(290px,.65fr);
-  gap:34px;
+  grid-template-columns:minmax(0,1.25fr) minmax(230px,.48fr) minmax(250px,.52fr);
+  gap:24px;
   align-items:center;
-  padding:32px 36px;
-  border:1px solid rgba(74,173,255,.30);
-  border-radius:26px;
+  padding:28px 30px;
+  border:1px solid #CADCEB;
+  border-radius:24px;
   background:
-    radial-gradient(540px circle at 82% 20%,rgba(22,140,255,.17),transparent 60%),
-    linear-gradient(145deg,#071C32,#092844 62%,#0B3154);
-  box-shadow:0 28px 70px rgba(0,0,0,.28),0 0 42px rgba(22,140,255,.07);
+    radial-gradient(420px circle at 92% 0%,rgba(22,140,255,.10),transparent 62%),
+    #FFFFFF;
+  box-shadow:0 18px 50px rgba(28,56,86,.09);
   overflow:hidden;
   position:relative
 }
 .home-express-shell::after{
   content:"";
   position:absolute;
-  right:-50px;
-  top:-70px;
+  right:-62px;
+  top:-84px;
   width:220px;
   height:220px;
   border-radius:50%;
-  border:1px solid rgba(116,195,255,.12);
+  border:1px solid rgba(22,140,255,.08);
   box-shadow:
-    0 0 0 34px rgba(116,195,255,.035),
-    0 0 0 72px rgba(116,195,255,.022);
+    0 0 0 32px rgba(22,140,255,.025),
+    0 0 0 68px rgba(22,140,255,.018);
   pointer-events:none
 }
-.home-express-copy,.home-express-actions{position:relative;z-index:1}
+.home-express-copy,.home-express-speed,.home-express-actions{position:relative;z-index:1}
 .home-express-eyebrow{
   display:flex;
   align-items:center;
   gap:9px;
-  margin-bottom:10px;
-  color:#79C6FF;
-  font-size:.68rem;
+  margin-bottom:9px;
+  color:#0E74C9;
+  font-size:.67rem;
   font-weight:900;
   letter-spacing:.13em
 }
@@ -3760,76 +3761,124 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
   width:7px;
   height:7px;
   border-radius:50%;
-  background:#45B5FF;
-  box-shadow:0 0 14px rgba(69,181,255,.72)
+  background:#168CFF;
+  box-shadow:0 0 12px rgba(22,140,255,.28)
 }
 .home-express-copy h2{
-  margin:0 0 10px;
+  margin:0 0 9px;
   max-width:900px;
-  font-size:clamp(2rem,3.6vw,3.65rem);
-  line-height:1.02;
+  color:#122238;
+  font-size:clamp(1.9rem,3.1vw,3.25rem);
+  line-height:1.03;
   letter-spacing:-.045em
 }
-.home-express-copy h2 span{color:#61B8FF}
+.home-express-copy h2 span{color:#168CFF}
 .home-express-copy p{
   margin:0;
-  max-width:880px;
-  color:#AFC1D4;
-  font-size:.95rem
+  max-width:850px;
+  color:#5F7288;
+  font-size:.9rem;
+  line-height:1.55
 }
 .home-express-meta{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  gap:9px;
-  margin-top:15px;
-  color:#BEE3FF;
-  font-size:.72rem
+  gap:8px;
+  margin-top:13px;
+  color:#31506E;
+  font-size:.7rem
 }
-.home-express-meta b{font-weight:800}
+.home-express-meta b{font-weight:850}
 .home-express-meta i{
   width:4px;
   height:4px;
   border-radius:50%;
-  background:#4BB4FF
+  background:#168CFF
+}
+.home-express-speed{
+  display:grid;
+  gap:9px
+}
+.home-express-speed-main,
+.home-express-speed-app{
+  padding:15px 16px;
+  border-radius:16px;
+  border:1px solid #C7DFF4;
+  background:linear-gradient(145deg,#EDF7FF,#F9FCFF)
+}
+.home-express-speed-app{
+  border-color:#D9E3EC;
+  background:#F7F9FC
+}
+.home-express-speed span{
+  display:block;
+  color:#5B7C9C;
+  font-size:.58rem;
+  font-weight:900;
+  letter-spacing:.12em;
+  margin-bottom:3px
+}
+.home-express-speed strong{
+  display:block;
+  color:#168CFF;
+  font-size:1.38rem;
+  line-height:1;
+  letter-spacing:-.035em
+}
+.home-express-speed-app strong{color:#26435F}
+.home-express-speed small{
+  display:block;
+  color:#71849A;
+  font-size:.63rem;
+  line-height:1.35;
+  margin-top:5px
 }
 .home-express-actions{
   display:grid;
   gap:10px;
-  justify-items:stretch
+  align-items:center
 }
-.home-express-actions .btn{width:100%}
 .home-express-primary{
-  min-height:54px;
-  font-size:.92rem
+  min-height:52px;
+  width:100%;
+  font-size:.9rem
 }
-.home-express-secondary{
-  background:#FFFFFF;
-  border-color:#C7E1F8;
-  color:#1377C6;
-  box-shadow:0 10px 28px rgba(22,140,255,.12)
+.home-express-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  color:#0E74C9;
+  font-size:.8rem;
+  font-weight:850
 }
-.home-express-secondary:hover{
-  background:#F5FBFF;
-  border-color:#8CC7F6;
-  color:#0D6FB9
-}
+.home-express-link:hover{color:#075EA6}
 .home-express-actions small{
   text-align:center;
-  color:#7591AA;
-  font-size:.65rem;
+  color:#7B8DA0;
+  font-size:.62rem;
   line-height:1.4
 }
-@media(max-width:900px){
-  .home-express-shell{grid-template-columns:1fr;padding:28px}
-  .home-express-actions{grid-template-columns:1fr 1fr;align-items:center}
+@media(max-width:1040px){
+  .home-express-shell{
+    grid-template-columns:minmax(0,1fr) minmax(220px,.48fr);
+  }
+  .home-express-actions{
+    grid-column:1/-1;
+    grid-template-columns:minmax(220px,1fr) minmax(180px,.55fr);
+  }
   .home-express-actions small{grid-column:1/-1}
 }
-@media(max-width:620px){
-  .home-express-cta{padding-top:20px}
-  .home-express-shell{padding:24px 20px;border-radius:21px}
-  .home-express-copy h2{font-size:clamp(2rem,10vw,2.8rem)}
-  .home-express-actions{grid-template-columns:1fr}
+@media(max-width:760px){
+  .home-express-cta{padding:26px 0}
+  .home-express-shell{grid-template-columns:1fr;padding:24px 20px;border-radius:21px}
+  .home-express-copy h2{font-size:clamp(2rem,9.5vw,2.75rem)}
+  .home-express-speed{grid-template-columns:1fr 1fr}
+  .home-express-actions{grid-column:auto;grid-template-columns:1fr}
   .home-express-actions small{grid-column:auto}
+}
+@media(max-width:520px){
+  .home-express-speed{grid-template-columns:1fr}
   .home-express-meta{gap:7px}
 }
