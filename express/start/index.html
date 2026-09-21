@@ -53,8 +53,8 @@
       <p>Most businesses finish in about 3-10 minutes. We only show questions that matter to your project.</p>
       <div class="ex-progress" aria-hidden="true"><span id="progressBar"></span></div>
       <div class="ex-step-nav">
-        <div class="ex-step-tab active" data-nav-step="1"><span class="num">1</span><div><b>Your Business</b><small>Basics + package</small></div></div>
-        <div class="ex-step-tab" data-nav-step="2"><span class="num">2</span><div><b>Goals + Needs</b><small>What it should do</small></div></div>
+        <div class="ex-step-tab active" data-nav-step="1"><span class="num">1</span><div><b>Quick Start</b><small>Lead basics</small></div></div>
+        <div class="ex-step-tab" data-nav-step="2"><span class="num">2</span><div><b>Business + Goals</b><small>Details + needs</small></div></div>
         <div class="ex-step-tab" data-nav-step="3"><span class="num">3</span><div><b>Brand + Story</b><small>Look + messaging</small></div></div>
         <div class="ex-step-tab" data-nav-step="4"><span class="num">4</span><div><b>People + Pages</b><small>Media + structure</small></div></div>
         <div class="ex-step-tab" data-nav-step="5"><span class="num">5</span><div><b>Review</b><small>Confirm + submit</small></div></div>
@@ -82,8 +82,8 @@
       <div class="ex-form-top">
         <div>
           <div class="eyebrow" id="stepEyebrow">STEP 1 OF 5</div>
-          <h2 id="stepTitle">Your Business</h2>
-          <p id="stepDescription">Start with the basics. We will use these answers to personalize the rest of the intake.</p>
+          <h2 id="stepTitle">Quick Start</h2>
+          <p id="stepDescription">Just the basics we need to save your project and contact you if you do not finish the full intake.</p>
         </div>
         <div class="ex-time-pill">About 3-10 minutes</div>
       </div>
@@ -100,17 +100,31 @@
         </div>
 
         <div class="ex-section">
-          <div class="ex-section-head"><div><h3>Business basics</h3><p>Use the public business name you want customers to see.</p></div></div>
+          <div class="ex-section-head"><div><h3>Your contact basics</h3><p>Keep this quick. We only need enough to save your project and follow up if you stop here.</p></div></div>
           <div class="ex-fields">
             <div class="ex-field full"><label for="business_name">Business / Organization Name *</label><input id="business_name" name="business_name" autocomplete="organization" required><span class="ex-error">Please enter your business or organization name.</span></div>
             <div class="ex-field"><label for="contact_first">First Name *</label><input id="contact_first" name="contact_first" autocomplete="given-name" required></div>
             <div class="ex-field"><label for="contact_last">Last Name *</label><input id="contact_last" name="contact_last" autocomplete="family-name" required></div>
-            <div class="ex-field"><label for="contact_role">Your Role</label><input id="contact_role" name="contact_role" placeholder="Owner, Pastor, Manager, Director..."></div>
             <div class="ex-field"><label for="contact_phone">Phone *</label><input id="contact_phone" name="contact_phone" type="tel" autocomplete="tel" required></div>
             <div class="ex-field"><label for="contact_email">Email *</label><input id="contact_email" name="contact_email" type="email" autocomplete="email" required></div>
-            <div class="ex-field"><label for="business_city">Primary City *</label><input id="business_city" name="business_city" autocomplete="address-level2" required></div>
+            <div class="ex-field"><label for="business_city">City *</label><input id="business_city" name="business_city" autocomplete="address-level2" required></div>
             <div class="ex-field"><label for="business_region">State / Province *</label><input id="business_region" name="business_region" autocomplete="address-level1" placeholder="FL" required></div>
-            <div class="ex-field"><label for="business_country">Country *</label><select id="business_country" name="business_country" required><option value="US">United States</option><option value="CA">Canada</option><option value="OTHER">Other</option></select></div>
+          </div>
+          <div class="ex-lead-note" id="leadCaptureNote">
+            <span class="ex-lead-dot"></span>
+            <div><strong>Your project basics are saved as a lead once this section is complete.</strong><small>If you do not finish the full intake today, Eagle Vision can still follow up about the website or app you started.</small></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- STEP 2 -->
+      <section class="ex-step-panel" data-step="2">
+        <div class="ex-section">
+          <div class="ex-section-head"><div><h3>Tell us a little more about the business</h3><p>Now that your lead is saved, these details help us personalize the website or app correctly.</p></div></div>
+          <div class="ex-fields">
+            <div class="ex-field"><label for="contact_role">Your Role</label><input id="contact_role" name="contact_role" placeholder="Owner, Pastor, Manager, Director..."></div>
+            <div class="ex-field"><label for="business_country">Country</label><select id="business_country" name="business_country"><option value="US">United States</option><option value="CA">Canada</option><option value="OTHER">Other</option></select></div>
             <div class="ex-field"><label for="industry">Industry *</label><select id="industry" name="industry" required>
               <option value="">Choose one</option>
               <option value="local_service">Local Service Business</option>
@@ -128,11 +142,7 @@
             </select></div>
             <div class="ex-field ex-conditional" id="industryOtherWrap"><label for="industry_other">Industry / Business Type</label><input id="industry_other" name="industry_other" placeholder="Tell us what kind of organization this is."></div>
             <div class="ex-field full"><label for="one_line_description">What do you do? <small>One sentence is enough.</small></label><input id="one_line_description" name="one_line_description" placeholder="Example: Residential HVAC repair and replacement across the Emerald Coast."></div>
-            <div class="ex-field"><label for="current_website">Current Website</label><input id="current_website" name="current_website" type="url" placeholder="https://"></div>
-          </div>
-          <div class="ex-lead-note" id="leadCaptureNote">
-            <span class="ex-lead-dot"></span>
-            <div><strong>Your project basics are saved as a lead once this section is complete.</strong><small>If you do not finish the full intake today, Eagle Vision can still follow up about the website or app you started.</small></div>
+            <div class="ex-field full"><label for="current_website">Current Website</label><input id="current_website" name="current_website" type="url" placeholder="https://"></div>
           </div>
         </div>
 
@@ -142,10 +152,8 @@
             <div class="ex-field full"><label for="source_files">Upload PDFs, menus, brochures or source documents</label><input id="source_files" name="source_files" type="file" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp"><span class="ex-help">We can use supplied source material to prefill and organize your build. Important imported facts still require confirmation before publication.</span></div>
           </div>
         </div>
-      </section>
 
-      <!-- STEP 2 -->
-      <section class="ex-step-panel" data-step="2">
+
         <div class="ex-section">
           <div class="ex-section-head"><div><h3>What is the #1 action you want a visitor to take?</h3><p>This answer influences the homepage, navigation, calls to action and app experience.</p></div></div>
           <div class="ex-pill-group" id="primaryActionGroup">
