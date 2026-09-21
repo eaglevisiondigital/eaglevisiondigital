@@ -1,0 +1,94 @@
+{
+  "version": "1.0.0",
+  "certificationStatuses": {
+    "tested_approved": "Eagle Vision has directly validated the implementation for the defined use case.",
+    "tested_limited": "Eagle Vision validated part of the implementation, with documented limitations.",
+    "documented_unverified": "Observed in product UI/docs but not yet live-certified end-to-end.",
+    "pilot_only": "Available only in controlled pilot until end-to-end certification is complete.",
+    "external_custom": "Use an external or Eagle Vision-controlled solution rather than the provider feature.",
+    "proposed": "Architecture direction only; implementation is not yet production-certified.",
+    "future": "Intentionally deferred from v1."
+  },
+  "capabilities": {
+    "custom_interactive_page": {
+      "clientQuestion": null,
+      "providers": [{"provider": "appy_pie", "implementation": "code_page", "status": "tested_approved", "notes": "HTML, CSS, JavaScript, external image, responsive layout and interaction passed in Bambinos test."}]
+    },
+    "html_css_content_page": {
+      "clientQuestion": null,
+      "providers": [{"provider": "appy_pie", "implementation": "html_code", "status": "tested_limited", "notes": "HTML/CSS proven. JavaScript not proven in visible editor; no JS tab was available."}]
+    },
+    "website_destination": {
+      "clientQuestion": "Do you need the app to open a website or hosted page?",
+      "providers": [{"provider": "appy_pie", "implementation": "website_feature", "status": "documented_unverified", "notes": "Visual destination-card builder observed. Direct seamless webview behavior remains unverified."}]
+    },
+    "platform_specific_link": {
+      "clientQuestion": null,
+      "providers": [{"provider": "appy_pie", "implementation": "deeplink", "status": "documented_unverified", "notes": "Platform-specific destinations observed. Internal feature deep-linking remains unverified."}]
+    },
+    "secondary_navigation_folder": {
+      "clientQuestion": null,
+      "providers": [{"provider": "appy_pie", "implementation": "folder", "status": "documented_unverified", "notes": "Feature exists; child-feature behavior must be certified."}]
+    },
+    "online_ordering": {
+      "clientQuestion": "Do customers need to order online?",
+      "providers": [
+        {"provider": "existing_system", "implementation": "link_or_integration", "status": "proposed", "notes": "Prefer retaining proven client systems when appropriate."},
+        {"provider": "appy_pie", "implementation": "food_court", "status": "pilot_only", "notes": "Requires complete transaction and shared-menu-source test."},
+        {"provider": "eagle_vision", "implementation": "future_ordering", "status": "future"}
+      ]
+    },
+    "booking": {
+      "clientQuestion": "Do customers need to book appointments or reservations?",
+      "providers": [{"provider": "existing_system", "implementation": "link_or_integration", "status": "proposed"}, {"provider": "appy_pie", "implementation": "reservation_features", "status": "documented_unverified"}]
+    },
+    "loyalty": {
+      "clientQuestion": "Do you want a customer loyalty or rewards program?",
+      "providers": [{"provider": "appy_pie", "implementation": "loyalty_card", "status": "pilot_only"}, {"provider": "eagle_vision", "implementation": "custom_loyalty", "status": "proposed"}]
+    },
+    "coupons": {
+      "clientQuestion": "Do you want coupons or digital offers?",
+      "providers": [{"provider": "appy_pie", "implementation": "coupon", "status": "pilot_only"}, {"provider": "eagle_vision", "implementation": "boss_or_custom", "status": "external_custom", "notes": "Do not move Boss into Appy Pie coupon modules by default."}]
+    },
+    "push_notifications": {
+      "clientQuestion": "Do you want to send push notifications to app users?",
+      "providers": [{"provider": "appy_pie", "implementation": "notification", "status": "documented_unverified", "notes": "Must certify iPhone, Android, targeting, tap destination and app-state behavior."}]
+    },
+    "member_only_content": {
+      "clientQuestion": "Do different users need access to different app content?",
+      "providers": [{"provider": "appy_pie", "implementation": "groups_page_access", "status": "documented_unverified"}, {"provider": "propel", "implementation": "master_entitlements", "status": "proposed"}]
+    },
+    "user_provisioning": {
+      "clientQuestion": null,
+      "providers": [{"provider": "appy_pie", "implementation": "user_registration_update_api", "status": "documented_unverified", "notes": "Server-side only. Highest-priority API test remains VIP group create/update/access-removal flow."}]
+    },
+    "true_sso": {
+      "clientQuestion": null,
+      "providers": [{"provider": "appy_pie", "implementation": "external_auth_unknown", "status": "future", "notes": "Provisioning is not SSO. OAuth/JWT/magic-link/external IdP support remains unresolved."}]
+    },
+    "giving": {
+      "clientQuestion": "Do you need giving or donations?",
+      "providers": [{"provider": "existing_system", "implementation": "giving_link_or_connector", "status": "proposed"}, {"provider": "propel", "implementation": "giving", "status": "proposed"}]
+    },
+    "courses": {
+      "clientQuestion": "Do you need courses or training content?",
+      "providers": [{"provider": "appy_pie", "implementation": "course_builder", "status": "documented_unverified"}, {"provider": "propel", "implementation": "lms", "status": "proposed"}]
+    },
+    "chat_messaging": {
+      "clientQuestion": "Do users need chat or messaging inside the app?",
+      "providers": [{"provider": "appy_pie", "implementation": "chat_messenger", "status": "documented_unverified"}, {"provider": "propel", "implementation": "messaging", "status": "proposed"}]
+    },
+    "ecommerce": {
+      "clientQuestion": "Do you need online product sales?",
+      "providers": [{"provider": "existing_system", "implementation": "shopify_or_existing", "status": "proposed"}, {"provider": "appy_pie", "implementation": "woocommerce", "status": "documented_unverified"}]
+    },
+    "payments": {
+      "clientQuestion": "Do you need payments integrated into the website or app?",
+      "providers": [{"provider": "eagle_vision_payments", "implementation": "global_payment_adapter", "status": "proposed"}, {"provider": "existing_system", "implementation": "supported_existing_provider", "status": "proposed"}]
+    },
+    "directory": {
+      "clientQuestion": "Do you need a searchable directory of businesses, members, staff, or resources?",
+      "providers": [{"provider": "appy_pie", "implementation": "directory", "status": "documented_unverified"}, {"provider": "eagle_vision", "implementation": "custom_directory", "status": "proposed"}]
+    }
+  }
+}
