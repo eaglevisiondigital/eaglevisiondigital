@@ -19,8 +19,13 @@
     .ex-hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.013) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.013) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(to bottom,black,transparent 92%);pointer-events:none}
     .ex-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:.98fr 1.02fr;gap:clamp(42px,5vw,82px);align-items:center}
     .ex-hero-copy{max-width:760px}
-    .ex-hero h1{font-size:clamp(3.8rem,5.65vw,6.35rem);max-width:790px}
-    .ex-hero h1 span,.ex-heading span{color:var(--blue-soft)}
+    .ex-hero h1{font-size:clamp(3.25rem,4.7vw,5.25rem);max-width:820px;margin-bottom:27px}
+    .ex-hero-title{line-height:.94;letter-spacing:-.058em}
+    .ex-hero-title-line{display:block}
+    .ex-hero-title-white{color:#FFFFFF}
+    .ex-hero-title-blue{color:var(--blue-soft)}
+    .ex-hero-title-time{font-size:.88em;margin-top:.06em}
+    .ex-heading span{color:var(--blue-soft)}
     .ex-hero .lead{max-width:720px;margin-bottom:28px}
     .ex-hero-note{display:flex;align-items:flex-start;gap:10px;margin-top:22px;color:#90A0B4;font-size:.86rem;max-width:680px}
     .ex-hero-note::before{content:"";width:7px;height:7px;border-radius:50%;background:#3BC17B;box-shadow:0 0 14px rgba(59,193,123,.55);margin-top:7px;flex:0 0 auto}
@@ -173,7 +178,7 @@
       .ex-process{grid-template-columns:repeat(3,1fr)}.ex-process-line{display:none}
     }
     @media(max-width:760px){
-      .ex-hero{padding-top:54px}.ex-hero h1{font-size:clamp(3rem,13vw,4.4rem)}
+      .ex-hero{padding-top:54px}.ex-hero h1{font-size:clamp(2.8rem,12vw,4rem);line-height:.96}
       .ex-timing-grid,.ex-ai-points,.ex-compare{grid-template-columns:1fr}\n      .ex-ai-points::before,.ex-ai-points::after{display:none}\n      .ex-ai-point{min-height:auto}
       .ex-compare article+article{border-left:0;border-top:1px solid var(--line)}
       .ex-trust-grid,.ex-value-grid,.ex-product-grid,.ex-industry-grid,.ex-process,.ex-mini-industry-grid{grid-template-columns:1fr}
@@ -259,7 +264,12 @@
   <div class="container ex-hero-grid">
     <div class="ex-hero-copy reveal">
       <div class="kicker">EAGLE VISION EXPRESS</div>
-      <h1>Custom Built. No Templates. <span>Ready for Review in 3-24 Hours.</span></h1>
+      <h1 class="ex-hero-title">
+        <span class="ex-hero-title-line ex-hero-title-white">Custom Built.</span>
+        <span class="ex-hero-title-line ex-hero-title-white">No Templates.</span>
+        <span class="ex-hero-title-line ex-hero-title-blue">Ready for Review</span>
+        <span class="ex-hero-title-line ex-hero-title-blue ex-hero-title-time">in 3-24 Hours.</span>
+      </h1>
       <p class="lead">A professionally designed Eagle Vision Digital website custom-composed around your business, brand, customers and goals. Premium quality without the traditional wait.</p>
       <div class="btn-row">
         <a class="btn btn-primary" href="/express/start/">Start My Express Build →</a>
