@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Express Custom Websites & Apps | Eagle Vision Digital</title>
+  <meta name="description" content="Eagle Vision Express delivers custom-built websites ready for review in 3–24 hours and optional custom apps ready for review and device testing in 3–7 days. No cookie-cutter templates.">
+  <link rel="canonical" href="https://eaglevision.digital/express/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Express Custom Websites | Eagle Vision Digital">
+  <meta property="og:description" content="Custom built. No templates. Initial qualifying website build ready for review in 3–24 hours.">
+  <meta property="og:url" content="https://eaglevision.digital/express/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    body.express-page{overflow-x:hidden}
+    .ex-hero{position:relative;overflow:hidden;padding:clamp(72px,7vw,112px) 0 clamp(58px,6vw,90px);border-bottom:1px solid rgba(255,255,255,.055)}
+    .ex-hero::before{content:"";position:absolute;inset:-30% -12% auto auto;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(22,140,255,.18),rgba(22,140,255,.045) 40%,transparent 69%);pointer-events:none}
+    .ex-hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.013) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.013) 1px,transparent 1px);background-size:76px 76px;mask-image:linear-gradient(to bottom,black,transparent 92%);pointer-events:none}
+    .ex-hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:.98fr 1.02fr;gap:clamp(42px,5vw,82px);align-items:center}
+    .ex-hero-copy{max-width:760px}
+    .ex-hero h1{font-size:clamp(3.8rem,5.65vw,6.35rem);max-width:790px}
+    .ex-hero h1 span,.ex-heading span{color:var(--blue-soft)}
+    .ex-hero .lead{max-width:720px;margin-bottom:28px}
+    .ex-hero-note{display:flex;align-items:flex-start;gap:10px;margin-top:22px;color:#90A0B4;font-size:.86rem;max-width:680px}
+    .ex-hero-note::before{content:"";width:7px;height:7px;border-radius:50%;background:#3BC17B;box-shadow:0 0 14px rgba(59,193,123,.55);margin-top:7px;flex:0 0 auto}
+    .ex-proof-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}
+    .ex-proof-row span{border:1px solid var(--line);background:rgba(255,255,255,.028);border-radius:999px;padding:8px 11px;color:#DCE5EF;font-size:.78rem;font-weight:780}
+    .ex-hero-console{position:relative;border:1px solid rgba(22,140,255,.27);border-radius:30px;background:linear-gradient(155deg,rgba(9,23,43,.94),rgba(3,8,17,.96) 66%,rgba(5,16,30,.98));padding:24px;box-shadow:0 38px 100px rgba(0,0,0,.42),0 0 70px rgba(22,140,255,.10)}
+    .ex-console-bar{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:17px;border-bottom:1px solid var(--line)}
+    .ex-console-dots{display:flex;gap:6px}.ex-console-dots i{width:8px;height:8px;border-radius:50%;background:#43536A}.ex-console-dots i:nth-child(1){background:#58B8FF}
+    .ex-console-bar b{font-size:.74rem;letter-spacing:.12em;color:#83C6FF;text-transform:uppercase}
+    .ex-timing-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+    .ex-timing{padding:21px;border:1px solid var(--line);border-radius:20px;background:rgba(255,255,255,.028)}
+    .ex-timing.primary{border-color:rgba(22,140,255,.34);background:linear-gradient(155deg,rgba(22,140,255,.12),rgba(255,255,255,.025))}
+    .ex-timing small{display:block;color:#7F91A7;font-size:.67rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+    .ex-timing strong{display:block;font-size:clamp(1.7rem,2.5vw,2.5rem);line-height:1;color:#fff;letter-spacing:-.055em}
+    .ex-timing span{display:block;color:#91A1B6;font-size:.78rem;margin-top:7px}
+    .ex-flow{display:grid;gap:9px;margin-top:10px}
+    .ex-flow div{display:grid;grid-template-columns:32px 1fr auto;gap:11px;align-items:center;padding:11px 12px;border:1px solid rgba(255,255,255,.065);border-radius:14px;background:rgba(1,5,12,.45)}
+    .ex-flow em{width:32px;height:32px;border-radius:10px;background:rgba(22,140,255,.10);border:1px solid rgba(22,140,255,.21);display:grid;place-items:center;color:#8BCBFF;font-style:normal;font-weight:900;font-size:.76rem}
+    .ex-flow b{font-size:.86rem}.ex-flow span{font-size:.72rem;color:#6F8299}
+    .ex-console-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px;padding-top:15px;border-top:1px solid var(--line);font-size:.75rem;color:#7F91A7}
+    .ex-console-foot strong{color:#B8DBF8}
+
+    .ex-trust{padding:28px 0;border-bottom:1px solid rgba(255,255,255,.05);background:linear-gradient(180deg,rgba(255,255,255,.018),transparent)}
+    .ex-trust-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .ex-trust-item{padding:15px 16px;border:1px solid rgba(255,255,255,.065);border-radius:16px;background:rgba(255,255,255,.018)}
+    .ex-trust-item strong{display:block;font-size:.86rem;color:#EDF5FC}.ex-trust-item span{display:block;font-size:.72rem;color:#76899F;margin-top:2px}
+
+    .ex-center{max-width:930px;margin:0 auto 48px;text-align:center}.ex-center p{max-width:770px;margin-inline:auto}
+    .ex-center h2,.ex-split h2{margin-bottom:18px}.ex-center h2 span,.ex-split h2 span{color:var(--blue-soft)}
+    .ex-value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+    .ex-value{position:relative;padding:29px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(150deg,rgba(255,255,255,.05),rgba(255,255,255,.018));min-height:285px;box-shadow:var(--shadow)}
+    .ex-value i{display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:rgba(22,140,255,.11);border:1px solid rgba(22,140,255,.24);color:#93CEFF;font-style:normal;font-weight:900;margin-bottom:26px}
+    .ex-value h3{font-size:1.4rem}.ex-value p{font-size:.95rem}.ex-value b{display:block;margin-top:20px;color:#A8D8FF;font-size:.84rem}
+    .ex-value.featured{border-color:rgba(22,140,255,.35);box-shadow:var(--shadow),var(--glow)}
+    
+    .ex-split{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,5vw,76px);align-items:start}
+    .ex-compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:#030812;box-shadow:var(--shadow)}
+    .ex-compare article{padding:clamp(28px,3vw,42px)}
+    .ex-compare article+article{border-left:1px solid var(--line)}
+    .ex-compare .express{background:radial-gradient(500px circle at 85% 0%,rgba(22,140,255,.15),transparent 55%),rgba(8,19,35,.72)}
+    .ex-compare small{color:#71839A;letter-spacing:.12em;font-weight:850;font-size:.68rem}.ex-compare .express small{color:#6DBBFF}
+    .ex-compare h3{font-size:clamp(1.45rem,2vw,2rem);margin:12px 0 20px}
+    .ex-list{list-style:none;margin:0;padding:0;display:grid;gap:13px}.ex-list li{position:relative;padding-left:27px;color:#AEB8C6;font-size:.94rem}.ex-list li::before{content:"";position:absolute;left:0;top:.48em;width:14px;height:14px;border-radius:50%;border:1px solid #556579}
+    .ex-compare .express .ex-list li::before{border-color:#168CFF;background:radial-gradient(circle,#168CFF 0 34%,transparent 38%)}
+
+    .ex-process-shell{position:relative}.ex-process-line{position:absolute;left:8%;right:8%;top:29px;height:1px;background:linear-gradient(90deg,transparent,rgba(22,140,255,.75),transparent)}
+    .ex-process{position:relative;z-index:2;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .ex-step{text-align:center;padding:0 8px}.ex-step b{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin:0 auto 19px;background:#071426;border:1px solid rgba(22,140,255,.38);box-shadow:0 0 28px rgba(22,140,255,.10);color:#91CEFF;font-size:.9rem}
+    .ex-step h3{font-size:1.05rem}.ex-step p{font-size:.83rem;margin:0 auto;max-width:220px}
+
+    .ex-product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+    .ex-product{position:relative;padding:31px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(150deg,rgba(255,255,255,.052),rgba(255,255,255,.017));min-height:455px;display:flex;flex-direction:column}
+    .ex-product.best{border-color:rgba(22,140,255,.42);background:radial-gradient(520px circle at 50% -10%,rgba(22,140,255,.18),transparent 54%),linear-gradient(150deg,#081425,#030914);box-shadow:var(--glow)}
+    .ex-product-badge{position:absolute;right:20px;top:20px;padding:7px 10px;border-radius:999px;background:rgba(22,140,255,.13);border:1px solid rgba(22,140,255,.25);color:#8DCCFF;font-size:.65rem;font-weight:900;letter-spacing:.09em;text-transform:uppercase}
+    .ex-product small{color:#6EB8F6;letter-spacing:.11em;font-weight:850;font-size:.68rem;text-transform:uppercase}.ex-product h3{font-size:1.75rem;margin-top:11px}
+    .ex-product .time{font-size:2.35rem;line-height:1;letter-spacing:-.055em;color:#fff;font-weight:900;margin:16px 0 7px}.ex-product .time-note{font-size:.78rem;color:#7F91A7;margin-bottom:22px}
+    .ex-product ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:11px}.ex-product li{color:#B7C2D0;font-size:.9rem;padding-left:22px;position:relative}.ex-product li::before{content:"✓";position:absolute;left:0;color:#58B8FF;font-weight:900}.ex-product .btn{margin-top:auto;width:100%}
+
+    .ex-industry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
+    .ex-industry{padding:29px;border:1px solid var(--line);border-radius:24px;background:#030813}.ex-industry-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:22px}.ex-industry-icon{width:48px;height:48px;border-radius:15px;background:rgba(22,140,255,.1);border:1px solid rgba(22,140,255,.22);display:grid;place-items:center;color:#80C6FF;font-size:1.2rem}
+    .ex-industry small{color:#66809C;font-size:.68rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.ex-industry h3{font-size:1.4rem}.ex-industry p{font-size:.9rem}.ex-industry .ex-list li{font-size:.84rem}
+
+    .ex-ai-shell{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(34px,5vw,72px);align-items:center;padding:clamp(36px,5vw,64px);border:1px solid var(--line-blue);border-radius:32px;background:radial-gradient(700px circle at 15% 0%,rgba(22,140,255,.16),transparent 53%),linear-gradient(145deg,#071426,#030914 68%,#061321);box-shadow:var(--glow)}
+    .ex-ai-points{display:grid;grid-template-columns:1fr 1fr;gap:13px}.ex-ai-point{padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:17px;background:rgba(1,5,12,.52)}.ex-ai-point b{display:block;color:#E7F5FF;font-size:.9rem}.ex-ai-point span{display:block;color:#788CA5;font-size:.76rem;margin-top:4px}
+
+    .ex-guarantee{position:relative;overflow:hidden;border:1px solid rgba(22,140,255,.42);border-radius:30px;padding:clamp(36px,5vw,66px);background:radial-gradient(650px circle at 90% 10%,rgba(22,140,255,.18),transparent 56%),#04101E;box-shadow:0 26px 80px rgba(0,0,0,.34)}
+    .ex-guarantee-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(30px,5vw,64px);align-items:center}
+    .ex-big-time{font-size:clamp(3.5rem,7vw,7rem);font-weight:950;letter-spacing:-.075em;line-height:.86;color:#fff}.ex-big-time span{display:block;color:#6FC0FF;font-size:.22em;letter-spacing:.1em;text-transform:uppercase;line-height:1.3;margin-top:18px}
+    .ex-scope{display:grid;gap:11px}.ex-scope div{padding:14px 16px;border:1px solid rgba(255,255,255,.075);border-radius:15px;background:rgba(255,255,255,.025);color:#AAB8C8;font-size:.86rem}.ex-scope b{color:#EEF7FF}
+    .ex-guarantee-note{margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;color:#778AA2}
+
+    .ex-faq .faq-layout{align-items:start}.ex-faq .faq-heading{position:sticky;top:112px}.ex-faq .faq-heading p{max-width:440px}
+    .ex-final{text-align:center;padding-bottom:clamp(80px,8vw,125px)}.ex-final-shell{max-width:980px;margin:0 auto;border:1px solid rgba(22,140,255,.35);border-radius:32px;padding:clamp(40px,6vw,76px);background:radial-gradient(650px circle at 50% 0%,rgba(22,140,255,.16),transparent 56%),#04101D;box-shadow:var(--glow)}
+    .ex-final h2{font-size:clamp(2.7rem,4.8vw,5rem)}.ex-final p{max-width:700px;margin:0 auto 28px}.ex-final .btn-row{justify-content:center}.ex-final small{display:block;margin-top:16px;color:#77889E}
+
+    @media(max-width:1100px){
+      .ex-hero-grid,.ex-split,.ex-ai-shell,.ex-guarantee-grid{grid-template-columns:1fr}
+      .ex-hero-copy{max-width:880px}.ex-hero-console{max-width:760px}
+      .ex-trust-grid{grid-template-columns:repeat(3,1fr)}
+      .ex-value-grid,.ex-product-grid,.ex-industry-grid{grid-template-columns:repeat(2,1fr)}
+      .ex-product.best{grid-column:span 2}
+      .ex-process{grid-template-columns:repeat(3,1fr)}.ex-process-line{display:none}
+    }
+    @media(max-width:760px){
+      .ex-hero{padding-top:54px}.ex-hero h1{font-size:clamp(3rem,13vw,4.4rem)}
+      .ex-timing-grid,.ex-ai-points,.ex-compare{grid-template-columns:1fr}
+      .ex-compare article+article{border-left:0;border-top:1px solid var(--line)}
+      .ex-trust-grid,.ex-value-grid,.ex-product-grid,.ex-industry-grid,.ex-process{grid-template-columns:1fr}
+      .ex-product.best{grid-column:auto}.ex-faq .faq-heading{position:static}
+      .ex-console-foot{align-items:flex-start;flex-direction:column}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Service",
+    "name":"Eagle Vision Express Custom Websites",
+    "provider":{"@type":"Organization","name":"Eagle Vision Digital","url":"https://eaglevision.digital/"},
+    "serviceType":["Express Custom Website Design","Custom Website Development","Mobile App Development"],
+    "areaServed":["United States","Canada"],
+    "url":"https://eaglevision.digital/express/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is this a template website?","acceptedAnswer":{"@type":"Answer","text":"No. Eagle Vision Express uses reusable engineering and industry-specific architecture behind the scenes, but each customer-facing website is custom-composed around the client's brand, information, goals, content and calls to action."}},
+    {"@type":"Question","name":"How can Eagle Vision build a custom website in 3 to 24 hours?","acceptedAnswer":{"@type":"Answer","text":"Eagle Vision combines a short structured intake, reusable production engineering, AI-assisted workflows and human review. The timing commitment begins only after required information and assets are complete and the project is accepted as standard Express scope."}},
+    {"@type":"Question","name":"What does the 3 to 24 hour guarantee cover?","acceptedAnswer":{"@type":"Answer","text":"It covers the initial full standard-scope Express website build being ready for Eagle Vision review and client preview after Eagle Vision accepts the complete required information and assets. Custom software, unusual integrations and other nonstandard work may require a separate scope."}},
+    {"@type":"Question","name":"How fast is an Express mobile app?","acceptedAnswer":{"@type":"Answer","text":"The initial standard-scope app build is designed to be ready for review and device testing within 3 to 7 days after required information and assets are accepted. Apple and Google review and developer-account timelines are separate."}},
+    {"@type":"Question","name":"Does AI build my website by itself?","acceptedAnswer":{"@type":"Answer","text":"No. AI-assisted production helps Eagle Vision move faster, but every Express project uses verified client information, Eagle Vision design standards, structured production rules and human quality control."}}
+  ]}
+  </script>
+</head>
+<body class="express-page">
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="/" aria-label="Eagle Vision Digital home">
+      <img src="/assets/logos/eagle-vision-digital-horizontal.png" alt="Eagle Vision Digital">
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">☰</button>
+    <nav id="primary-nav" class="nav-links" aria-label="Primary navigation">
+      <div class="nav-mega nav-mega--solutions">
+        <div class="nav-mega-trigger">
+          <a class="nav-mega-main-link" href="/services/">Solutions</a>
+          <button class="nav-mega-toggle" type="button" aria-expanded="false" aria-label="Open Solutions menu">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5.5 7.5 4.5 4.5 4.5-4.5"/></svg>
+          </button>
+        </div>
+        <div class="solutions-mega-panel" aria-label="Solutions menu">
+          <div class="solutions-mega-head">
+            <div>
+              <span class="solutions-mega-eyebrow">EAGLE VISION DIGITAL</span>
+              <strong>What can we build for you?</strong>
+              <p>Choose a solution or start with the business outcome you need.</p>
+            </div>
+            <a class="solutions-mega-all" href="/services/">View All Solutions <span>→</span></a>
+          </div>
+          <div class="solutions-mega-grid">
+            <a class="solutions-mega-item" href="/services/custom-websites/"><span class="solutions-mega-icon">⌘</span><span><b>Custom Websites</b><small>Strategy, SEO, conversion & growth</small></span></a>
+            <a class="solutions-mega-item" href="/services/mobile-apps/"><span class="solutions-mega-icon">▯</span><span><b>Mobile Apps</b><small>iOS, Android & engagement</small></span></a>
+            <a class="solutions-mega-item" href="/services/ai-automation/"><span class="solutions-mega-icon">✦</span><span><b>AI + Automation</b><small>Assistants, workflows & integrations</small></span></a>
+            <a class="solutions-mega-item" href="/services/digital-platforms/"><span class="solutions-mega-icon">▦</span><span><b>Digital Platforms</b><small>Portals, dashboards & operations</small></span></a>
+            <a class="solutions-mega-item" href="/services/digital-ecosystems/"><span class="solutions-mega-icon">◎</span><span><b>Digital Ecosystems</b><small>Connected technology that works together</small></span></a>
+            <a class="solutions-mega-item" href="/services/coaching-platforms/"><span class="solutions-mega-icon">◉</span><span><b>Coaching Platforms</b><small>Programs, tracking, content & clients</small></span></a>
+            <a class="solutions-mega-item" href="/services/customer-portals/"><span class="solutions-mega-icon">◫</span><span><b>Customer Portals</b><small>Secure accounts & self-service</small></span></a>
+            <a class="solutions-mega-item" href="/services/membership-platforms/"><span class="solutions-mega-icon">♧</span><span><b>Membership Platforms</b><small>Community, content & recurring access</small></span></a>
+            <a class="solutions-mega-item" href="/services/ecommerce/"><span class="solutions-mega-icon">◇</span><span><b>E-Commerce</b><small>Products, ordering & subscriptions</small></span></a>
+            <a class="solutions-mega-item" href="/services/payment-solutions/"><span class="solutions-mega-icon">$</span><span><b>Integrated Payments</b><small>Processing, checkout & savings</small></span></a>
+            <a class="solutions-mega-item" href="/services/forms-workflows/"><span class="solutions-mega-icon">↗</span><span><b>Forms + Workflows</b><small>Intake, routing & automation</small></span></a>
+            <a class="solutions-mega-item solutions-mega-item--custom" href="/services/custom-technology/"><span class="solutions-mega-icon">+</span><span><b>Custom Technology</b><small>Don't see it? We can probably build it.</small></span></a>
+          </div>
+          <div class="solutions-mega-foot"><span><i></i> Not sure where to start?</span><a href="/#solution-finder">Use the 60-Second Solution Finder →</a></div>
+        </div>
+      </div>
+      <a href="/industries/">Industries</a>
+      <a href="/case-studies/">Work</a>
+      <a href="/about/">About</a>
+      <a href="/resources/">Resources</a>
+      <a href="/contact/">Contact</a>
+      <a class="phone-link" href="tel:+18508124711">(850) 812-4711</a>
+      <a class="btn btn-primary" href="/contact/?service=express">Start a Project</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="ex-hero">
+  <div class="container ex-hero-grid">
+    <div class="ex-hero-copy reveal">
+      <div class="kicker">EAGLE VISION EXPRESS</div>
+      <h1>Custom Built. No Templates. <span>Ready for Review in 3–24 Hours.</span></h1>
+      <p class="lead">A professionally designed Eagle Vision Digital website custom-composed around your business, brand, customers and goals. Premium quality without the traditional wait.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="/contact/?service=express">Start My Express Build →</a>
+        <a class="btn btn-secondary" href="#how-it-works">See How Express Works</a>
+      </div>
+      <div class="ex-proof-row"><span>No Cookie-Cutter Templates</span><span>Eagle Vision QA</span><span>Responsive</span><span>SEO Foundation</span><span>App Option</span></div>
+      <p class="ex-hero-note">The 3–24 hour guarantee applies to qualifying standard-scope Express websites after Eagle Vision accepts the complete required information and assets.</p>
+    </div>
+
+    <div class="ex-hero-console reveal" aria-label="Eagle Vision Express production timeline">
+      <div class="ex-console-bar"><div class="ex-console-dots"><i></i><i></i><i></i></div><b>Express Build System</b></div>
+      <div class="ex-timing-grid">
+        <div class="ex-timing primary"><small>Express Website</small><strong>3–24 HRS</strong><span>Initial full build ready for review</span></div>
+        <div class="ex-timing"><small>Express App</small><strong>3–7 DAYS</strong><span>Initial build ready for device testing</span></div>
+      </div>
+      <div class="ex-flow">
+        <div><em>01</em><b>Smart Intake</b><span>3–10 min</span></div>
+        <div><em>02</em><b>Custom Production</b><span>Brand + goals</span></div>
+        <div><em>03</em><b>Eagle Vision QA</b><span>Human review</span></div>
+        <div><em>04</em><b>Your Preview</b><span>Review + approve</span></div>
+      </div>
+      <div class="ex-console-foot"><span>One intake. One connected digital presence.</span><strong>Website • App • Both</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="ex-trust">
+  <div class="container ex-trust-grid">
+    <div class="ex-trust-item"><strong>Custom Composed</strong><span>Built around your brand</span></div>
+    <div class="ex-trust-item"><strong>Industry Smart</strong><span>Right pages and features</span></div>
+    <div class="ex-trust-item"><strong>Human Reviewed</strong><span>Eagle Vision approves first</span></div>
+    <div class="ex-trust-item"><strong>Future Ready</strong><span>Apps, payments, portals, AI</span></div>
+    <div class="ex-trust-item"><strong>Built to Convert</strong><span>Designed around your next action</span></div>
+  </div>
+</section>
+
+<section class="section-xl">
+  <div class="container">
+    <div class="ex-center">
+      <div class="kicker">CUSTOM DOESN'T HAVE TO MEAN SLOW</div>
+      <h2>We Reuse Proven Engineering.<br><span>We Do Not Reuse Your Identity.</span></h2>
+      <p>Express is not a one-click AI website generator and it is not a library of prebuilt client templates. We use proven engineering, structured industry knowledge and production automation behind the scenes so more time can go into the part your customer actually sees: your brand, your message and your experience.</p>
+    </div>
+    <div class="ex-value-grid">
+      <article class="ex-value"><i>01</i><h3>Your Business First</h3><p>The build begins with your goals, audience, offers, differentiators and the one action you most want customers to take.</p><b>Strategy before decoration →</b></article>
+      <article class="ex-value featured"><i>02</i><h3>Custom Composition</h3><p>Page structure, imagery, messaging, hierarchy and calls to action are assembled around your business instead of forcing your business into a generic theme.</p><b>Your identity stays yours →</b></article>
+      <article class="ex-value"><i>03</i><h3>Fast Production</h3><p>Structured intake, reusable engineering and AI-assisted workflows eliminate repetitive production work without eliminating human judgment.</p><b>Speed without generic output →</b></article>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl">
+  <div class="container ex-split">
+    <div>
+      <div class="kicker">NO TEMPLATES ALLOWED</div>
+      <h2 class="ex-heading">Fast Should Never Mean <span>Cookie-Cutter.</span></h2>
+      <p>Traditional website production often makes you choose between fast and custom. Eagle Vision Express is built to remove that tradeoff for standard business websites.</p>
+      <p>Behind the scenes, our system knows the proven building blocks a local service company, church, ministry, restaurant and future industries commonly need. In front of the customer, the final site should still look and feel like your organization.</p>
+    </div>
+    <div class="ex-compare">
+      <article>
+        <small>TYPICAL TEMPLATE BUILDER</small>
+        <h3>Pick a theme.<br>Fill in the blanks.</h3>
+        <ul class="ex-list">
+          <li>Layout dictates the business</li>
+          <li>Generic page structure</li>
+          <li>Same visual patterns as competitors</li>
+          <li>Copy treated as filler</li>
+          <li>Future technology added later</li>
+        </ul>
+      </article>
+      <article class="express">
+        <small>EAGLE VISION EXPRESS</small>
+        <h3>Understand the business.<br>Compose the right experience.</h3>
+        <ul class="ex-list">
+          <li>Industry-aware page architecture</li>
+          <li>Brand-specific visual direction</li>
+          <li>Professional copy from verified facts</li>
+          <li>Conversion and SEO considered from day one</li>
+          <li>Website and app planned to work together</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl" id="how-it-works">
+  <div class="container">
+    <div class="ex-center">
+      <div class="kicker">THE EXPRESS PROCESS</div>
+      <h2>From Your Information to a <span>Professional First Build.</span></h2>
+      <p>The customer experience is designed to be short. The production system behind it is not.</p>
+    </div>
+    <div class="ex-process-shell">
+      <div class="ex-process-line"></div>
+      <div class="ex-process">
+        <article class="ex-step"><b>01</b><h3>Tell Us About You</h3><p>A short adaptive intake collects the facts, goals, content and assets we actually need.</p></article>
+        <article class="ex-step"><b>02</b><h3>We Confirm Scope</h3><p>Eagle Vision checks completeness, rights, claims, pages and integrations before the clock starts.</p></article>
+        <article class="ex-step"><b>03</b><h3>We Build</h3><p>Our production system creates the custom first build using your approved information and brand direction.</p></article>
+        <article class="ex-step"><b>04</b><h3>We QA First</h3><p>Eagle Vision reviews layout, content, mobile behavior, links, forms, SEO basics and overall quality.</p></article>
+        <article class="ex-step"><b>05</b><h3>You Review</h3><p>You receive the polished preview for approval, revisions and final launch.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl">
+  <div class="container">
+    <div class="ex-center">
+      <div class="kicker">CHOOSE YOUR EXPRESS PATH</div>
+      <h2>Website. App. <span>One Connected Presence.</span></h2>
+      <p>Start with exactly what you need today. The same approved business information can be reused across your website and app wherever practical.</p>
+    </div>
+    <div class="ex-product-grid">
+      <article class="ex-product">
+        <small>EXPRESS WEBSITE</small>
+        <h3>Custom Website</h3>
+        <div class="time">3–24 HRS</div>
+        <div class="time-note">Initial qualifying website ready for review</div>
+        <ul>
+          <li>Five-page recommended starting architecture</li>
+          <li>Swap from industry-specific page options</li>
+          <li>Professional copy from your verified facts</li>
+          <li>Responsive desktop, tablet and mobile</li>
+          <li>SEO and conversion foundation</li>
+          <li>Eagle Vision QA before client review</li>
+        </ul>
+        <a class="btn btn-secondary" href="/contact/?service=express-website">Start My Website</a>
+      </article>
+      <article class="ex-product best">
+        <div class="ex-product-badge">Best Connected Value</div>
+        <small>WEBSITE + APP</small>
+        <h3>One Digital Presence</h3>
+        <div class="time">ONE INTAKE</div>
+        <div class="time-note">Shared information. Coordinated experience.</div>
+        <ul>
+          <li>Everything in Express Website</li>
+          <li>Custom branded mobile app</li>
+          <li>Shared business content where practical</li>
+          <li>Selected certified app features</li>
+          <li>Push, member access, loyalty or other capabilities when approved</li>
+          <li>Built to connect with future Eagle Vision platform services</li>
+        </ul>
+        <a class="btn btn-primary" href="/contact/?service=express-bundle">Build Website + App →</a>
+      </article>
+      <article class="ex-product">
+        <small>EXPRESS APP</small>
+        <h3>Custom Mobile App</h3>
+        <div class="time">3–7 DAYS</div>
+        <div class="time-note">Initial build ready for review and device testing</div>
+        <ul>
+          <li>Custom branded app shell and navigation</li>
+          <li>iOS and Android path</li>
+          <li>Certified native features selected by business need</li>
+          <li>Website/content reuse where appropriate</li>
+          <li>Device testing before submission</li>
+          <li>Apple and Google review time is separate</li>
+        </ul>
+        <a class="btn btn-secondary" href="/contact/?service=express-app">Start My App</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl">
+  <div class="container">
+    <div class="ex-center">
+      <div class="kicker">BUILT AROUND YOUR INDUSTRY</div>
+      <h2>Start With What Works.<br><span>Customize What Makes You Different.</span></h2>
+      <p>Express launches with focused blueprints for three categories, with more industries added through the same underlying system.</p>
+    </div>
+    <div class="ex-industry-grid">
+      <article class="ex-industry">
+        <div class="ex-industry-head"><div><small>LAUNCH BLUEPRINT 01</small><h3>Local Service Businesses</h3></div><div class="ex-industry-icon">⌂</div></div>
+        <p>Designed around calls, quote requests, booking, trust, service areas and proof of work.</p>
+        <ul class="ex-list"><li>Home</li><li>Services</li><li>About</li><li>Reviews / Projects</li><li>Contact / Request a Quote</li></ul>
+      </article>
+      <article class="ex-industry">
+        <div class="ex-industry-head"><div><small>LAUNCH BLUEPRINT 02</small><h3>Churches & Ministries</h3></div><div class="ex-industry-icon">✦</div></div>
+        <p>Designed around first-time visitors, messages, connection, events, ministries and giving pathways.</p>
+        <ul class="ex-list"><li>Home</li><li>New Here / Plan Your Visit</li><li>About / Leadership / Beliefs</li><li>Watch / Messages</li><li>Connect / Events</li></ul>
+      </article>
+      <article class="ex-industry">
+        <div class="ex-industry-head"><div><small>LAUNCH BLUEPRINT 03</small><h3>Restaurants</h3></div><div class="ex-industry-icon">◇</div></div>
+        <p>Designed around menu discovery, ordering, reservations, hours, location and repeat-customer engagement.</p>
+        <ul class="ex-list"><li>Home</li><li>Menu</li><li>Order Online</li><li>Our Story</li><li>Visit / Hours / Contact</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl">
+  <div class="container ex-ai-shell">
+    <div>
+      <div class="kicker">AI-ASSISTED, HUMAN-CONTROLLED</div>
+      <h2 class="ex-heading">AI Helps Us Move Faster.<br><span>It Doesn't Replace Judgment.</span></h2>
+      <p>We do use advanced AI-assisted production where it helps. That includes organizing intake data, drafting professional copy from your supplied facts, assembling production briefs and accelerating repetitive production tasks.</p>
+      <p>But AI does not get to invent your credentials, guarantees, beliefs, years of experience, pricing, medical claims or other facts. Eagle Vision controls the rules and reviews the result before you see it.</p>
+    </div>
+    <div class="ex-ai-points">
+      <div class="ex-ai-point"><b>Verified Facts</b><span>Client-supplied information stays the factual source.</span></div>
+      <div class="ex-ai-point"><b>Professional Writing</b><span>Exact, light polish or professional rewrite controls.</span></div>
+      <div class="ex-ai-point"><b>Human QA</b><span>Eagle Vision reviews the build before client approval.</span></div>
+      <div class="ex-ai-point"><b>Version Approval</b><span>Launch only after the correct version is approved.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl">
+  <div class="container ex-guarantee">
+    <div class="ex-guarantee-grid">
+      <div class="ex-big-time">3–24
+        <span>Hour Express Website Guarantee</span>
+      </div>
+      <div>
+        <div class="kicker">WHAT THE GUARANTEE MEANS</div>
+        <h2 class="ex-heading">A Full First Build.<br><span>Ready for Review.</span></h2>
+        <p>Once Eagle Vision has received, reviewed and accepted the complete information and required assets for a qualifying standard-scope Express website, the initial full website build will be ready for Eagle Vision review and client preview within 3–24 hours.</p>
+        <div class="ex-scope">
+          <div><b>The clock starts after acceptance.</b> Missing content, assets or required approvals do not start the timing window.</div>
+          <div><b>Standard scope matters.</b> Advanced custom software, large databases, extensive ecommerce or unsupported integrations may require a custom project scope.</div>
+          <div><b>App publication is separate.</b> Express app builds target 3–7 days for review/device testing. Apple and Google control their own approval timelines.</div>
+        </div>
+      </div>
+    </div>
+    <div class="ex-guarantee-note">Eagle Vision will identify nonstandard scope before the Express timing commitment begins. Revisions requested after the initial review are separate from the initial-build timing guarantee.</div>
+  </div>
+</section>
+
+<section class="section-xl ex-faq">
+  <div class="container faq-layout">
+    <div class="faq-heading">
+      <div class="kicker">EXPRESS QUESTIONS</div>
+      <h2>Fast Answers.<br><span>Clear Expectations.</span></h2>
+      <p>Express is designed to remove the long agency wait without lowering the quality standard.</p>
+    </div>
+    <div class="faq-list">
+      <details><summary>Is this a template website?<span>+</span></summary><p>No. We reuse proven engineering and industry architecture behind the scenes, but your public website is custom-composed around your brand, information, audience, goals, imagery and calls to action.</p></details>
+      <details><summary>How can a custom website be ready in 3–24 hours?<span>+</span></summary><p>We remove repetitive production work with a short structured intake, reusable engineering, industry blueprints and AI-assisted workflows. Eagle Vision still controls the design system, factual rules, QA and approval process.</p></details>
+      <details><summary>What exactly is guaranteed?<span>+</span></summary><p>For qualifying standard-scope Express websites, the initial full build will be ready for Eagle Vision review and client preview within 3–24 hours after Eagle Vision accepts the complete required information and assets.</p></details>
+      <details><summary>What if my project needs custom software or a complicated integration?<span>+</span></summary><p>We can still help, but it may move into a custom scope rather than the Express timing guarantee. Eagle Vision will identify that before the Express clock begins.</p></details>
+      <details><summary>Can I choose my five pages?<span>+</span></summary><p>Yes. Each industry starts with five recommended pages. You can accept them or swap from industry-specific alternatives. Additional pages can be added when needed.</p></details>
+      <details><summary>What if I already have a website, menu, brochure or brand guide?<span>+</span></summary><p>Use it. Existing source material can help prefill and accelerate the intake. Imported facts that matter to publication are confirmed before they are treated as verified.</p></details>
+      <details><summary>Can I provide my own exact copy?<span>+</span></summary><p>Yes. Important content can be marked Use Exactly as Written, Professionally Clean Up, or Rewrite Professionally from your supplied facts and bullet points. Sensitive content such as legal disclaimers stays exact.</p></details>
+      <details><summary>How fast is the app?<span>+</span></summary><p>The initial standard-scope Express app is designed to be ready for review and real-device testing within 3–7 days after required information and assets are accepted. Apple and Google review time is not included.</p></details>
+      <details><summary>Does the website and app use the same information?<span>+</span></summary><p>Where technically practical, yes. Business information, hours, services, staff, menu, events, locations and other ordinary approved content should be structured once and reused appropriately across both experiences.</p></details>
+      <details><summary>Will AI make things up about my business?<span>+</span></summary><p>No. The production system is specifically designed not to invent credentials, licenses, guarantees, years, awards, ratings, pricing, beliefs or other factual claims. Sensitive facts must be supplied or confirmed.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="ex-final">
+  <div class="container">
+    <div class="ex-final-shell">
+      <div class="kicker">READY WHEN YOU ARE</div>
+      <h2>Tell Us About Your Business.<br><span class="blue">We'll Build the Digital Presence.</span></h2>
+      <p>Start with an Express Website, an Express App, or both. We'll identify the right pages, features and implementation path from the business outcomes you need.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="/contact/?service=express">Start My Express Build →</a><a class="btn btn-secondary" href="tel:+18508124711">Call (850) 812-4711</a></div>
+      <small>Based in Fort Walton Beach, Florida • Serving businesses and organizations across the U.S. &amp; select Canada.</small>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logos/eagle-vision-digital-horizontal.png" alt="Eagle Vision Digital">
+        <p>Custom websites, mobile apps, AI automation, digital platforms and payment solutions designed to help businesses grow.</p>
+        <p><strong>Based in Fort Walton Beach, Florida • Serving the U.S. &amp; Canada</strong></p>
+      </div>
+      <div>
+        <h3>Solutions</h3>
+        <div class="footer-links"><a href="/express/">Express Websites + Apps</a><a href="/services/custom-websites/">Custom Websites</a><a href="/services/mobile-apps/">Mobile Apps</a><a href="/services/ai-automation/">AI &amp; Automation</a><a href="/services/customer-portals/">Customer Portals</a><a href="/services/membership-platforms/">Membership Platforms</a><a href="/services/payment-solutions/">Payment Solutions</a></div>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <div class="footer-links"><a href="/about/">About</a><a href="/industries/">Industries</a><a href="/case-studies/">Work</a><a href="/resources/">Resources</a><a href="/contact/">Contact</a><a href="tel:+18508124711">(850) 812-4711</a><a href="mailto:info@eaglevision.digital">info@eaglevision.digital</a><a class="footer-facebook" href="https://www.facebook.com/share/1NmZyahcdQ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Eagle Vision Digital on Facebook">Follow Us on Facebook ↗</a></div>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Eagle Vision Digital. All rights reserved.</span><span>Your Vision. Our Technology. Your Future.</span></div>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+</body>
+</html>
