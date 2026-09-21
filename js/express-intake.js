@@ -3,6 +3,8 @@
   if (!form) return;
 
   const STORAGE_KEY = 'evExpressIntakeV1';
+  const LEAD_ID_KEY = 'evExpressLeadIdV1';
+  const LEAD_FINGERPRINT_KEY = 'evExpressLeadFingerprintV1';
   const stepPanels = [...document.querySelectorAll('.ex-step-panel')];
   const navSteps = [...document.querySelectorAll('.ex-step-tab')];
   const progressBar = document.getElementById('progressBar');
@@ -29,6 +31,7 @@
 
   let currentStep = 1;
   let saveTimer;
+  let leadCaptureTimer;
 
   const stepCopy = {
     1: ['STEP 1 OF 5', 'Your Business', 'Start with the basics. We will use these answers to personalize the rest of the intake.'],
@@ -87,6 +90,126 @@
     if (ch === '"') return '&quot;';
     return '&#039;';
   });
+
+  function getLeadCaptureId() {
+    let id = val('lead_capture_id');
+    if (id) return id;
+    try { id = localStorage.getItem(LEAD_ID_KEY) || ''; } catch (_) {}
+    if (!id) {
+      id = (globalThis.crypto && typeof globalThis.crypto.randomUUID === 'function')
+        ? globalThis.crypto.randomUUID()
+        : `evlead-${Date.now()}-${Math.random().toString(36).slice(2,10)}`;
+      try { localStorage.setItem(LEAD_ID_KEY, id); } catch (_) {}
+    }
+    if ($('lead_capture_id')) $('lead_capture_id').value = id;
+    return id;
+  }
+
+  function leadPayload() {
+    return {
+      'form-name': 'express-lead-capture',
+      lead_capture_id: getLeadCaptureId(),
+      lead_stage: 'step_1_basics',
+      lead_captured_at: new Date().toISOString(),
+      package_product: productValue(),
+      business_name: val('business_name'),
+      contact_first: val('contact_first'),
+      contact_last: val('contact_last'),
+      contact_role: val('contact_role'),
+      contact_phone: val('contact_phone'),
+      contact_email: val('contact_email'),
+      industry: industryValue(),
+      industry_other: val('industry_other'),
+      business_city: val('business_city'),
+      business_region: val('business_region'),
+      business_country: val('business_country'),
+      current_website: val('current_website'),
+      source: val('source') || 'self_service',
+      utm_source: val('utm_source'),
+      utm_medium: val('utm_medium'),
+      utm_campaign: val('utm_campaign'),
+      utm_content: val('utm_content'),
+      referrer: val('referrer')
+    };
+  }
+
+  function leadReady() {
+    const email = $('contact_email');
+    return Boolean(
+      productValue() &&
+      val('business_name') &&
+      val('contact_first') &&
+      val('contact_last') &&
+      val('contact_phone') &&
+      val('contact_email') &&
+      (!email || email.checkValidity()) &&
+      industryValue() &&
+      val('business_city') &&
+      val('business_region') &&
+      val('business_country')
+    );
+  }
+
+  function leadFingerprint(payload) {
+    const copy = { ...payload };
+    delete copy.lead_captured_at;
+    return JSON.stringify(copy);
+  }
+
+  function setLeadCaptureState(saved) {
+    const note = $('leadCaptureNote');
+    if (!note) return;
+    note.classList.toggle('saved', saved);
+    const strong = note.querySelector('strong');
+    const small = note.querySelector('small');
+    if (saved) {
+      if (strong) strong.textContent = 'Project basics saved with Eagle Vision.';
+      if (small) small.textContent = 'You can continue the full intake now, or return later and finish from this device.';
+    } else {
+      if (strong) strong.textContent = 'Your project basics are saved as a lead once this section is complete.';
+      if (small) small.textContent = 'If you do not finish the full intake today, Eagle Vision can still follow up about the website or app you started.';
+    }
+  }
+
+  async function captureLead(force = false) {
+    if (!leadReady()) return false;
+    const payload = leadPayload();
+    const fingerprint = leadFingerprint(payload);
+    let lastFingerprint = '';
+    try { lastFingerprint = localStorage.getItem(LEAD_FINGERPRINT_KEY) || ''; } catch (_) {}
+    if (!force && fingerprint === lastFingerprint) {
+      setLeadCaptureState(true);
+      return true;
+    }
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams(payload).toString()
+      });
+      if (!response.ok) throw new Error(`Lead capture failed with status ${response.status}`);
+      try {
+        localStorage.setItem(LEAD_FINGERPRINT_KEY, fingerprint);
+        localStorage.setItem(LEAD_ID_KEY, payload.lead_capture_id);
+      } catch (_) {}
+      setLeadCaptureState(true);
+      saveStatus.textContent = 'Project basics saved with Eagle Vision';
+      return true;
+    } catch (_) {
+      saveStatus.textContent = 'Draft saved on this device';
+      return false;
+    }
+  }
+
+  function queueLeadCapture() {
+    clearTimeout(leadCaptureTimer);
+    if (currentStep !== 1 || !leadReady()) {
+      setLeadCaptureState(false);
+      return;
+    }
+    leadCaptureTimer = setTimeout(() => { captureLead(false); }, 900);
+  }
 
   function setConditional(id, show) {
     const el = $(id);
@@ -475,6 +598,7 @@
       schemaVersion: '1.0.0',
       submission: {
         submissionId: `EV-${Date.now()}`,
+        leadCaptureId: getLeadCaptureId(),
         status: 'client_confirmed',
         source: val('source') || 'self_service',
         utm: {
@@ -651,8 +775,16 @@
     reviewSummaryField.value = `${data.business.legalOrPublicName} | ${packageLabel(data.package.product)} | ${industryLabel(data.business.industry)} | Goal: ${actionLabel(data.goals.primaryAction)} | Pages: ${data.pages.selected.map(labelForPage).join(', ')} | Capabilities: ${data.capabilities.map(c => c.capabilityId).join(', ')}`;
   }
 
-  nextBtn.addEventListener('click', () => {
+  nextBtn.addEventListener('click', async () => {
     if (!validateStep(currentStep)) return;
+    if (currentStep === 1) {
+      nextBtn.disabled = true;
+      const originalText = nextBtn.textContent;
+      nextBtn.textContent = 'Saving basics...';
+      await captureLead(false);
+      nextBtn.textContent = originalText;
+      nextBtn.disabled = false;
+    }
     showStep(currentStep + 1);
   });
 
@@ -672,6 +804,7 @@
     }
     syncConditionals();
     queueSave();
+    queueLeadCapture();
   });
 
   form.addEventListener('change', (event) => {
@@ -679,6 +812,7 @@
     if (event.target.id === 'industry') renderPages(false);
     syncConditionals();
     queueSave();
+    queueLeadCapture();
   });
 
   addMediaBtn.addEventListener('click', revealMediaRows);
@@ -694,6 +828,7 @@
     submitBtn.textContent = 'Submitting...';
   });
 
+  getLeadCaptureId();
   restoreDraft();
   const savedPages = val('pages_selected');
   applyQueryParams();
@@ -704,4 +839,5 @@
   ensureMediaRowsFromSaved();
   showStep(currentStep);
   saveDraft();
+  queueLeadCapture();
 })();
