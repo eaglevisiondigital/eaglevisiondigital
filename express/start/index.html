@@ -21,6 +21,8 @@
 <form name="express-lead-capture" method="POST" data-netlify="true" data-netlify-honeypot="lead-bot-field" hidden aria-hidden="true">
   <input type="hidden" name="form-name" value="express-lead-capture">
   <input type="text" name="lead-bot-field" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="subject" value="New Eagle Vision Express Lead (%{submissionId})">
+  <input type="hidden" name="email">
   <input type="hidden" name="lead_capture_id">
   <input type="hidden" name="lead_stage">
   <input type="hidden" name="lead_captured_at">
@@ -65,6 +67,8 @@
     <form id="expressIntakeForm" class="ex-form-card" name="express-intake" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/express/thank-you/">
       <input type="hidden" name="form-name" value="express-intake">
       <p hidden aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="subject" data-remove-prefix value="Completed Eagle Vision Express Intake (%{submissionId})">
+      <input type="hidden" name="email" id="notification_email">
       <input type="hidden" name="source" id="source" value="self_service">
       <input type="hidden" name="utm_source" id="utm_source">
       <input type="hidden" name="utm_medium" id="utm_medium">
@@ -158,7 +162,11 @@
         <div class="ex-section">
           <div class="ex-section-head"><div><h3>Existing source material</h3><p>If you already have a website, brochure, menu, bulletin, service sheet or brand guide, give us something to work from instead of retyping everything.</p></div><span class="ex-optional">Optional</span></div>
           <div class="ex-fields">
-            <div class="ex-field full"><label for="source_files">Upload PDFs, menus, brochures or source documents</label><input id="source_files" name="source_files" type="file" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp"><span class="ex-help">We can use supplied source material to prefill and organize your build. Important imported facts still require confirmation before publication.</span></div>
+            <div class="ex-field full"><label>Upload PDFs, menus, brochures or source documents</label><div class="ex-source-upload-grid">
+              <input id="source_file_1" name="source_file_1" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp">
+              <input id="source_file_2" name="source_file_2" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp">
+              <input id="source_file_3" name="source_file_3" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.webp">
+            </div><span class="ex-help">Up to 3 source files. Keep the combined files in this intake under 7 MB. Larger asset packages can be supplied separately after submission. Important imported facts still require confirmation before publication.</span></div>
           </div>
         </div>
 
