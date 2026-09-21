@@ -80,6 +80,7 @@
   const lines = (text) => (text || '').split(/\n+/).map(s => s.trim()).filter(Boolean);
   const csv = (text) => (text || '').split(/[,\n]+/).map(s => s.trim()).filter(Boolean);
   const visible = (el) => !!(el && el.offsetParent !== null);
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#039;'}[ch]));
 
   function setConditional(id, show) {
     const el = $(id);
@@ -162,6 +163,14 @@
       updatePageCount();
       queueSave();
     }));
+    updatePageCount();
+  }
+
+  function applySavedPageSelection(savedValue) {
+    if (!savedValue || !pageChoices) return;
+    const ids = savedValue.split(',').map(v => v.trim()).filter(Boolean);
+    if (!ids.length) return;
+    pageChoices.querySelectorAll('input[type=\"checkbox\"]').forEach(input => { input.checked = ids.includes(input.value); });
     updatePageCount();
   }
 
@@ -382,10 +391,27 @@
     return selected.map(id => ({ capabilityId: id, needed: true, priority: 'must_have', notes: null }));
   }
 
+  function normalizedRestaurantNeeds() {
+    const raw = csv(val('restaurant_needs')).map(v => v.toLowerCase());
+    const out = [];
+    const add = (v) => { if (!out.includes(v)) out.push(v); };
+    raw.forEach(item => {
+      if (item.includes('order')) add('online_ordering');
+      else if (item.includes('menu')) add('menu');
+      else if (item.includes('payment')) add('payments');
+      else if (item.includes('loyal') || item.includes('reward')) add('loyalty');
+      else if (item.includes('reserv')) add('reservations');
+      else if (item.includes('customer') || item.includes('crm')) add('customer_data');
+      else if (item.includes('deliver')) add('delivery');
+      else add('other');
+    });
+    return out;
+  }
+
   function integrationsData() {
     const list = [];
     if (industryValue() === 'restaurant') {
-      if (val('pos_provider')) list.push({ category:'pos', provider:val('pos_provider'), keepExisting:val('keep_existing_pos') !== 'no', integrationNeeds:csv(val('restaurant_needs')), publicUrl:null, notes:null });
+      if (val('pos_provider')) list.push({ category:'pos', provider:val('pos_provider'), keepExisting:val('keep_existing_pos') !== 'no', integrationNeeds:normalizedRestaurantNeeds(), publicUrl:null, notes:null });
       if (val('ordering_provider')) list.push({ category:'ordering', provider:val('ordering_provider'), keepExisting:true, integrationNeeds:['online_ordering'], publicUrl:null, notes:null });
     }
     if (industryValue() === 'church_ministry' && val('giving_url')) {
@@ -427,7 +453,7 @@
         needsNewPosRecommendation: val('has_pos') === 'no',
         reservationProvider: null,
         menuSource: val('menu_source') || 'unknown',
-        orderingIntegrationNeeds: csv(val('restaurant_needs'))
+        orderingIntegrationNeeds: normalizedRestaurantNeeds()
       } : null
     };
   }
@@ -663,8 +689,10 @@
   });
 
   restoreDraft();
+  const savedPages = val('pages_selected');
   applyQueryParams();
   renderPages(false);
+  applySavedPageSelection(savedPages);
   syncConditionals();
   enforceDescriptorLimit();
   ensureMediaRowsFromSaved();
