@@ -1,0 +1,81 @@
+{
+  "version": "1.0.0",
+  "ruleFormat": "when all/any predicates match, apply show/require/default/derive/review actions",
+  "rules": [
+    {
+      "id": "industry_local_service",
+      "when": {"all": [{"path": "business.industry", "op": "eq", "value": "local_service"}]},
+      "then": {"show": ["industryData.localService"], "default": {"pages.selected": ["home", "services", "about", "reviews_projects", "contact_quote"]}}
+    },
+    {
+      "id": "industry_church",
+      "when": {"all": [{"path": "business.industry", "op": "eq", "value": "church_ministry"}]},
+      "then": {"show": ["industryData.churchMinistry"], "default": {"pages.selected": ["home", "new_here", "about_leadership_beliefs", "watch_messages", "connect_events"], "contentPolicy.beliefs": "exact"}}
+    },
+    {
+      "id": "industry_restaurant",
+      "when": {"all": [{"path": "business.industry", "op": "eq", "value": "restaurant"}]},
+      "then": {"show": ["industryData.restaurant"], "default": {"pages.selected": ["home", "menu", "order_online", "our_story", "visit_contact"]}}
+    },
+    {
+      "id": "restaurant_existing_pos",
+      "when": {"all": [{"path": "industryData.restaurant.hasPos", "op": "eq", "value": true}]},
+      "then": {"show": ["industryData.restaurant.posProvider", "industryData.restaurant.keepExistingPos", "industryData.restaurant.orderingIntegrationNeeds"], "require": ["industryData.restaurant.posProvider", "industryData.restaurant.keepExistingPos"]}
+    },
+    {
+      "id": "restaurant_no_pos",
+      "when": {"all": [{"path": "industryData.restaurant.hasPos", "op": "eq", "value": false}]},
+      "then": {"show": ["industryData.restaurant.needsNewPosRecommendation"]}
+    },
+    {
+      "id": "website_only_hide_app",
+      "when": {"all": [{"path": "package.product", "op": "eq", "value": "website"}]},
+      "then": {"hide": ["app"], "default": {"package.appTier": "not_applicable"}}
+    },
+    {
+      "id": "app_requested",
+      "when": {"any": [{"path": "package.product", "op": "eq", "value": "app"}, {"path": "package.product", "op": "eq", "value": "website_app"}]},
+      "then": {"show": ["app"], "require": ["app.experiencePreference", "app.requiresLogin"]}
+    },
+    {
+      "id": "app_login_groups",
+      "when": {"all": [{"path": "app.requiresLogin", "op": "eq", "value": true}]},
+      "then": {"show": ["app.accessGroups"], "review": ["capability.member_only_content", "capability.user_provisioning", "capability.true_sso"]}
+    },
+    {
+      "id": "primary_goal_order",
+      "when": {"all": [{"path": "goals.primaryAction", "op": "eq", "value": "order"}]},
+      "then": {"derive": [{"path": "capabilities.online_ordering", "value": true}]}
+    },
+    {
+      "id": "primary_goal_book",
+      "when": {"all": [{"path": "goals.primaryAction", "op": "eq", "value": "book"}]},
+      "then": {"derive": [{"path": "capabilities.booking", "value": true}]}
+    },
+    {
+      "id": "primary_goal_donate",
+      "when": {"all": [{"path": "goals.primaryAction", "op": "eq", "value": "donate"}]},
+      "then": {"derive": [{"path": "capabilities.giving", "value": true}]}
+    },
+    {
+      "id": "content_rights_block",
+      "when": {"any": [{"path": "permissions.contentRightsConfirmed", "op": "eq", "value": false}, {"path": "media[*].rightsConfirmed", "op": "contains", "value": false}]},
+      "then": {"block": ["accepted_for_build"], "review": ["rights_clearance"]}
+    },
+    {
+      "id": "unverified_sensitive_claim",
+      "when": {"any": [{"path": "goals.approvedProofPoints[*].verified", "op": "contains", "value": false}]},
+      "then": {"review": ["claim_verification"], "blockPublicationOf": ["unverified_claims"]}
+    },
+    {
+      "id": "more_than_five_marketing_pages",
+      "when": {"all": [{"path": "pages.selected", "op": "marketing_count_gt", "value": 5}]},
+      "then": {"review": ["page_add_on_scope"]}
+    },
+    {
+      "id": "existing_site_prefill",
+      "when": {"all": [{"path": "business.currentWebsiteUrl", "op": "not_empty"}]},
+      "then": {"offerAction": ["extract_and_prefill_then_confirm"]}
+    }
+  ]
+}
