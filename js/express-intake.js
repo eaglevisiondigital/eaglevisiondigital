@@ -255,6 +255,11 @@
     setConditional('keepPosWrap', val('has_pos') === 'yes');
     setConditional('accessGroupsWrap', hasApp() && val('app_requires_login') === 'yes');
 
+    const publicContactDifferent = val('public_contact_same') === 'no';
+    setConditional('publicContactFields', publicContactDifferent);
+    if ($('public_phone')) $('public_phone').required = publicContactDifferent;
+    if ($('public_email')) $('public_email').required = publicContactDifferent;
+
     if (hasApp()) {
       const action = checkedValue('primary_action');
       if (action === 'order') $('capOrdering').checked = true;
@@ -652,22 +657,27 @@
           email: val('contact_email'),
           phone: val('contact_phone')
         },
+        publicContact: {
+          useLeadContact: val('public_contact_same') === 'yes',
+          email: val('public_contact_same') === 'yes' ? val('contact_email') : (val('public_email') || null),
+          phone: val('public_contact_same') === 'yes' ? val('contact_phone') : (val('public_phone') || null)
+        },
         currentWebsiteUrl: val('current_website') || null,
         currentApp: null,
         locations: [{
           name: 'Primary Location',
-          street: null,
+          street: val('public_street') || null,
           city: val('business_city'),
           region: val('business_region'),
           postalCode: null,
           country: val('business_country') || 'US',
           public: true,
-          phone: val('contact_phone') || null,
-          email: val('contact_email') || null,
-          hours: null
+          phone: val('public_contact_same') === 'yes' ? val('contact_phone') : (val('public_phone') || null),
+          email: val('public_contact_same') === 'yes' ? val('contact_email') : (val('public_email') || null),
+          hours: val('public_hours') || null
         }],
         serviceAreas: csv(val('service_areas')),
-        socialLinks: []
+        socialLinks: lines(val('social_links')).filter(v => /^https?:\/\//i.test(v))
       },
       goals: {
         primaryAction: checkedValue('primary_action') || 'contact',
@@ -823,6 +833,9 @@
     if (data.goals.approvedProofPoints.some(point => !point.verified)) flags.push('One or more proof claims require confirmation before publication.');
     if (data.business.industry === 'church_ministry' && !data.industryData.churchMinistry?.beliefsText) flags.push('No beliefs / statement of faith text was supplied.');
     if (data.business.industry === 'restaurant' && data.industryData.restaurant?.hasOnlineOrdering && !data.industryData.restaurant?.orderingProvider) flags.push('Existing online ordering was indicated, but the provider was not supplied.');
+    if (['restaurant','church_ministry'].includes(data.business.industry) && !data.business.locations?.[0]?.street) flags.push('No public street address / physical location was supplied. Confirm before publishing visit or directions content.');
+    if (data.business.industry === 'restaurant' && !data.business.locations?.[0]?.hours) flags.push('Restaurant hours were not supplied. Confirm before publishing hours.');
+    if (!data.business.publicContact?.phone && !data.business.publicContact?.email) flags.push('No public phone or email is available for the website. Confirm before publishing contact details.');
     return flags.length ? bulletLines(flags) : '- No obvious intake gaps requiring pre-build clarification.';
   }
 
@@ -872,6 +885,7 @@ For an app component:
 - Express website tier: ${titleCaseToken(data.package.websiteTier)}
 - Express app tier: ${titleCaseToken(data.package.appTier)}
 - Industry: ${industryLabel(data.business.industry)}
+- Industry detail: ${briefValue(data.business.industryOther)}
 - Public business / organization name: ${briefValue(data.business.legalOrPublicName)}
 - One-line business description: ${briefValue(data.business.oneLineDescription)}
 - Current website: ${briefValue(data.business.currentWebsiteUrl)}
@@ -882,11 +896,17 @@ For an app component:
 - Email: ${briefValue(data.business.primaryContact.email)}
 - Phone: ${briefValue(data.business.primaryContact.phone)}
 
-## LOCATION
+## PUBLIC CONTACT / LOCATION
+- Use Step 1 contact publicly: ${data.business.publicContact?.useLeadContact ? 'Yes' : 'No'}
+- Public phone: ${briefValue(data.business.publicContact?.phone)}
+- Public email: ${briefValue(data.business.publicContact?.email)}
+- Street / public location: ${briefValue(location.street)}
 - City: ${briefValue(location.city)}
 - State / Province: ${briefValue(location.region)}
 - Country: ${briefValue(location.country)}
+- Business / office hours: ${briefValue(location.hours)}
 - Service areas: ${briefValue(data.business.serviceAreas)}
+- Social links: ${briefValue(data.business.socialLinks)}
 
 ## PRIMARY BUSINESS GOAL
 - Primary CTA: ${actionLabel(data.goals.primaryAction)}
