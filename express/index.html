@@ -99,7 +99,24 @@
     .ex-industry small{color:#66809C;font-size:.68rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.ex-industry h3{font-size:1.4rem}.ex-industry p{font-size:.9rem}.ex-industry .ex-list li{font-size:.84rem}
 
     .ex-ai-shell{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(34px,5vw,72px);align-items:center;padding:clamp(36px,5vw,64px);border:1px solid var(--line-blue);border-radius:32px;background:radial-gradient(700px circle at 15% 0%,rgba(22,140,255,.16),transparent 53%),linear-gradient(145deg,#071426,#030914 68%,#061321);box-shadow:var(--glow)}
-    .ex-ai-points{display:grid;grid-template-columns:1fr 1fr;gap:13px}.ex-ai-point{padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:17px;background:rgba(1,5,12,.52)}.ex-ai-point b{display:block;color:#E7F5FF;font-size:.9rem}.ex-ai-point span{display:block;color:#788CA5;font-size:.76rem;margin-top:4px}
+    .ex-ai-control{position:relative}
+    .ex-ai-control-label{display:inline-flex;align-items:center;gap:9px;margin:0 0 14px;padding:8px 11px;border:1px solid rgba(92,183,255,.24);border-radius:999px;background:rgba(22,140,255,.075);color:#8DCCFF;font-size:.64rem;font-weight:900;letter-spacing:.12em}
+    .ex-ai-control-label i{width:7px;height:7px;border-radius:50%;background:#48B5FF;box-shadow:0 0 14px rgba(72,181,255,.8)}
+    .ex-ai-points{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .ex-ai-points::before,.ex-ai-points::after{content:"";position:absolute;pointer-events:none;z-index:0;background:linear-gradient(90deg,transparent,rgba(65,167,245,.20),transparent)}
+    .ex-ai-points::before{left:7%;right:7%;height:1px;top:50%}
+    .ex-ai-points::after{top:8%;bottom:8%;width:1px;left:50%;background:linear-gradient(180deg,transparent,rgba(65,167,245,.18),transparent)}
+    .ex-ai-point{position:relative;z-index:1;min-height:185px;padding:20px 20px 18px;border:1px solid rgba(105,184,245,.16);border-radius:19px;background:linear-gradient(145deg,rgba(3,12,23,.94),rgba(2,8,16,.84));box-shadow:0 16px 36px rgba(0,0,0,.16);overflow:hidden;transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease)}
+    .ex-ai-point::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,transparent,#168CFF,transparent);opacity:.72}
+    .ex-ai-point::after{content:"";position:absolute;right:-30px;top:-38px;width:105px;height:105px;border-radius:50%;background:radial-gradient(circle,rgba(22,140,255,.12),transparent 68%)}
+    .ex-ai-point:hover{transform:translateY(-3px);border-color:rgba(92,185,255,.34);box-shadow:0 22px 46px rgba(0,0,0,.24),0 0 30px rgba(22,140,255,.07)}
+    .ex-ai-point-top{display:flex;align-items:center;gap:11px;margin-bottom:15px}
+    .ex-ai-point-top small{color:#67B7F5;font-size:.59rem;font-weight:900;letter-spacing:.1em}
+    .ex-ai-icon{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;background:linear-gradient(145deg,rgba(22,140,255,.16),rgba(22,140,255,.06));border:1px solid rgba(79,173,246,.28);box-shadow:inset 0 0 18px rgba(22,140,255,.06)}
+    .ex-ai-icon svg{width:20px;height:20px;fill:none;stroke:#70C4FF;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .ex-ai-point b{display:block;color:#F1F8FE;font-size:1.02rem;letter-spacing:-.02em}
+    .ex-ai-point span{display:block;color:#8EA0B6;font-size:.79rem;line-height:1.5;margin-top:5px}
+    .ex-ai-point em{display:block;margin-top:13px;padding-top:11px;border-top:1px solid rgba(255,255,255,.07);color:#6FB8EE;font-size:.66rem;font-style:normal;font-weight:800}
 
     .ex-guarantee{position:relative;overflow:hidden;border:1px solid rgba(22,140,255,.42);border-radius:30px;padding:clamp(36px,5vw,66px);background:radial-gradient(650px circle at 90% 10%,rgba(22,140,255,.18),transparent 56%),#04101E;box-shadow:0 26px 80px rgba(0,0,0,.34)}
     .ex-guarantee-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(30px,5vw,64px);align-items:center}
@@ -157,7 +174,7 @@
     }
     @media(max-width:760px){
       .ex-hero{padding-top:54px}.ex-hero h1{font-size:clamp(3rem,13vw,4.4rem)}
-      .ex-timing-grid,.ex-ai-points,.ex-compare{grid-template-columns:1fr}
+      .ex-timing-grid,.ex-ai-points,.ex-compare{grid-template-columns:1fr}\n      .ex-ai-points::before,.ex-ai-points::after{display:none}\n      .ex-ai-point{min-height:auto}
       .ex-compare article+article{border-left:0;border-top:1px solid var(--line)}
       .ex-trust-grid,.ex-value-grid,.ex-product-grid,.ex-industry-grid,.ex-process,.ex-mini-industry-grid{grid-template-columns:1fr}
       .ex-product.best{grid-column:auto}.ex-faq .faq-heading{position:static}
@@ -461,11 +478,46 @@
       <p>We do use advanced AI-assisted production where it helps. That includes organizing intake data, drafting professional copy from your supplied facts, assembling production briefs and accelerating repetitive production tasks.</p>
       <p>But AI does not get to invent your credentials, guarantees, beliefs, years of experience, pricing, medical claims or other facts. Eagle Vision controls the rules and reviews the result before you see it.</p>
     </div>
-    <div class="ex-ai-points">
-      <div class="ex-ai-point"><b>Verified Facts</b><span>Client-supplied information stays the factual source.</span></div>
-      <div class="ex-ai-point"><b>Professional Writing</b><span>Exact, light polish or professional rewrite controls.</span></div>
-      <div class="ex-ai-point"><b>Human QA</b><span>Eagle Vision reviews the build before client approval.</span></div>
-      <div class="ex-ai-point"><b>Version Approval</b><span>Launch only after the correct version is approved.</span></div>
+    <div class="ex-ai-control">
+      <div class="ex-ai-control-label"><i></i><span>EAGLE VISION CONTROL LAYER</span></div>
+      <div class="ex-ai-points">
+        <div class="ex-ai-point">
+          <div class="ex-ai-point-top">
+            <div class="ex-ai-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.7 2.7 8 7 10 4.3-2 7-5.3 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-5"/></svg></div>
+            <small>01 - SOURCE CONTROL</small>
+          </div>
+          <b>Verified Facts</b>
+          <span>Client-supplied information stays the factual source.</span>
+          <em>Facts stay locked to your approved information.</em>
+        </div>
+        <div class="ex-ai-point">
+          <div class="ex-ai-point-top">
+            <div class="ex-ai-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 16 16.5 5.5a2.1 2.1 0 0 1 3 3L9 19H6v-3Z"/><path d="m14.5 7.5 3 3"/></svg></div>
+            <small>02 - CONTENT CONTROL</small>
+          </div>
+          <b>Professional Writing</b>
+          <span>Exact, light polish or professional rewrite controls.</span>
+          <em>You decide how much we refine your wording.</em>
+        </div>
+        <div class="ex-ai-point">
+          <div class="ex-ai-point-top">
+            <div class="ex-ai-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12.5 9 17l11-11"/><path d="M20 12v7H4V5h10"/></svg></div>
+            <small>03 - QUALITY CONTROL</small>
+          </div>
+          <b>Human QA</b>
+          <span>Eagle Vision reviews the build before client approval.</span>
+          <em>Automation accelerates. Human judgment approves.</em>
+        </div>
+        <div class="ex-ai-point">
+          <div class="ex-ai-point-top">
+            <div class="ex-ai-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 4h9l3 3v13H6z"/><path d="M14 4v4h4"/><path d="M9 13h6M9 16h4"/></svg></div>
+            <small>04 - RELEASE CONTROL</small>
+          </div>
+          <b>Version Approval</b>
+          <span>Launch only after the correct version is approved.</span>
+          <em>The approved version is the version that goes live.</em>
+        </div>
+      </div>
     </div>
   </div>
 </section>
