@@ -279,3 +279,15 @@ body.express-intake-page{background:#01030B;color:#fff}
   box-shadow:0 0 12px rgba(59,193,123,.35)
 }
 .ex-lead-note.saved strong{color:#236640}
+
+.ex-source-upload-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px
+}
+.ex-source-upload-grid input[type="file"]{
+  min-width:0
+}
+@media(max-width:760px){
+  .ex-source-upload-grid{grid-template-columns:1fr}
+}
