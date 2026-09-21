@@ -109,6 +109,8 @@
   function leadPayload() {
     return {
       'form-name': 'express-lead-capture',
+      subject: 'New Eagle Vision Express Lead',
+      email: val('contact_email'),
       lead_capture_id: getLeadCaptureId(),
       lead_stage: 'step_1_basics',
       lead_captured_at: new Date().toISOString(),
@@ -511,7 +513,9 @@
 
   function sourceMaterialFiles() {
     return [
-      ...fileDescriptor('source_files', 'source_material'),
+      ...fileDescriptor('source_file_1', 'source_material'),
+      ...fileDescriptor('source_file_2', 'source_material'),
+      ...fileDescriptor('source_file_3', 'source_material'),
       ...fileDescriptor('logo_upload', 'logo'),
       ...fileDescriptor('brand_guide_upload', 'brand_guide_or_alternate_logo')
     ];
@@ -1042,8 +1046,27 @@ Before final launch:
     reviewSummaryField.value = `${data.business.legalOrPublicName} | ${packageLabel(data.package.product)} | ${industryLabel(data.business.industry)} | Goal: ${actionLabel(data.goals.primaryAction)} | Pages: ${pageLabels.join(', ')} | App: ${capabilities.join(', ')}`;
   }
 
+  function totalUploadBytes() {
+    let total = 0;
+    form.querySelectorAll('input[type="file"]').forEach(input => {
+      [...(input.files || [])].forEach(file => { total += file.size || 0; });
+    });
+    return total;
+  }
+
+  function validateUploadBudget() {
+    const maxBytes = 7 * 1024 * 1024;
+    const total = totalUploadBytes();
+    if (total <= maxBytes) return true;
+    submitStatus.textContent = `Your selected uploads total ${(total / 1024 / 1024).toFixed(1)} MB. Please reduce them to 7 MB or less for this intake, then submit again. Larger asset packages can be supplied separately.`;
+    submitStatus.classList.add('show');
+    submitStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+
   function prepareSubmission() {
     $('submission_timestamp').value = new Date().toISOString();
+    if ($('notification_email')) $('notification_email').value = val('contact_email');
     updatePageCount();
     updateCapabilities();
     const data = buildIntakeData();
@@ -1096,6 +1119,10 @@ Before final launch:
 
   form.addEventListener('submit', (event) => {
     if (!validateStep(5)) {
+      event.preventDefault();
+      return;
+    }
+    if (!validateUploadBudget()) {
       event.preventDefault();
       return;
     }
