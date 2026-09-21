@@ -80,7 +80,13 @@
   const lines = (text) => (text || '').split(/\n+/).map(s => s.trim()).filter(Boolean);
   const csv = (text) => (text || '').split(/[,\n]+/).map(s => s.trim()).filter(Boolean);
   const visible = (el) => !!(el && el.offsetParent !== null);
-  const escapeHtml = (value) => String(value ?? '').replace(/[&<>\"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#039;'}[ch]));
+  const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, ch => {
+    if (ch === '&') return '&amp;';
+    if (ch === '<') return '&lt;';
+    if (ch === '>') return '&gt;';
+    if (ch === '"') return '&quot;';
+    return '&#039;';
+  });
 
   function setConditional(id, show) {
     const el = $(id);
