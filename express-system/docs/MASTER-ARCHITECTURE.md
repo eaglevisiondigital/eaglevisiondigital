@@ -1,4 +1,4 @@
-# Eagle Vision Express Intake – Master Architecture v1
+# Eagle Vision Express Intake - Master Architecture v1
 
 ## 1. Product architecture
 
@@ -24,25 +24,42 @@ Global Propel is the intended master identity/CRM/organization/role/membership/e
 
 ## 2. Five visible client steps
 
-### Step 1 – Your Business
-Collect package, business name, industry, contact, location, current site/app, and optionally existing-source URLs for smart extraction.
+### Step 1 - Quick Start Lead Capture
+Collect only the initial lead information Eagle Vision wants before project discovery begins:
 
-### Step 2 – What You Need
+- Product interest: Website, App, or Website + App
+- Business / organization name
+- First name
+- Last name
+- Role
+- Phone
+- Email
+- City
+- State / Province
+- Country
+- Industry
+- Industry detail only when "Other" is selected
+
+Once those required Step 1 fields are complete, create a lightweight **partial lead capture** even if the client never finishes the full intake. Use one persistent lead capture ID so a later completed intake can be matched back to the original partial lead.
+
+Do not require the business description, current website, source materials, project goals, services, differentiators, integrations, or street address before the lead is captured.
+
+### Step 2 - What You Need
 Collect one primary CTA, top offerings, audience/problem, differentiators, outcome capabilities and existing integrations. Branch aggressively so irrelevant questions never appear.
 
-### Step 3 – Your Look + Story
+### Step 3 - Your Look + Story
 Collect logo/brand assets, up to three visual descriptors, color strategy, light/dark/EV choice, about/mission/history notes, and default content-handling preference.
 
-### Step 4 – People + Photos + Pages
+### Step 4 - People + Photos + Pages
 Collect labeled media, team profiles, permissions, recommended five pages with simple swap controls, and app-specific needs only when app is purchased.
 
-### Step 5 – Review
-Render “Here is what we understand,” highlight missing/uncertain facts, show selected pages/features, then allow **Looks right – Build my site** or Edit.
+### Step 5 - Review
+Render “Here is what we understand,” highlight missing/uncertain facts, show selected pages/features, then allow **Looks right - Build my site** or Edit.
 
 Target answered questions after branching:
-- Simple: 12–16
-- Typical: 18–24
-- Complex: 25–30
+- Simple: 12-16
+- Typical: 18-24
+- Complex: 25-30
 
 The UI may have many underlying fields without feeling like a long questionnaire.
 
@@ -111,7 +128,7 @@ External app identity mapping must not rely only on email. Store Propel user, or
 
 ## 8. Express SLA gate
 
-The 3–24-hour website clock and 3–7-business-day app clock begin only after Eagle Vision marks the project **accepted_for_build**.
+The 3-24-hour website clock and 3-7-business-day app clock begin only after Eagle Vision marks the project **accepted_for_build**.
 
 Acceptance means required information/assets are complete or explicitly waived, rights are confirmed, sensitive claims needed for publication are verified, and the project fits standard/preapproved scope.
 
