@@ -126,3 +126,102 @@ body.express-intake-page{background:#01030B;color:#fff}
   .ex-section-head{display:block}.ex-section-head .ex-optional{display:block;margin-top:5px}
   .ex-intake-footer .inner{align-items:flex-start;flex-direction:column}
 }
+
+
+/* LIGHT FORM SURFACE - accessibility/readability polish */
+.ex-form-card{
+  background:linear-gradient(180deg,#F8FAFD 0%,#EFF4F9 100%);
+  color:#0B1727;
+  border-color:#D3DEE9;
+  box-shadow:0 34px 90px rgba(0,0,0,.28),0 0 0 1px rgba(255,255,255,.55) inset
+}
+.ex-form-top{border-bottom-color:#D8E2EC;background:rgba(255,255,255,.58)}
+.ex-form-top h2{color:#0B1727}
+.ex-form-top p{color:#64768B}
+.ex-form-top .eyebrow{color:#147BDA}
+.ex-time-pill{border-color:#B7D8F5;background:#EAF5FF;color:#126EBF}
+.ex-step-panel{color:#0B1727}
+.ex-section{border-bottom-color:#D7E1EB}
+.ex-section-head h3{color:#142338}
+.ex-section-head p{color:#677A90}
+.ex-optional{color:#7A8BA0}
+
+.ex-field label,.ex-label{color:#24364C}
+.ex-field label small,.ex-label small{color:#708399}
+.ex-field input,.ex-field select,.ex-field textarea{
+  background:#FFFFFF;
+  color:#0D1A2B;
+  border-color:#C9D6E3;
+  box-shadow:0 1px 0 rgba(255,255,255,.7) inset
+}
+.ex-field input::placeholder,.ex-field textarea::placeholder{color:#93A1B1}
+.ex-field input:focus,.ex-field select:focus,.ex-field textarea:focus{
+  background:#FFFFFF;
+  border-color:#4AA7F4;
+  box-shadow:0 0 0 3px rgba(22,140,255,.11)
+}
+.ex-help{color:#74879C}
+.ex-error{color:#C44747}
+
+.ex-choice label{
+  background:#FFFFFF;
+  border-color:#D1DCE7;
+  box-shadow:0 5px 14px rgba(23,48,76,.035)
+}
+.ex-choice label:hover{border-color:#8DC7F8;background:#F7FBFF}
+.ex-choice input:checked+label{
+  border-color:#52A9F2;
+  background:linear-gradient(145deg,#EAF5FF,#F8FCFF);
+  box-shadow:0 0 0 2px rgba(22,140,255,.055)
+}
+.ex-choice strong{color:#17263A}
+.ex-choice span{color:#687B90}
+.ex-choice .choice-mark{background:#FFFFFF;border-color:#9DAFC2}
+.ex-choice input:checked+label .choice-mark{background:#168CFF;border-color:#168CFF;box-shadow:inset 0 0 0 5px #F2F8FE}
+
+.ex-pill label{background:#FFFFFF;border-color:#D2DDE8;color:#5F7288}
+.ex-pill input:checked+label{border-color:#58A9ED;background:#EAF5FF;color:#176DAF}
+
+.ex-recommend-box{border-color:#B8D8F4;background:#EAF5FF}
+.ex-recommend-box b{color:#176DAF}
+.ex-recommend-box p{color:#5D7690}
+
+.ex-page-option label{background:#FFFFFF;border-color:#D3DEE8}
+.ex-page-option label b{color:#24364A}
+.ex-page-option label span{color:#7B8B9D}
+.ex-page-option input:checked+label{border-color:#5DACEF;background:#EEF7FF}
+.ex-page-option input:checked+label b{color:#123759}
+.ex-page-count{color:#72869C}.ex-page-count strong{color:#147BDA}
+
+.ex-file-row,.ex-person-card{background:#FFFFFF;border-color:#D3DEE8}
+.ex-add-btn{border-color:#A9D2F4;background:#EAF5FF;color:#176DAF}
+.ex-add-btn:hover{background:#DDEFFF}
+
+.ex-callout{background:#FFFFFF;border-color:#D5E0EA;color:#65798F}
+.ex-callout strong{color:#22364C}
+.ex-callout.info{border-color:#B8D8F4;background:#EAF5FF}
+.ex-callout.warn{border-color:#E8D2A7;background:#FFF8E8}
+.ex-callout.warn strong{color:#805B16}
+
+.ex-form-actions{
+  border-top-color:#D2DDE8;
+  background:linear-gradient(180deg,#F4F7FA,#EAF0F6)
+}
+.ex-btn-quiet{color:#5E7288}.ex-btn-quiet:hover{color:#17263A}
+
+.ex-review-card,.ex-consent{
+  background:#FFFFFF;
+  border-color:#D2DDE8;
+  box-shadow:0 6px 18px rgba(23,48,76,.035)
+}
+.ex-review-card small{color:#647D96}
+.ex-review-card strong{color:#15263A}
+.ex-review-card p{color:#697C91}
+.ex-review-tags span{border-color:#B8D8F4;background:#EAF5FF;color:#176DAF}
+.ex-consent{color:#53687F}
+.ex-submit-status{background:#EAF5FF;border-color:#B8D8F4;color:#176DAF}
+.ex-required-note{color:#708298}
+
+/* Slightly tighter rhythm so the form feels efficient rather than cavernous. */
+.ex-step-panel{padding-top:27px}
+.ex-section{padding-bottom:24px;margin-bottom:24px}
