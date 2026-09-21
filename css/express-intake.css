@@ -225,3 +225,15 @@ body.express-intake-page{background:#01030B;color:#fff}
 /* Slightly tighter rhythm so the form feels efficient rather than cavernous. */
 .ex-step-panel{padding-top:27px}
 .ex-section{padding-bottom:24px;margin-bottom:24px}
+
+.ex-form-actions .btn-secondary{
+  background:#FFFFFF;
+  border-color:#C9D6E3;
+  color:#23384F;
+  box-shadow:0 5px 16px rgba(23,48,76,.045)
+}
+.ex-form-actions .btn-secondary:hover{
+  background:#F7FBFF;
+  border-color:#9CC8EC;
+  color:#0F2D48
+}
