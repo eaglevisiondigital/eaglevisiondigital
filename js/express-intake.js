@@ -1058,7 +1058,7 @@ Before final launch:
     const maxBytes = 7 * 1024 * 1024;
     const total = totalUploadBytes();
     if (total <= maxBytes) return true;
-    submitStatus.textContent = `Your selected uploads total ${(total / 1024 / 1024).toFixed(1)} MB. Please reduce them to 7 MB or less for this intake, then submit again. Larger asset packages can be supplied separately.`;
+    submitStatus.textContent = `Your selected uploads total ${(total / 1024 / 1024).toFixed(1)} MB. Please keep this intake at 7 MB or less. For larger files, email design@eaglevision.digital with the subject "Express Assets - Business Name - City, State" or send a Google Drive, Dropbox, OneDrive, or similar download link with access enabled. Do not send passwords, PINs, full cardholder data, or unnecessary sensitive information.`;
     submitStatus.classList.add('show');
     submitStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return false;
