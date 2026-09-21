@@ -18,6 +18,33 @@
   </div>
 </header>
 
+<form name="express-lead-capture" method="POST" data-netlify="true" data-netlify-honeypot="lead-bot-field" hidden aria-hidden="true">
+  <input type="hidden" name="form-name" value="express-lead-capture">
+  <input type="text" name="lead-bot-field" tabindex="-1" autocomplete="off">
+  <input type="hidden" name="lead_capture_id">
+  <input type="hidden" name="lead_stage">
+  <input type="hidden" name="lead_captured_at">
+  <input type="hidden" name="package_product">
+  <input type="hidden" name="business_name">
+  <input type="hidden" name="contact_first">
+  <input type="hidden" name="contact_last">
+  <input type="hidden" name="contact_role">
+  <input type="hidden" name="contact_phone">
+  <input type="hidden" name="contact_email">
+  <input type="hidden" name="industry">
+  <input type="hidden" name="industry_other">
+  <input type="hidden" name="business_city">
+  <input type="hidden" name="business_region">
+  <input type="hidden" name="business_country">
+  <input type="hidden" name="current_website">
+  <input type="hidden" name="source">
+  <input type="hidden" name="utm_source">
+  <input type="hidden" name="utm_medium">
+  <input type="hidden" name="utm_campaign">
+  <input type="hidden" name="utm_content">
+  <input type="hidden" name="referrer">
+</form>
+
 <main class="ex-intake-shell">
   <div class="container ex-intake-grid">
     <aside class="ex-sidebar" aria-label="Express intake progress">
@@ -46,6 +73,7 @@
       <input type="hidden" name="utm_content" id="utm_content">
       <input type="hidden" name="referrer" id="referrer">
       <input type="hidden" name="submission_timestamp" id="submission_timestamp">
+      <input type="hidden" name="lead_capture_id" id="lead_capture_id">
       <input type="hidden" name="pages_selected" id="pages_selected">
       <input type="hidden" name="capabilities_selected" id="capabilities_selected">
       <input type="hidden" name="intake_json" id="intake_json">
@@ -80,6 +108,9 @@
             <div class="ex-field"><label for="contact_role">Your Role</label><input id="contact_role" name="contact_role" placeholder="Owner, Pastor, Manager, Director..."></div>
             <div class="ex-field"><label for="contact_phone">Phone *</label><input id="contact_phone" name="contact_phone" type="tel" autocomplete="tel" required></div>
             <div class="ex-field"><label for="contact_email">Email *</label><input id="contact_email" name="contact_email" type="email" autocomplete="email" required></div>
+            <div class="ex-field"><label for="business_city">Primary City *</label><input id="business_city" name="business_city" autocomplete="address-level2" required></div>
+            <div class="ex-field"><label for="business_region">State / Province *</label><input id="business_region" name="business_region" autocomplete="address-level1" placeholder="FL" required></div>
+            <div class="ex-field"><label for="business_country">Country *</label><select id="business_country" name="business_country" required><option value="US">United States</option><option value="CA">Canada</option><option value="OTHER">Other</option></select></div>
             <div class="ex-field"><label for="industry">Industry *</label><select id="industry" name="industry" required>
               <option value="">Choose one</option>
               <option value="local_service">Local Service Business</option>
@@ -97,10 +128,11 @@
             </select></div>
             <div class="ex-field ex-conditional" id="industryOtherWrap"><label for="industry_other">Industry / Business Type</label><input id="industry_other" name="industry_other" placeholder="Tell us what kind of organization this is."></div>
             <div class="ex-field full"><label for="one_line_description">What do you do? <small>One sentence is enough.</small></label><input id="one_line_description" name="one_line_description" placeholder="Example: Residential HVAC repair and replacement across the Emerald Coast."></div>
-            <div class="ex-field"><label for="business_city">Primary City *</label><input id="business_city" name="business_city" autocomplete="address-level2" required></div>
-            <div class="ex-field"><label for="business_region">State / Province *</label><input id="business_region" name="business_region" autocomplete="address-level1" placeholder="FL" required></div>
-            <div class="ex-field"><label for="business_country">Country *</label><select id="business_country" name="business_country" required><option value="US">United States</option><option value="CA">Canada</option><option value="OTHER">Other</option></select></div>
             <div class="ex-field"><label for="current_website">Current Website</label><input id="current_website" name="current_website" type="url" placeholder="https://"></div>
+          </div>
+          <div class="ex-lead-note" id="leadCaptureNote">
+            <span class="ex-lead-dot"></span>
+            <div><strong>Your project basics are saved as a lead once this section is complete.</strong><small>If you do not finish the full intake today, Eagle Vision can still follow up about the website or app you started.</small></div>
           </div>
         </div>
 
