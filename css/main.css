@@ -4176,12 +4176,16 @@ linear-gradient(rgba(13,50,82,.12) 1px,transparent 1px),linear-gradient(90deg,rg
 .ma-path-store-note{
   display:block;
   margin-top:8px;
+  min-height:18px;
   color:#7A8CA0!important;
   font-size:.64rem!important;
   line-height:1.4;
   text-align:center;
   letter-spacing:0!important;
   font-weight:600!important
+}
+.ma-path-store-note--empty{
+  visibility:hidden
 }
 @media(max-width:1050px){
   .ma-express-choice-shell{grid-template-columns:1fr}
