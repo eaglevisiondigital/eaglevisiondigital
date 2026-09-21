@@ -26,6 +26,7 @@
   const capabilitiesSelectedField = document.getElementById('capabilities_selected');
   const intakeJsonField = document.getElementById('intake_json');
   const reviewSummaryField = document.getElementById('review_summary');
+  const buildBriefField = document.getElementById('eagle_vision_build_brief');
   const submitStatus = document.getElementById('submitStatus');
   const addMediaBtn = document.getElementById('addMediaBtn');
 
@@ -492,6 +493,25 @@
     }).filter(p => p.name);
   }
 
+  function fileDescriptor(inputId, category) {
+    const input = $(inputId);
+    if (!input || !input.files || !input.files.length) return [];
+    return [...input.files].map(file => ({
+      category,
+      fileName: file.name,
+      mimeType: file.type || null,
+      sizeBytes: Number.isFinite(file.size) ? file.size : null
+    }));
+  }
+
+  function sourceMaterialFiles() {
+    return [
+      ...fileDescriptor('source_files', 'source_material'),
+      ...fileDescriptor('logo_upload', 'logo'),
+      ...fileDescriptor('brand_guide_upload', 'brand_guide_or_alternate_logo')
+    ];
+  }
+
   function mediaMetadata() {
     const out = [];
     [...document.querySelectorAll('[data-media-row]')].forEach(row => {
@@ -697,6 +717,7 @@
       },
       capabilities: capabilityObjects(),
       integrations: integrationsData(),
+      sourceMaterials: sourceMaterialFiles(),
       media: mediaMetadata(),
       industryData: industryData(),
       app: hasApp() ? {
@@ -722,6 +743,239 @@
         finalApprovedVersion: null
       }
     };
+  }
+
+  function titleCaseToken(value) {
+    return String(value || '')
+      .replaceAll('_', ' ')
+      .replace(/\b\w/g, ch => ch.toUpperCase());
+  }
+
+  function briefValue(value, fallback = 'Not supplied') {
+    if (value === null || value === undefined) return fallback;
+    if (Array.isArray(value)) return value.length ? value.join(', ') : fallback;
+    const text = String(value).trim();
+    return text || fallback;
+  }
+
+  function bulletLines(items, fallback = '- Not supplied') {
+    if (!items || !items.length) return fallback;
+    return items.map(item => `- ${item}`).join('\n');
+  }
+
+  function buildIndustryBrief(data) {
+    const industry = data.business.industry;
+    if (industry === 'local_service' && data.industryData.localService) {
+      const d = data.industryData.localService;
+      return [
+        `- Service areas: ${briefValue(data.business.serviceAreas)}`,
+        `- Emergency / same-day service: ${d.emergencyService === null ? 'Not supplied' : d.emergencyService ? 'Yes' : 'No'}`,
+        `- Free estimates: ${d.freeEstimates === null ? 'Not supplied' : d.freeEstimates ? 'Yes' : 'No'}`,
+        `- Financing available: ${d.financingAvailable === null ? 'Not supplied' : d.financingAvailable ? 'Yes' : 'No'}`,
+        `- Licenses / credentials supplied: ${briefValue(d.licensesOrCredentials)}`
+      ].join('\n');
+    }
+    if (industry === 'church_ministry' && data.industryData.churchMinistry) {
+      const d = data.industryData.churchMinistry;
+      return [
+        `- Service / gathering times: ${briefValue(d.serviceTimes)}`,
+        `- Lead pastor / leader: ${briefValue(d.pastorOrLeader)}`,
+        `- Ministries: ${briefValue(d.ministries)}`,
+        `- Giving URL: ${briefValue(d.givingUrl)}`,
+        `- Beliefs supplied: ${d.beliefsText ? 'Yes - preserve according to the content handling rule below' : 'No'}`
+      ].join('\n');
+    }
+    if (industry === 'restaurant' && data.industryData.restaurant) {
+      const d = data.industryData.restaurant;
+      return [
+        `- Cuisine / concept: ${briefValue(d.cuisine)}`,
+        `- Existing online ordering: ${d.hasOnlineOrdering === null ? 'Not supplied' : d.hasOnlineOrdering ? 'Yes' : 'No'}`,
+        `- Ordering provider: ${briefValue(d.orderingProvider)}`,
+        `- Existing POS: ${d.hasPos === null ? 'Not supplied' : d.hasPos ? 'Yes' : 'No'}`,
+        `- POS provider: ${briefValue(d.posProvider)}`,
+        `- Keep existing POS: ${d.keepExistingPos === null ? 'Not supplied' : d.keepExistingPos ? 'Yes' : 'No'}`,
+        `- Menu source: ${titleCaseToken(d.menuSource)}`,
+        `- Integration needs: ${briefValue(d.orderingIntegrationNeeds.map(titleCaseToken))}`
+      ].join('\n');
+    }
+    return '- No additional industry-specific answers were required for this intake.';
+  }
+
+  function buildAssetBrief(data) {
+    const sourceFiles = data.sourceMaterials || [];
+    const labeledMedia = data.media || [];
+    const sourceBlock = sourceFiles.length
+      ? sourceFiles.map(file => `- ${titleCaseToken(file.category)}: ${file.fileName}`).join('\n')
+      : '- No source documents, logo files, or brand guide files were uploaded in the intake.';
+    const mediaBlock = labeledMedia.length
+      ? labeledMedia.map(asset => `- ${titleCaseToken(asset.label)}: ${briefValue(asset.subject, asset.uploadToken || 'Image')} | placement: ${titleCaseToken(asset.placement)} | file: ${briefValue(asset.uploadToken)}`).join('\n')
+      : '- No labeled project photos were uploaded in the intake.';
+    return `SOURCE / BRAND FILES\n${sourceBlock}\n\nLABELED PHOTOS / MEDIA\n${mediaBlock}`;
+  }
+
+  function buildReviewFlags(data) {
+    const flags = [];
+    if (!data.business.oneLineDescription) flags.push('Business one-line description was not supplied.');
+    if (!data.contentPolicy.aboutNotes && !data.business.currentWebsiteUrl && !(data.sourceMaterials || []).length) {
+      flags.push('Limited source copy was supplied. Build from verified offerings, goals, and differentiators, and flag any factual gaps rather than inventing them.');
+    }
+    if (!(data.brand.visualDescriptors || []).length) flags.push('No visual descriptors selected. Eagle Vision should choose a premium direction.');
+    if (data.goals.approvedProofPoints.some(point => !point.verified)) flags.push('One or more proof claims require confirmation before publication.');
+    if (data.business.industry === 'church_ministry' && !data.industryData.churchMinistry?.beliefsText) flags.push('No beliefs / statement of faith text was supplied.');
+    if (data.business.industry === 'restaurant' && data.industryData.restaurant?.hasOnlineOrdering && !data.industryData.restaurant?.orderingProvider) flags.push('Existing online ordering was indicated, but the provider was not supplied.');
+    return flags.length ? bulletLines(flags) : '- No obvious intake gaps requiring pre-build clarification.';
+  }
+
+  function buildChatReadyBrief(data) {
+    const location = data.business.locations?.[0] || {};
+    const pageLabels = (data.pages.selected || []).map(labelForPage);
+    const offerings = (data.offerings || []).map(o => o.name);
+    const proofPoints = (data.goals.approvedProofPoints || []).map(p => `${p.claim} [client supplied]`);
+    const people = (data.people || []).map(p => `${p.name} | ${p.role}${p.bioOrBullets ? ` | ${p.bioOrBullets}` : ''}`);
+    const capabilities = (data.capabilities || []).filter(c => c.needed).map(c => titleCaseToken(c.capabilityId));
+    const integrations = (data.integrations || []).map(i => `${titleCaseToken(i.category)} | ${i.provider} | keep existing: ${i.keepExisting ? 'Yes' : 'No'} | needs: ${briefValue((i.integrationNeeds || []).map(titleCaseToken))}`);
+    const extras = data.pages.additionalPaidPages || [];
+    const contentMode = titleCaseToken(data.contentPolicy.defaultHandling);
+    const app = data.app;
+
+    return `# EAGLE VISION EXPRESS - PRODUCTION BUILD BRIEF
+Brief version: EV-EXPRESS-BRIEF-1.0
+Lead capture ID: ${briefValue(data.submission.leadCaptureId)}
+Intake submission ID: ${briefValue(data.submission.submissionId)}
+
+## BUILD INSTRUCTION
+Use this brief as the authoritative client intake for this Eagle Vision Express project.
+
+Create a high-end, professional, conversion-focused digital presence that looks custom-built for this client. Do not use a generic visual template. Reuse proven engineering where appropriate, but customize composition, hierarchy, messaging, imagery, page flow, calls to action, and brand presentation around the client.
+
+For a website build:
+- Build the complete first version to Eagle Vision quality standards.
+- Use responsive, accessible, performance-conscious production code.
+- Include foundational on-page SEO, page titles, descriptions, semantic structure, social metadata, and appropriate structured data.
+- Use the selected page plan below.
+- Make the primary conversion action obvious throughout the experience.
+- Do not invent factual claims, credentials, years, awards, guarantees, pricing, beliefs, ratings, medical claims, or other facts.
+- If a factual detail is missing, flag it for review rather than making it up.
+- Use short hyphens only. Do not use em dashes or en dashes.
+- Run basic QA for mobile, tablet, desktop, links, images, forms, overflow, readability, accessibility, metadata, and obvious content inconsistencies.
+- Production workflow target: GitHub + Netlify.
+- Push the build to the appropriate Eagle Vision GitHub repository / branch and create a Netlify review deployment.
+- Dave / Eagle Vision reviews first. Do not treat the site as client-approved or production-launched until Eagle Vision approval and then client approval are recorded.
+
+For an app component:
+- Treat the client need as the requirement and choose only certified / approved implementation paths.
+- Do not assume unverified Appy Pie capabilities.
+- Keep app-store approval timing separate from app build timing.
+
+## PROJECT
+- Product: ${packageLabel(data.package.product)}
+- Express website tier: ${titleCaseToken(data.package.websiteTier)}
+- Express app tier: ${titleCaseToken(data.package.appTier)}
+- Industry: ${industryLabel(data.business.industry)}
+- Public business / organization name: ${briefValue(data.business.legalOrPublicName)}
+- One-line business description: ${briefValue(data.business.oneLineDescription)}
+- Current website: ${briefValue(data.business.currentWebsiteUrl)}
+
+## PRIMARY CONTACT
+- Name: ${briefValue(`${data.business.primaryContact.firstName} ${data.business.primaryContact.lastName}`)}
+- Role: ${briefValue(data.business.primaryContact.role)}
+- Email: ${briefValue(data.business.primaryContact.email)}
+- Phone: ${briefValue(data.business.primaryContact.phone)}
+
+## LOCATION
+- City: ${briefValue(location.city)}
+- State / Province: ${briefValue(location.region)}
+- Country: ${briefValue(location.country)}
+- Service areas: ${briefValue(data.business.serviceAreas)}
+
+## PRIMARY BUSINESS GOAL
+- Primary CTA: ${actionLabel(data.goals.primaryAction)}
+- Primary CTA detail: ${briefValue(data.goals.primaryActionOther)}
+- Target audience: ${briefValue(data.goals.targetAudience)}
+- Customer problem / need: ${briefValue(data.goals.customerProblem)}
+
+## TOP SERVICES / OFFERS / MINISTRIES
+${bulletLines(offerings)}
+
+## DIFFERENTIATORS
+${bulletLines(data.goals.differentiators)}
+
+## CLIENT-SUPPLIED PROOF / CLAIMS
+${bulletLines(proofPoints, '- No proof points were supplied.')}
+
+Important: Client-supplied proof is not the same as independent verification. Publish only claims that Eagle Vision is comfortable treating as verified / confirmed.
+
+## INDUSTRY-SPECIFIC DETAILS
+${buildIndustryBrief(data)}
+
+## BRAND DIRECTION
+- Visual descriptors: ${briefValue(data.brand.visualDescriptors.map(titleCaseToken))}
+- Color strategy: ${titleCaseToken(data.brand.colorStrategy)}
+- Appearance preference: ${titleCaseToken(data.brand.appearancePreference)}
+- Existing colors supplied: ${briefValue(data.brand.existingColors)}
+- Design direction: ${titleCaseToken(data.brand.designDirection)}
+- Inspiration URLs: ${briefValue(data.brand.inspirationUrls)}
+
+## CONTENT HANDLING
+- Default content mode: ${contentMode}
+- About handling: ${titleCaseToken(data.contentPolicy.about)}
+- Mission handling: ${titleCaseToken(data.contentPolicy.mission)}
+- Bios handling: ${titleCaseToken(data.contentPolicy.bios)}
+- Beliefs handling: ${titleCaseToken(data.contentPolicy.beliefs)}
+- Testimonials: ${titleCaseToken(data.contentPolicy.testimonials)}
+- Legal disclaimers: EXACT - do not rewrite
+
+### About / Story Notes
+${briefValue(data.contentPolicy.aboutNotes)}
+
+### Mission / Purpose Notes
+${briefValue(data.contentPolicy.missionNotes)}
+
+### History / Milestone Notes
+${briefValue(data.contentPolicy.historyNotes)}
+
+## PEOPLE / LEADERSHIP TO FEATURE
+${bulletLines(people, '- No people / leadership entries were supplied.')}
+
+## WEBSITE PAGE PLAN
+${hasWebsite() ? bulletLines(pageLabels) : '- Website not included in this package.'}
+${extras.length ? `\nAdditional selected pages beyond the standard five:\n${bulletLines(extras.map(labelForPage))}` : ''}
+
+## APP PLAN
+- App included: ${hasApp() ? 'Yes' : 'No'}
+- App experience preference: ${app ? titleCaseToken(app.experiencePreference) : 'Not applicable'}
+- Login required: ${app ? (app.requiresLogin ? 'Yes' : 'No') : 'Not applicable'}
+- Access groups: ${app ? briefValue(app.accessGroups) : 'Not applicable'}
+- Developer account path: ${app ? titleCaseToken(app.developerAccountPreference) : 'Not applicable'}
+- Requested app capabilities: ${hasApp() ? briefValue(capabilities) : 'Not applicable'}
+
+## EXISTING INTEGRATIONS / PROVIDERS
+${bulletLines(integrations, '- No existing integrations were entered.')}
+
+## ASSETS AND UPLOADS
+${buildAssetBrief(data)}
+
+## RIGHTS / APPROVAL
+- Content and media rights confirmed by client: ${data.permissions.contentRightsConfirmed ? 'Yes' : 'No'}
+- Testimonial rights confirmed by client: ${data.permissions.testimonialRightsConfirmed ? 'Yes' : 'No'}
+- Submitter states they have authority to approve: ${data.permissions.legalAuthorityToApprove ? 'Yes' : 'No'}
+- Client summary confirmed: ${data.review.clientSummaryConfirmed ? 'Yes' : 'No'}
+
+## MISSING / REVIEW ITEMS
+${buildReviewFlags(data)}
+
+## EAGLE VISION BUILD STANDARD
+The finished work should feel like a premium custom agency build, not an AI-generated template. Prioritize clarity, credibility, conversion, visual hierarchy, responsive polish, professional spacing, strong typography, thoughtful imagery, and an obvious customer journey.
+
+Before final launch:
+1. Generate the first build.
+2. Run automated / technical QA where available.
+3. Deploy a review preview.
+4. Eagle Vision / Dave reviews first.
+5. Make required refinements.
+6. Client reviews the Eagle Vision-approved version.
+7. Launch only after final approval of the same version.
+`;
   }
 
   function labelForPage(id) {
@@ -764,6 +1018,7 @@
     ].map(([small,strong,p,full]) => `<article class="ex-review-card${full ? ' full':''}"><small>${small}</small><strong>${strong}</strong><p>${p}</p></article>`).join('');
 
     intakeJsonField.value = JSON.stringify(data);
+    if (buildBriefField) buildBriefField.value = buildChatReadyBrief(data);
     reviewSummaryField.value = `${data.business.legalOrPublicName} | ${packageLabel(data.package.product)} | ${industryLabel(data.business.industry)} | Goal: ${actionLabel(data.goals.primaryAction)} | Pages: ${pageLabels.join(', ')} | App: ${capabilities.join(', ')}`;
   }
 
@@ -773,6 +1028,7 @@
     updateCapabilities();
     const data = buildIntakeData();
     intakeJsonField.value = JSON.stringify(data);
+    if (buildBriefField) buildBriefField.value = buildChatReadyBrief(data);
     reviewSummaryField.value = `${data.business.legalOrPublicName} | ${packageLabel(data.package.product)} | ${industryLabel(data.business.industry)} | Goal: ${actionLabel(data.goals.primaryAction)} | Pages: ${data.pages.selected.map(labelForPage).join(', ')} | Capabilities: ${data.capabilities.map(c => c.capabilityId).join(', ')}`;
   }
 
