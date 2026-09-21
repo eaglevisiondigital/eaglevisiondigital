@@ -151,3 +151,39 @@ Dave approval and client approval must reference the same version before product
 1. Local Service: prove intake -> website -> QA -> branded preview -> approval.
 2. Church: add app shell, access groups and Propel/Appy Pie provisioning pilot.
 3. Restaurant: add menu/POS/ordering integration decisioning without blocking the first two pilots.
+
+## 11. Submission output contract
+
+Every completed Express intake must create two production-ready outputs:
+
+### Structured record
+A machine-readable JSON object that follows `schema/intake.schema.json`. This is the canonical record for future automation, Propel synchronization, reporting, and generation logic.
+
+### Eagle Vision Build Brief
+A human-readable Markdown brief stored in the Netlify submission field `eagle_vision_build_brief`.
+
+The Build Brief must be ready to copy directly into a new ChatGPT project chat and must include:
+
+- production instruction and Eagle Vision quality standard
+- product/package and industry
+- lead capture ID and final submission ID
+- primary contact
+- public contact and location information
+- primary CTA, audience, customer problem, services/offers, differentiators
+- client-supplied claims with verification caution
+- industry-specific answers
+- brand direction and visual preferences
+- content handling rules
+- about, mission, history, leadership/people
+- selected website pages and add-on pages
+- app preferences and requested capabilities
+- existing integrations/providers
+- uploaded source/brand files and labeled media filenames
+- rights/authority confirmations
+- explicit missing/review items
+- GitHub + Netlify build/review workflow
+- instruction never to invent factual claims
+- instruction to use short hyphens only, never em dashes or en dashes
+
+The brief is intended to eliminate manual reconstruction of a raw form submission before production begins.
+
