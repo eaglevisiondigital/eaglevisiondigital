@@ -83,6 +83,13 @@
   const checkedValues = (selector) => [...form.querySelectorAll(selector)].filter(el => el.checked).map(el => el.value);
   const lines = (text) => (text || '').split(/\n+/).map(s => s.trim()).filter(Boolean);
   const csv = (text) => (text || '').split(/[,\n]+/).map(s => s.trim()).filter(Boolean);
+  const normalizeUrl = (value) => {
+    const text = String(value || '').trim();
+    if (!text) return null;
+    if (/^https?:\/\//i.test(text)) return text;
+    if (/^www\./i.test(text)) return `https://${text}`;
+    return null;
+  };
   const visible = (el) => !!(el && el.offsetParent !== null);
   const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, ch => {
     if (ch === '&') return '&amp;';
@@ -715,7 +722,7 @@
           hours: val('public_hours') || null
         }],
         serviceAreas: csv(val('service_areas')),
-        socialLinks: lines(val('social_links')).filter(v => /^https?:\/\//i.test(v))
+        socialLinks: lines(val('social_links')).map(normalizeUrl).filter(Boolean)
       },
       goals: {
         primaryAction: checkedValue('primary_action') || 'contact',
@@ -741,7 +748,7 @@
         colorStrategy: checkedValue('color_strategy') || 'eagle_vision_recommends',
         appearancePreference: val('appearance_preference') || 'eagle_vision_chooses',
         existingColors: csv(val('existing_colors')),
-        inspirationUrls: csv(val('inspiration_urls')).filter(v => /^https?:\/\//i.test(v)),
+        inspirationUrls: csv(val('inspiration_urls')).map(normalizeUrl).filter(Boolean),
         designDirection: val('design_direction') || 'eagle_vision_selects'
       },
       contentPolicy: {
@@ -890,6 +897,7 @@
     const app = data.app;
 
     return `# EAGLE VISION EXPRESS - PRODUCTION BUILD BRIEF
+COPY THIS ENTIRE BUILD BRIEF INTO A NEW EAGLE VISION DIGITAL PROJECT CHAT WITH THE ASSOCIATED CLIENT ASSETS.
 Brief version: EV-EXPRESS-BRIEF-1.0
 Lead capture ID: ${briefValue(data.submission.leadCaptureId)}
 Intake submission ID: ${briefValue(data.submission.submissionId)}
