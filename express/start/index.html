@@ -64,7 +64,7 @@
       <div class="ex-sidebar-help">Need help? <a href="tel:+18508124711">(850) 812-4711</a></div>
     </aside>
 
-    <form id="expressIntakeForm" class="ex-form-card" name="express-intake" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/express/thank-you/">
+    <form id="expressIntakeForm" class="ex-form-card" name="express-intake" method="POST" novalidate data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/express/thank-you/">
       <input type="hidden" name="form-name" value="express-intake">
       <p hidden aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <input type="hidden" name="subject" data-remove-prefix value="Completed Eagle Vision Express Intake (%{submissionId})">
@@ -131,7 +131,7 @@
               <option value="professional_services">Professional Services</option>
               <option value="other">Other</option>
             </select></div>
-            <div class="ex-field full ex-conditional" id="industryOtherWrap"><label for="industry_other">Industry / Business Type *</label><input id="industry_other" name="industry_other" placeholder="Tell us what kind of organization this is." required></div>
+            <div class="ex-field full ex-conditional" id="industryOtherWrap"><label for="industry_other">Industry / Business Type *</label><input id="industry_other" name="industry_other" placeholder="Tell us what kind of organization this is."></div>
           </div>
           <div class="ex-lead-note" id="leadCaptureNote">
             <span class="ex-lead-dot"></span>
