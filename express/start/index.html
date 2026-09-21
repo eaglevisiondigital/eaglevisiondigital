@@ -23,7 +23,7 @@
     <aside class="ex-sidebar" aria-label="Express intake progress">
       <div class="ex-sidebar-kicker">Eagle Vision Express</div>
       <h1>Tell us what to build.</h1>
-      <p>Most businesses finish in about 3–10 minutes. We only show questions that matter to your project.</p>
+      <p>Most businesses finish in about 3-10 minutes. We only show questions that matter to your project.</p>
       <div class="ex-progress" aria-hidden="true"><span id="progressBar"></span></div>
       <div class="ex-step-nav">
         <div class="ex-step-tab active" data-nav-step="1"><span class="num">1</span><div><b>Your Business</b><small>Basics + package</small></div></div>
@@ -38,7 +38,7 @@
 
     <form id="expressIntakeForm" class="ex-form-card" name="express-intake" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" action="/express/thank-you/">
       <input type="hidden" name="form-name" value="express-intake">
-      <p class="sr-only"><label>Do not fill this out if you are human: <input name="bot-field"></label></p>
+      <p hidden aria-hidden="true"><label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
       <input type="hidden" name="source" id="source" value="self_service">
       <input type="hidden" name="utm_source" id="utm_source">
       <input type="hidden" name="utm_medium" id="utm_medium">
@@ -57,7 +57,7 @@
           <h2 id="stepTitle">Your Business</h2>
           <p id="stepDescription">Start with the basics. We will use these answers to personalize the rest of the intake.</p>
         </div>
-        <div class="ex-time-pill">About 3–10 minutes</div>
+        <div class="ex-time-pill">About 3-10 minutes</div>
       </div>
 
       <!-- STEP 1 -->
@@ -65,7 +65,7 @@
         <div class="ex-section">
           <div class="ex-section-head"><div><h3>What are we building?</h3><p>Choose the path you want to start with. You can still adjust scope with Eagle Vision before production begins.</p></div></div>
           <div class="ex-choice-grid">
-            <div class="ex-choice"><input type="radio" id="pkgWebsite" name="package_product" value="website" required><label for="pkgWebsite"><span class="choice-mark"></span><strong>Express Website</strong><span>Custom website with the 3–24 hour qualifying first-build guarantee.</span></label></div>
+            <div class="ex-choice"><input type="radio" id="pkgWebsite" name="package_product" value="website" required><label for="pkgWebsite"><span class="choice-mark"></span><strong>Express Website</strong><span>Custom website with the 3-24 hour qualifying first-build guarantee.</span></label></div>
             <div class="ex-choice"><input type="radio" id="pkgBoth" name="package_product" value="website_app"><label for="pkgBoth"><span class="choice-mark"></span><strong>Website + App</strong><span>One intake for a connected website and branded mobile app.</span></label></div>
             <div class="ex-choice"><input type="radio" id="pkgApp" name="package_product" value="app"><label for="pkgApp"><span class="choice-mark"></span><strong>Express App</strong><span>Start with a custom branded app and selected certified features.</span></label></div>
           </div>
@@ -319,7 +319,7 @@
         <div class="ex-section ex-conditional" id="appSetupSection">
           <div class="ex-section-head"><div><h3>App setup preferences</h3><p>These answers help us choose the right shell, navigation and publishing path without making you choose technical features.</p></div></div>
           <div class="ex-fields">
-            <div class="ex-field"><label for="app_experience">Preferred App Experience</label><select id="app_experience" name="app_experience"><option value="eagle_vision_chooses">Let Eagle Vision Choose</option><option value="classic">Classic App – bottom navigation</option><option value="menu">Menu App – larger navigation</option><option value="directory">Directory App – grid / category experience</option></select></div>
+            <div class="ex-field"><label for="app_experience">Preferred App Experience</label><select id="app_experience" name="app_experience"><option value="eagle_vision_chooses">Let Eagle Vision Choose</option><option value="classic">Classic App - bottom navigation</option><option value="menu">Menu App - larger navigation</option><option value="directory">Directory App - grid / category experience</option></select></div>
             <div class="ex-field"><label for="developer_account">Apple / Google Developer Account Path</label><select id="developer_account" name="developer_account"><option value="eagle_vision_guidance_needed">I Need Eagle Vision Guidance</option><option value="client_owned">We Have / Will Use Our Own Accounts</option><option value="unknown">Not Sure Yet</option></select></div>
           </div>
           <div class="ex-callout warn" style="margin-top:14px"><strong>App build timing and app-store approval are different.</strong> The Express app target is for the initial build and device testing. Apple and Google control their own publication review timelines.</div>
