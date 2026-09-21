@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "submission": {"submissionId": "EV-REST-001", "status": "client_confirmed", "source": "self_service", "utm": {}, "startedAt": null, "clientConfirmedAt": null, "acceptedForBuildAt": null},
+  "package": {"product": "website_app", "websiteTier": "express_standard", "appTier": "express_standard", "salesProgram": "standard", "requestedLaunchDate": null},
+  "business": {"legalOrPublicName": "Sample Coastal Kitchen", "industry": "restaurant", "industryOther": null, "oneLineDescription": "Casual coastal dining.", "primaryContact": {"firstName": "Taylor", "lastName": "Sample", "role": "Owner", "email": "hello@example.com", "phone": "8505550102"}, "currentWebsiteUrl": null, "currentApp": null, "locations": [{"name": "Main Restaurant", "street": null, "city": "Destin", "region": "FL", "postalCode": null, "country": "US", "public": true, "phone": "8505550102", "email": "hello@example.com", "hours": "Daily 11-9"}], "serviceAreas": [], "socialLinks": []},
+  "goals": {"primaryAction": "order", "primaryActionOther": null, "secondaryActions": ["visit", "book"], "targetAudience": "Local families and visitors.", "customerProblem": null, "differentiators": ["Fresh local seafood"], "proudOf": null, "approvedProofPoints": []},
+  "offerings": [{"id": "menu", "name": "Main Menu", "descriptionOrNotes": "Menu supplied separately", "featured": true, "publicPrice": null, "cta": "View Menu", "contentHandlingOverride": "exact"}],
+  "brand": {"visualDescriptors": ["premium", "warm", "modern"], "colorStrategy": "pull_from_logo", "appearancePreference": "eagle_vision_chooses", "existingColors": [], "inspirationUrls": [], "designDirection": "eagle_vision_selects"},
+  "contentPolicy": {"defaultHandling": "professional_rewrite", "about": "inherit", "mission": "inherit", "bios": "inherit", "beliefs": "not_applicable", "testimonials": "exact", "legalDisclaimers": "exact", "aboutNotes": null, "missionNotes": null, "historyNotes": null},
+  "people": [],
+  "pages": {"selectionMode": "accept_recommended", "selected": ["home", "menu", "order_online", "our_story", "visit_contact"], "additionalPaidPages": [], "utilityPages": ["privacy", "thank_you"]},
+  "capabilities": [{"capabilityId": "online_ordering", "needed": true, "priority": "must_have", "notes": "Keep existing ordering provider."}, {"capabilityId": "loyalty", "needed": true, "priority": "future", "notes": null}],
+  "integrations": [{"category": "pos", "provider": "Square", "keepExisting": true, "integrationNeeds": ["online_ordering", "menu", "payments"], "publicUrl": null, "notes": null}],
+  "media": [],
+  "industryData": {"localService": null, "churchMinistry": null, "restaurant": {"cuisine": "Seafood", "hasOnlineOrdering": true, "orderingProvider": "Square", "hasPos": true, "posProvider": "Square", "keepExistingPos": true, "needsNewPosRecommendation": false, "reservationProvider": null, "menuSource": "pos", "orderingIntegrationNeeds": ["online_ordering", "menu", "payments"]}},
+  "app": {"experiencePreference": "classic", "requiresLogin": false, "accessGroups": [], "developerAccountPreference": "eagle_vision_guidance_needed", "existingAppleAccount": null, "existingGoogleAccount": null, "bundleIdPreference": null},
+  "information": [],
+  "permissions": {"contentRightsConfirmed": true, "testimonialRightsConfirmed": true, "contactPermission": true, "legalAuthorityToApprove": true},
+  "review": {"clientSummaryConfirmed": true, "clientConfirmedVersion": "intake-v1", "daveApprovedVersion": null, "finalApprovedVersion": null}
+}
