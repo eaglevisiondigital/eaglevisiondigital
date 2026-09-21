@@ -242,6 +242,7 @@
   function syncConditionals() {
     const industry = industryValue();
     setConditional('industryOtherWrap', industry === 'other');
+    if ($('industry_other')) $('industry_other').required = industry === 'other';
     setConditional('localServiceQuestions', industry === 'local_service');
     setConditional('churchQuestions', industry === 'church_ministry');
     setConditional('restaurantQuestions', industry === 'restaurant');
@@ -380,6 +381,39 @@
         pageRecommendationCopy.textContent = 'Please select at least one website page before continuing.';
         pageRecommendationCopy.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return false;
+      }
+    }
+    return true;
+  }
+
+  function fieldIsApplicable(field) {
+    let node = field.parentElement;
+    while (node && node !== form) {
+      if ((node.classList?.contains('ex-conditional') || node.classList?.contains('ex-conditional-grid')) && !node.classList.contains('show')) {
+        return false;
+      }
+      node = node.parentElement;
+    }
+    return true;
+  }
+
+  function validateAllSteps() {
+    for (let step = 1; step <= 5; step += 1) {
+      const panel = stepPanels.find(p => Number(p.dataset.step) === step);
+      if (!panel) continue;
+      const fields = [...panel.querySelectorAll('[required]')].filter(fieldIsApplicable);
+      for (const field of fields) {
+        if (!field.checkValidity()) {
+          showStep(step);
+          window.setTimeout(() => {
+            field.closest('.ex-field')?.classList.add('invalid');
+            field.reportValidity();
+            field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 80);
+          submitStatus.textContent = `Please complete the required information in Step ${step} before submitting.`;
+          submitStatus.classList.add('show');
+          return false;
+        }
       }
     }
     return true;
@@ -1118,18 +1152,22 @@ Before final launch:
   addMediaBtn.addEventListener('click', revealMediaRows);
 
   form.addEventListener('submit', (event) => {
-    if (!validateStep(5)) {
-      event.preventDefault();
-      return;
-    }
-    if (!validateUploadBudget()) {
-      event.preventDefault();
-      return;
-    }
+    event.preventDefault();
+
+    syncConditionals();
+
+    if (!validateAllSteps()) return;
+    if (!validateUploadBudget()) return;
+
     prepareSubmission();
+    submitStatus.textContent = 'Submitting your Express intake to Eagle Vision...';
     submitStatus.classList.add('show');
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting...';
+
+    window.setTimeout(() => {
+      form.submit();
+    }, 80);
   });
 
   getLeadCaptureId();
