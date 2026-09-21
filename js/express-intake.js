@@ -115,10 +115,14 @@
       business_name: val('business_name'),
       contact_first: val('contact_first'),
       contact_last: val('contact_last'),
+      contact_role: val('contact_role'),
       contact_phone: val('contact_phone'),
       contact_email: val('contact_email'),
       business_city: val('business_city'),
       business_region: val('business_region'),
+      business_country: val('business_country'),
+      industry: industryValue(),
+      industry_other: val('industry_other'),
       source: val('source') || 'self_service',
       utm_source: val('utm_source'),
       utm_medium: val('utm_medium'),
@@ -135,11 +139,15 @@
       val('business_name') &&
       val('contact_first') &&
       val('contact_last') &&
+      val('contact_role') &&
       val('contact_phone') &&
       val('contact_email') &&
       (!email || email.checkValidity()) &&
       val('business_city') &&
-      val('business_region')
+      val('business_region') &&
+      val('business_country') &&
+      industryValue() &&
+      (industryValue() !== 'other' || val('industry_other'))
     );
   }
 
