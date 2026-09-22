@@ -1135,7 +1135,7 @@ ${extras.length ? `\nAdditional selected pages beyond the standard five:\n${bull
 - App ongoing service: depends on selected features and publishing/service path
 ${buildSavingsBrief(data)}
 
-Important: The intake does not itself promise a discount or $0 setup. Eagle Vision determines the final Express Build Fee and any payment-related incentive after reviewing scope and qualification economics.
+Important: The intake does not itself promise a discount or $0 setup. Eagle Vision determines the final Express Build Fee and any payment-related incentive after reviewing scope and qualification economics. Any payment-processing volume used to determine a discount or waived setup fee must be verified before that discount is applied.
 
 ## EXISTING INTEGRATIONS / PROVIDERS
 ${bulletLines(integrations, '- No existing integrations were entered.')}
