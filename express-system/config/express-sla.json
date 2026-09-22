@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "website": {
+    "customerFacingName": "Express Custom Website",
+    "target": "3-24 hours",
+    "clockStartsWhen": "acceptedForBuildAt",
+    "required": [
+      "complete_required_intake",
+      "required_assets_received_or_explicitly_waived",
+      "content_and_media_rights_confirmed",
+      "standard_or_preapproved_page_scope",
+      "no_blocking_unverified_integration",
+      "no_unverified_sensitive_claim_required_for_launch"
+    ],
+    "manualOrCustomScopeTriggers": [
+      "extensive_custom_software",
+      "large_database_or_portal",
+      "complex_ecommerce",
+      "unsupported_third_party_integration",
+      "unusual_dns_or_domain_issue",
+      "more_than_standard_page_scope_without_preapproval",
+      "legal_or_compliance_review_required_before_build",
+      "missing_critical_client_assets"
+    ]
+  },
+  "app": {
+    "customerFacingName": "Express Custom App",
+    "target": "3-7 business days",
+    "clockStartsWhen": "acceptedForBuildAt",
+    "excludes": ["apple_review", "google_review", "developer_account_enrollment", "store_policy_remediation_outside_standard_scope"],
+    "required": [
+      "complete_required_app_intake",
+      "required_assets_received_or_explicitly_waived",
+      "requested_features_use_certified_or_preapproved_implementations",
+      "developer_account_path_identified",
+      "no_blocking_custom_integration"
+    ],
+    "manualOrCustomScopeTriggers": [
+      "uncertified_appy_pie_feature_required_as_must_have",
+      "true_sso_required_before_supported",
+      "custom_native_plugin_or_sdk_work",
+      "unsupported_pos_or_transactional_workflow",
+      "advanced_custom_authentication",
+      "app_store_rejection"
+    ]
+  },
+  "guaranteeLanguageRule": "Timing applies to the initial standard-scope build after Eagle Vision accepts complete information and required assets. Revisions, custom-scope engineering, and app-store review are separate."
+}

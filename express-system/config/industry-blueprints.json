@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "blueprints": {
+    "local_service": {
+      "label": "Local Service Business",
+      "recommendedPages": ["home", "services", "about", "reviews_projects", "contact_quote"],
+      "alternatePages": ["service_areas", "service_details", "faq", "team", "specials", "maintenance_plans", "careers"],
+      "typicalPrimaryActions": ["request_quote", "call", "book"],
+      "standardModules": ["business_profile", "services", "team", "locations", "hours", "testimonials", "gallery", "forms"],
+      "appNavigation": ["home", "services", "request", "specials_notifications", "more"],
+      "conditionalQuestions": ["service_areas", "emergency_service", "free_estimates", "financing", "credentials"],
+      "sensitiveFacts": ["licenses", "insurance", "guarantees", "years_in_business", "ratings", "pricing"]
+    },
+    "church_ministry": {
+      "label": "Church / Ministry",
+      "recommendedPages": ["home", "new_here", "about_leadership_beliefs", "watch_messages", "connect_events"],
+      "alternatePages": ["give_partner", "kids_youth_ministries", "small_groups", "prayer_care", "outreach_missions", "courses", "resources"],
+      "typicalPrimaryActions": ["visit", "watch", "join", "donate", "register"],
+      "standardModules": ["business_profile", "team", "locations", "hours", "events", "media", "forms", "giving", "membership"],
+      "appNavigation": ["home", "watch", "connect", "give", "more"],
+      "conditionalQuestions": ["service_times", "leadership", "beliefs", "ministries", "giving", "media_feeds", "plan_visit"],
+      "sensitiveFacts": ["beliefs", "doctrine", "leadership_titles", "giving_claims"]
+    },
+    "restaurant": {
+      "label": "Restaurant",
+      "recommendedPages": ["home", "menu", "order_online", "our_story", "visit_contact"],
+      "alternatePages": ["catering_private_events", "reservations", "specials_events", "gallery", "careers"],
+      "typicalPrimaryActions": ["order", "visit", "book", "call"],
+      "standardModules": ["business_profile", "locations", "hours", "menu", "gallery", "testimonials", "ordering", "loyalty"],
+      "appNavigation": ["home", "order", "rewards", "visit", "more"],
+      "conditionalQuestions": ["online_ordering", "pos", "menu_source", "reservations", "loyalty", "delivery"],
+      "sensitiveFacts": ["pricing", "ingredients", "allergen_claims", "nutrition_claims", "hours"]
+    }
+  },
+  "pageDefinitions": {
+    "home": {"label": "Home", "marketingPage": true},
+    "services": {"label": "Services", "marketingPage": true},
+    "about": {"label": "About", "marketingPage": true},
+    "reviews_projects": {"label": "Reviews / Projects", "marketingPage": true},
+    "contact_quote": {"label": "Contact / Request a Quote", "marketingPage": true},
+    "service_areas": {"label": "Service Areas", "marketingPage": true},
+    "service_details": {"label": "Individual Service Details", "marketingPage": true},
+    "faq": {"label": "FAQ", "marketingPage": true},
+    "team": {"label": "Team", "marketingPage": true},
+    "specials": {"label": "Specials", "marketingPage": true},
+    "maintenance_plans": {"label": "Maintenance Plans", "marketingPage": true},
+    "careers": {"label": "Careers", "marketingPage": true},
+    "new_here": {"label": "New Here / Plan Your Visit", "marketingPage": true},
+    "about_leadership_beliefs": {"label": "About / Leadership / Beliefs", "marketingPage": true},
+    "watch_messages": {"label": "Watch / Messages", "marketingPage": true},
+    "connect_events": {"label": "Connect / Events", "marketingPage": true},
+    "give_partner": {"label": "Give / Partner", "marketingPage": true},
+    "kids_youth_ministries": {"label": "Kids / Youth / Ministries", "marketingPage": true},
+    "small_groups": {"label": "Small Groups", "marketingPage": true},
+    "prayer_care": {"label": "Prayer / Care", "marketingPage": true},
+    "outreach_missions": {"label": "Outreach / Missions", "marketingPage": true},
+    "courses": {"label": "Courses", "marketingPage": true},
+    "resources": {"label": "Resources", "marketingPage": true},
+    "menu": {"label": "Menu", "marketingPage": true},
+    "order_online": {"label": "Order Online", "marketingPage": true, "canBeExternalAction": true},
+    "our_story": {"label": "Our Story", "marketingPage": true},
+    "visit_contact": {"label": "Visit / Hours / Contact", "marketingPage": true},
+    "catering_private_events": {"label": "Catering / Private Events", "marketingPage": true},
+    "reservations": {"label": "Reservations", "marketingPage": true, "canBeExternalAction": true},
+    "specials_events": {"label": "Specials / Events", "marketingPage": true},
+    "gallery": {"label": "Gallery", "marketingPage": true}
+  }
+}

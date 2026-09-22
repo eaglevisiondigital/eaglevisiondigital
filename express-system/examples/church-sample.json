@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "submission": {"submissionId": "EV-CHURCH-001", "status": "client_confirmed", "source": "sales_assisted", "utm": {}, "startedAt": null, "clientConfirmedAt": null, "acceptedForBuildAt": null},
+  "package": {"product": "website_app", "websiteTier": "express_standard", "appTier": "express_standard", "salesProgram": "standard", "requestedLaunchDate": null},
+  "business": {"legalOrPublicName": "Sample Community Church", "industry": "church_ministry", "industryOther": null, "oneLineDescription": "A local church helping people connect, grow and serve.", "primaryContact": {"firstName": "Jordan", "lastName": "Sample", "role": "Pastor", "email": "office@example.org", "phone": "8505550101"}, "currentWebsiteUrl": null, "currentApp": null, "locations": [{"name": "Main Campus", "street": null, "city": "Fort Walton Beach", "region": "FL", "postalCode": null, "country": "US", "public": true, "phone": "8505550101", "email": "office@example.org", "hours": null}], "serviceAreas": [], "socialLinks": []},
+  "goals": {"primaryAction": "visit", "primaryActionOther": null, "secondaryActions": ["watch", "join", "donate"], "targetAudience": "Families and individuals in the local community.", "customerProblem": null, "differentiators": [], "proudOf": null, "approvedProofPoints": []},
+  "offerings": [{"id": "sunday", "name": "Sunday Worship", "descriptionOrNotes": "Weekly worship gathering", "featured": true, "publicPrice": null, "cta": "Plan Your Visit", "contentHandlingOverride": "inherit"}],
+  "brand": {"visualDescriptors": ["warm", "modern", "family_oriented"], "colorStrategy": "pull_from_logo", "appearancePreference": "eagle_vision_chooses", "existingColors": [], "inspirationUrls": [], "designDirection": "eagle_vision_selects"},
+  "contentPolicy": {"defaultHandling": "professional_rewrite", "about": "inherit", "mission": "light_polish", "bios": "inherit", "beliefs": "exact", "testimonials": "exact", "legalDisclaimers": "exact", "aboutNotes": null, "missionNotes": null, "historyNotes": null},
+  "people": [],
+  "pages": {"selectionMode": "accept_recommended", "selected": ["home", "new_here", "about_leadership_beliefs", "watch_messages", "connect_events"], "additionalPaidPages": [], "utilityPages": ["privacy", "thank_you"]},
+  "capabilities": [{"capabilityId": "member_only_content", "needed": true, "priority": "nice_to_have", "notes": null}, {"capabilityId": "push_notifications", "needed": true, "priority": "nice_to_have", "notes": null}, {"capabilityId": "giving", "needed": true, "priority": "must_have", "notes": null}],
+  "integrations": [{"category": "giving", "provider": "Existing Giving Provider", "keepExisting": true, "integrationNeeds": ["link_or_embed"], "publicUrl": "https://example.org/give", "notes": null}],
+  "media": [],
+  "industryData": {"localService": null, "churchMinistry": {"serviceTimes": ["Sunday 10:30 AM"], "pastorOrLeader": "Jordan Sample", "beliefsText": "Client-supplied beliefs go here.", "ministries": ["Kids", "Youth"], "givingUrl": "https://example.org/give", "mediaFeedUrls": [], "planVisitNeeds": ["service_time", "directions", "kids_info"]}, "restaurant": null},
+  "app": {"experiencePreference": "classic", "requiresLogin": true, "accessGroups": ["Guest", "Member", "Volunteer", "Leader"], "developerAccountPreference": "eagle_vision_guidance_needed", "existingAppleAccount": null, "existingGoogleAccount": null, "bundleIdPreference": null},
+  "information": [{"fieldPath": "industryData.churchMinistry.beliefsText", "confidence": "verified", "source": "client", "confirmedAt": null}],
+  "permissions": {"contentRightsConfirmed": true, "testimonialRightsConfirmed": true, "contactPermission": true, "legalAuthorityToApprove": true},
+  "review": {"clientSummaryConfirmed": true, "clientConfirmedVersion": "intake-v1", "daveApprovedVersion": null, "finalApprovedVersion": null}
+}

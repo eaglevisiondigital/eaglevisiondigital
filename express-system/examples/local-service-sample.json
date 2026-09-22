@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "submission": {"submissionId": "EV-LOCAL-001", "status": "client_confirmed", "source": "self_service", "utm": {}, "startedAt": null, "clientConfirmedAt": null, "acceptedForBuildAt": null},
+  "package": {"product": "website_app", "websiteTier": "express_standard", "appTier": "express_standard", "salesProgram": "standard", "requestedLaunchDate": null},
+  "business": {"legalOrPublicName": "Sample Coastal HVAC", "industry": "local_service", "industryOther": null, "oneLineDescription": "Residential HVAC service and replacement.", "primaryContact": {"firstName": "Alex", "lastName": "Sample", "role": "Owner", "email": "alex@example.com", "phone": "8505550100"}, "currentWebsiteUrl": null, "currentApp": null, "locations": [{"name": "Main Office", "street": null, "city": "Fort Walton Beach", "region": "FL", "postalCode": null, "country": "US", "public": true, "phone": "8505550100", "email": "alex@example.com", "hours": "Mon-Fri 8-5"}], "serviceAreas": ["Fort Walton Beach", "Destin", "Niceville"], "socialLinks": []},
+  "goals": {"primaryAction": "request_quote", "primaryActionOther": null, "secondaryActions": ["call"], "targetAudience": "Homeowners in the Emerald Coast area.", "customerProblem": "Fast, reliable HVAC repair and replacement.", "differentiators": ["Locally owned", "Fast response"], "proudOf": null, "approvedProofPoints": []},
+  "offerings": [{"id": "repair", "name": "HVAC Repair", "descriptionOrNotes": "Residential repair", "featured": true, "publicPrice": null, "cta": "Request Service", "contentHandlingOverride": "inherit"}],
+  "brand": {"visualDescriptors": ["professional", "modern", "friendly"], "colorStrategy": "pull_from_logo", "appearancePreference": "eagle_vision_chooses", "existingColors": [], "inspirationUrls": [], "designDirection": "eagle_vision_selects"},
+  "contentPolicy": {"defaultHandling": "professional_rewrite", "about": "inherit", "mission": "inherit", "bios": "inherit", "beliefs": "not_applicable", "testimonials": "exact", "legalDisclaimers": "exact", "aboutNotes": "Family-owned local service company.", "missionNotes": null, "historyNotes": null},
+  "people": [],
+  "pages": {"selectionMode": "accept_recommended", "selected": ["home", "services", "about", "reviews_projects", "contact_quote"], "additionalPaidPages": [], "utilityPages": ["privacy", "thank_you"]},
+  "capabilities": [{"capabilityId": "push_notifications", "needed": true, "priority": "nice_to_have", "notes": "Seasonal maintenance reminders."}],
+  "integrations": [],
+  "media": [],
+  "industryData": {"localService": {"emergencyService": false, "freeEstimates": true, "financingAvailable": false, "licensesOrCredentials": [], "serviceAreaStrategy": "named_areas"}, "churchMinistry": null, "restaurant": null},
+  "app": {"experiencePreference": "classic", "requiresLogin": false, "accessGroups": [], "developerAccountPreference": "eagle_vision_guidance_needed", "existingAppleAccount": null, "existingGoogleAccount": null, "bundleIdPreference": null},
+  "information": [],
+  "permissions": {"contentRightsConfirmed": true, "testimonialRightsConfirmed": true, "contactPermission": true, "legalAuthorityToApprove": true},
+  "review": {"clientSummaryConfirmed": true, "clientConfirmedVersion": "intake-v1", "daveApprovedVersion": null, "finalApprovedVersion": null}
+}
