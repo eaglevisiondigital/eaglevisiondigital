@@ -671,6 +671,58 @@
     };
   }
 
+  function preliminarySavingsSignal() {
+    if (checkedValue('check_savings_eligibility') !== 'yes') {
+      return { tier:'standard_pricing', reasons:['Client did not request an Express savings review.'] };
+    }
+
+    const volume = val('monthly_card_volume');
+    const reviewInterest = val('payments_review_interest');
+    const onlineInterest = val('online_ev_payments_interest');
+    const storefrontInterest = val('storefront_ev_payments_interest');
+    const paymentInterest = [reviewInterest, onlineInterest, storefrontInterest].some(v => ['yes','maybe'].includes(v));
+
+    if (!volume || volume === 'not_sure' || volume === 'not_applicable') {
+      return { tier:'manual_review', reasons:['Monthly card-processing volume is not confirmed.'] };
+    }
+
+    if (!paymentInterest) {
+      return { tier:'standard_pricing', reasons:['Savings review requested, but no current interest in Eagle Vision Payments or processing review was indicated.'] };
+    }
+
+    if (['250000_plus','100000_249999','50000_99999','20000_49999'].includes(volume)) {
+      return {
+        tier:'strong_incentive_candidate',
+        reasons:[
+          'Monthly processing volume is at or above $20,000.',
+          'Client indicated openness to a payment-processing review and/or Eagle Vision Payments.'
+        ]
+      };
+    }
+
+    if (volume === '10000_19999') {
+      return {
+        tier:'possible_incentive_candidate',
+        reasons:[
+          'Monthly processing volume is between $10,000 and $19,999.',
+          'Client indicated openness to a payment-processing review and/or Eagle Vision Payments.'
+        ]
+      };
+    }
+
+    if (volume === 'under_10000') {
+      return {
+        tier:'limited_incentive_candidate',
+        reasons:[
+          'Monthly processing volume is under $10,000.',
+          'Some discount may still be possible depending on project scope, margin and payment integration.'
+        ]
+      };
+    }
+
+    return { tier:'manual_review', reasons:['Qualification inputs require manual review.'] };
+  }
+
   function buildIntakeData() {
     const product = productValue();
     const selectedPages = hasWebsite() ? checkedValues('#pageChoices input[type="checkbox"]') : [];
@@ -808,7 +860,9 @@
         paymentsReviewInterest: val('payments_review_interest') || null,
         onlineEagleVisionPaymentsInterest: val('online_ev_payments_interest') || null,
         storefrontEagleVisionPaymentsInterest: val('storefront_ev_payments_interest') || null,
-        includeProcessingSavingsInProposal: val('include_processing_savings') !== 'no'
+        includeProcessingSavingsInProposal: val('include_processing_savings') !== 'no',
+        preliminaryIncentiveSignal: preliminarySavingsSignal().tier,
+        preliminaryIncentiveReasons: preliminarySavingsSignal().reasons
       },
       information: [],
       permissions: {
@@ -920,7 +974,9 @@
       `- Open to Eagle Vision processing review: ${titleCaseToken(s.paymentsReviewInterest)}`,
       `- Consider Eagle Vision Payments online: ${titleCaseToken(s.onlineEagleVisionPaymentsInterest)}`,
       `- Consider Eagle Vision Payments in-store: ${briefValue(titleCaseToken(s.storefrontEagleVisionPaymentsInterest))}`,
-      `- Include potential processing savings in proposal: ${s.includeProcessingSavingsInProposal ? 'Yes' : 'No'}`
+      `- Include potential processing savings in proposal: ${s.includeProcessingSavingsInProposal ? 'Yes' : 'No'}`,
+      `- Internal preliminary incentive signal: ${titleCaseToken(s.preliminaryIncentiveSignal)}`,
+      `- Internal signal reasons: ${briefValue(s.preliminaryIncentiveReasons)}`
     ].join('\n');
   }
 
@@ -1146,7 +1202,7 @@ Before final launch:
       ...(hasWebsite() ? [['Website Pages', `${pageLabels.length} selected`, pageLabels.join('\n'), true]] : []),
       ...(hasApp() ? [['App Capabilities', capabilities.length ? `${capabilities.length} selected` : 'Standard app shell', capabilities.join('\n') || 'No additional capabilities selected yet.', true]] : []),
       ['Content Handling', data.contentPolicy.defaultHandling.replaceAll('_',' '), data.contentPolicy.aboutNotes ? 'About/story notes supplied.' : 'Eagle Vision will use the supplied business facts and source material.', false],
-      ['Express Savings', data.savingsQualification?.requested ? 'Eligibility review requested' : 'Standard Express pricing', data.savingsQualification?.requested ? `Monthly card volume: ${cardVolumeLabel(data.savingsQualification.monthlyCardVolume)} | Online EV Payments: ${titleCaseToken(data.savingsQualification.onlineEagleVisionPaymentsInterest)}` : 'No payment-processing savings review requested.', false],
+      ['Express Savings', data.savingsQualification?.requested ? titleCaseToken(data.savingsQualification.preliminaryIncentiveSignal) : 'Standard Express pricing', data.savingsQualification?.requested ? `Monthly card volume: ${cardVolumeLabel(data.savingsQualification.monthlyCardVolume)} | Online EV Payments: ${titleCaseToken(data.savingsQualification.onlineEagleVisionPaymentsInterest)}` : 'No payment-processing savings review requested.', false],
       ['Uploads', `${data.media.length} labeled image${data.media.length === 1 ? '' : 's'}`, data.media.map(m => `${m.label.replaceAll('_',' ')}: ${m.subject || m.uploadToken || 'image'}`).join('\n') || 'You can still provide additional assets during Eagle Vision review.', true]
     ].map(([small,strong,p,full]) => `<article class="ex-review-card${full ? ' full':''}"><small>${small}</small><strong>${strong}</strong><p>${p}</p></article>`).join('');
 
