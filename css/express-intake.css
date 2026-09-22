@@ -340,3 +340,29 @@ body.express-intake-page{background:#01030B;color:#fff}
   text-underline-offset:2px
 }
 .ex-final-asset-note b{color:#294E6E}
+
+
+/* EXPRESS SAVINGS QUALIFICATION */
+.ex-savings-section{
+  position:relative;
+  padding:22px;
+  border:1px solid #B8D8F4;
+  border-radius:20px;
+  background:linear-gradient(145deg,#EEF8FF,#F9FCFF);
+  box-shadow:0 12px 30px rgba(22,140,255,.05)
+}
+.ex-savings-section .ex-section-head{
+  padding-bottom:14px;
+  margin-bottom:16px;
+  border-bottom:1px solid #D9E8F5
+}
+.ex-savings-section .ex-section-head h3{color:#123A5D}
+.ex-savings-section .ex-section-head p{color:#5D758C}
+.ex-savings-section .ex-choice label{background:#FFFFFF}
+.ex-savings-section #savingsQuestions{
+  padding-top:2px
+}
+.ex-savings-section .ex-callout.info{
+  background:#E6F4FF;
+  border-color:#ABD3F3
+}
