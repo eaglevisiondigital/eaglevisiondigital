@@ -187,3 +187,33 @@ The Build Brief must be ready to copy directly into a new ChatGPT project chat a
 
 The brief is intended to eliminate manual reconstruction of a raw form submission before production begins.
 
+## 12. Express pricing and savings qualification
+
+Customer-facing terminology:
+- **Express Build Fee** - one-time setup/build fee
+- **Express Website Care Plan** - monthly managed hosting, maintenance and support
+
+Public pricing:
+- Express Website Build Fee: **$250-$1,000**
+- Express Website Care Plan: **$49-$249/month**
+- Express App Build Fee: **$250-$1,000**
+- Website + App: bundled Express pricing based on scope and selected features
+- App ongoing service varies by features, publishing path and service level
+
+Qualified businesses may receive a reduced or completely waived Express Build Fee through eligible Eagle Vision programs, including Eagle Vision Payments.
+
+Savings qualification is optional. If requested, collect:
+- whether the business accepts cards
+- approximate monthly card-processing volume
+- current processor
+- payment channels: storefront, online, mobile/on-site, invoicing, other
+- whether customers visit a physical storefront/location
+- openness to an Eagle Vision processing review
+- willingness to consider Eagle Vision Payments for online payments
+- willingness to consider Eagle Vision Payments for storefront processing where applicable
+- whether processing savings should be included in the proposal
+
+Do not require a merchant statement during the main intake. Request one separately only when the preliminary review suggests meaningful savings or a larger setup incentive may be available.
+
+The system may assign an internal preliminary incentive signal for triage, but it must not promise a specific discount or $0 setup. Final incentives require Eagle Vision review of project scope, payment integration and residual economics.
+
