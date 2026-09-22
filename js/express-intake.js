@@ -35,7 +35,7 @@
   let leadCaptureTimer;
 
   const stepCopy = {
-    1: ['STEP 1 OF 5', 'Quick Start', 'Just the basics we need to save your project and contact you if you do not finish the full intake.'],
+    1: ['STEP 1 OF 5', 'Quick Start', 'A few quick details to get your Express project started.'],
     2: ['STEP 2 OF 5', 'Business + Goals', 'Now tell us a little more about the business and what the website or app should help people do.'],
     3: ['STEP 3 OF 5', 'Brand + Story', 'Give us enough direction to make it feel like your business, not everyone else.'],
     4: ['STEP 4 OF 5', 'People + Pages', 'Add priority media, confirm your page structure and finish any app setup preferences.'],
