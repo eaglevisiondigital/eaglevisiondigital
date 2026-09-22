@@ -91,6 +91,32 @@
     .ex-step{text-align:center;padding:0 8px}.ex-step b{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;margin:0 auto 19px;background:#071426;border:1px solid rgba(22,140,255,.38);box-shadow:0 0 28px rgba(22,140,255,.10);color:#91CEFF;font-size:.9rem}
     .ex-step h3{font-size:1.05rem}.ex-step p{font-size:.83rem;margin:0 auto;max-width:220px}
 
+    .ex-pricing-section{background:linear-gradient(180deg,#F7FAFD,#EEF4FA);color:#102035;border-top:1px solid #D9E4EE;border-bottom:1px solid #D9E4EE}
+    .ex-pricing-section h2,.ex-pricing-section h3,.ex-pricing-section h4{color:#102035}
+    .ex-pricing-section .kicker{color:#147BDA}
+    .ex-pricing-section .kicker::before{background:#168CFF;box-shadow:none}
+    .ex-pricing-section .ex-center p{color:#607389}
+    .ex-pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+    .ex-price-card{position:relative;padding:28px;border:1px solid #D3DFEA;border-radius:24px;background:#FFFFFF;box-shadow:0 16px 42px rgba(25,53,82,.07);display:flex;flex-direction:column}
+    .ex-price-card--featured{border-color:#9ECEF6;background:linear-gradient(145deg,#EDF8FF,#FFFFFF);box-shadow:0 18px 46px rgba(22,140,255,.10)}
+    .ex-price-card--savings{border-color:#B9DCC8;background:linear-gradient(145deg,#F1FBF5,#FFFFFF)}
+    .ex-price-card small{color:#5C7893;font-size:.65rem;font-weight:900;letter-spacing:.11em}
+    .ex-price-card--featured small{color:#147BDA}.ex-price-card--savings small{color:#2E8A56}
+    .ex-price-card h3{font-size:1.45rem;margin:10px 0 8px}
+    .ex-price-card h4{font-size:.88rem;margin:0 0 7px}
+    .ex-price-range{font-size:clamp(2.1rem,3.1vw,3.1rem);font-weight:950;letter-spacing:-.055em;color:#168CFF;line-height:1}
+    .ex-price-label{font-size:.72rem!important;color:#718398!important;margin:6px 0 0!important}
+    .ex-price-divider{height:1px;background:#DFE7EF;margin:21px 0}
+    .ex-monthly-range{font-size:1.75rem;font-weight:900;color:#173A58;letter-spacing:-.04em}.ex-monthly-range span{font-size:.72rem;font-weight:700;color:#71849A;letter-spacing:0;margin-left:3px}
+    .ex-price-copy{min-height:64px;color:#536A81;font-size:.82rem;line-height:1.5}
+    .ex-price-card p{color:#687B90;font-size:.82rem}
+    .ex-price-card .btn{width:100%;margin-top:auto}
+    .ex-price-secondary{background:#FFFFFF!important;color:#147BDA!important;border-color:#B5D5F0!important}
+    .ex-price-secondary:hover{background:#F2F9FF!important;border-color:#7CBDF2!important}
+    .ex-savings-mark{font-size:3.2rem;line-height:1;font-weight:950;color:#2E9D61;letter-spacing:-.06em;margin:10px 0 12px}.ex-savings-mark span{display:block;font-size:.68rem;letter-spacing:.04em;color:#638273;font-weight:800;margin-top:5px;text-transform:uppercase}
+    .ex-price-card ul{list-style:none;padding:0;margin:4px 0 24px;display:grid;gap:8px}.ex-price-card li{position:relative;padding-left:20px;color:#52677E;font-size:.76rem}.ex-price-card li::before{content:"✓";position:absolute;left:0;color:#2E9D61;font-weight:900}
+    .ex-pricing-note{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:18px;padding:14px 18px;border:1px solid #D4E0EB;border-radius:16px;background:#FFFFFF;color:#60748A;font-size:.78rem;text-align:center}.ex-pricing-note strong{color:#173A58}
+
     .ex-product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap)}
     .ex-product{position:relative;padding:31px;border:1px solid var(--line);border-radius:26px;background:linear-gradient(150deg,rgba(255,255,255,.052),rgba(255,255,255,.017));min-height:455px;display:flex;flex-direction:column}
     .ex-product.best{border-color:rgba(22,140,255,.42);background:radial-gradient(520px circle at 50% -10%,rgba(22,140,255,.18),transparent 54%),linear-gradient(150deg,#081425,#030914);box-shadow:var(--glow)}
@@ -189,6 +215,7 @@
       .ex-hero-copy{max-width:880px}.ex-hero-console{max-width:760px}
       .ex-trust-grid{grid-template-columns:repeat(3,1fr)}
       .ex-value-grid,.ex-product-grid,.ex-industry-grid{grid-template-columns:repeat(2,1fr)}
+      .ex-pricing-grid{grid-template-columns:1fr}
       .ex-fit-grid{grid-template-columns:1fr}\n      .ex-mini-industry-grid{grid-template-columns:repeat(2,1fr)}\n      .ex-more-industries-head{grid-template-columns:1fr}
       .ex-product.best{grid-column:span 2}
       .ex-process{grid-template-columns:repeat(3,1fr)}.ex-process-line{display:none}
@@ -408,6 +435,61 @@
         <article class="ex-step"><b>04</b><h3>We QA First</h3><p>Eagle Vision reviews layout, content, mobile behavior, links, forms, SEO basics and overall quality.</p></article>
         <article class="ex-step"><b>05</b><h3>You Review</h3><p>You receive the polished preview for approval, revisions and final launch.</p></article>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-xl ex-pricing-section" id="pricing">
+  <div class="container">
+    <div class="ex-center">
+      <div class="kicker">STRAIGHTFORWARD EXPRESS PRICING</div>
+      <h2>Professional Custom Quality.<br><span>Streamlined Scope. Starting at $250.</span></h2>
+      <p>Express is designed for businesses and organizations that want a polished professional website or app without the cost and complexity of a large custom development engagement.</p>
+    </div>
+
+    <div class="ex-pricing-grid">
+      <article class="ex-price-card ex-price-card--featured">
+        <small>EXPRESS WEBSITE</small>
+        <h3>Express Build Fee</h3>
+        <div class="ex-price-range">$250-$1,000</div>
+        <p class="ex-price-label">Typical one-time setup</p>
+        <div class="ex-price-divider"></div>
+        <h4>Express Website Care Plan</h4>
+        <div class="ex-monthly-range">$49-$249<span>/month</span></div>
+        <p>Managed hosting, maintenance, support and ongoing Eagle Vision care based on the plan selected.</p>
+        <a class="btn btn-primary" href="/express/start/?package=website">Start My Express Website →</a>
+      </article>
+
+      <article class="ex-price-card">
+        <small>EXPRESS APP</small>
+        <h3>Express Build Fee</h3>
+        <div class="ex-price-range">$250-$1,000</div>
+        <p class="ex-price-label">Typical one-time setup</p>
+        <div class="ex-price-divider"></div>
+        <h4>Ongoing App Service</h4>
+        <div class="ex-price-copy">Monthly app/platform service varies by the features, publishing path and service level selected.</div>
+        <p>Apple and Google developer-account and store-review requirements are separate.</p>
+        <a class="btn btn-secondary ex-price-secondary" href="/express/start/?package=app">Start My Express App →</a>
+      </article>
+
+      <article class="ex-price-card ex-price-card--savings">
+        <small>EXPRESS SAVINGS</small>
+        <h3>You May Qualify for $0 Setup</h3>
+        <div class="ex-savings-mark">$0<span>possible setup</span></div>
+        <p>Qualified businesses may receive a reduced or completely waived Express Build Fee through eligible Eagle Vision programs, including Eagle Vision Payments.</p>
+        <ul>
+          <li>Eligibility depends on business and project scope</li>
+          <li>Payment-processing volume may affect available savings</li>
+          <li>Online and storefront payment integration may increase available discounts</li>
+          <li>No processor switch is required just to request a review</li>
+        </ul>
+        <a class="btn btn-secondary ex-price-secondary" href="/express/start/">Check My Savings Eligibility →</a>
+      </article>
+    </div>
+
+    <div class="ex-pricing-note">
+      <strong>Website + App?</strong>
+      <span>Bundled Express pricing is available. Your final setup amount depends on scope, selected features and any Eagle Vision savings programs you qualify for.</span>
     </div>
   </div>
 </section>
