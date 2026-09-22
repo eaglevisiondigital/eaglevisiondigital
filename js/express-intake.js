@@ -270,6 +270,19 @@
     if ($('public_phone')) $('public_phone').required = publicContactDifferent;
     if ($('public_email')) $('public_email').required = publicContactDifferent;
 
+    const wantsSavingsReview = checkedValue('check_savings_eligibility') === 'yes';
+    setConditional('savingsQuestions', wantsSavingsReview);
+    const savingsRequiredIds = ['accepts_cards','monthly_card_volume','payments_review_interest','online_ev_payments_interest'];
+    savingsRequiredIds.forEach(id => { if ($(id)) $(id).required = wantsSavingsReview; });
+
+    const processorIsOther = wantsSavingsReview && val('current_processor') === 'other';
+    setConditional('processorOtherWrap', processorIsOther);
+    if ($('current_processor_other')) $('current_processor_other').required = processorIsOther;
+
+    const hasStorefront = wantsSavingsReview && ['yes','multiple'].includes(val('has_customer_storefront'));
+    setConditional('storefrontPaymentsWrap', hasStorefront);
+    if ($('storefront_ev_payments_interest')) $('storefront_ev_payments_interest').required = hasStorefront;
+
     if (hasApp()) {
       const action = checkedValue('primary_action');
       if (action === 'order') $('capOrdering').checked = true;
@@ -784,6 +797,19 @@
         existingGoogleAccount: null,
         bundleIdPreference: null
       } : null,
+      savingsQualification: {
+        requested: checkedValue('check_savings_eligibility') === 'yes',
+        acceptsCards: val('accepts_cards') || null,
+        monthlyCardVolume: val('monthly_card_volume') || null,
+        currentProcessor: val('current_processor') || null,
+        currentProcessorOther: val('current_processor_other') || null,
+        paymentChannels: checkedValues('[name="payment_channels"]'),
+        hasCustomerStorefront: val('has_customer_storefront') || null,
+        paymentsReviewInterest: val('payments_review_interest') || null,
+        onlineEagleVisionPaymentsInterest: val('online_ev_payments_interest') || null,
+        storefrontEagleVisionPaymentsInterest: val('storefront_ev_payments_interest') || null,
+        includeProcessingSavingsInProposal: val('include_processing_savings') !== 'no'
+      },
       information: [],
       permissions: {
         contentRightsConfirmed: $('confirm_rights')?.checked || false,
@@ -868,6 +894,36 @@
     return `SOURCE / BRAND FILES\n${sourceBlock}\n\nLABELED PHOTOS / MEDIA\n${mediaBlock}`;
   }
 
+  function cardVolumeLabel(value) {
+    return ({
+      under_10000:'Under $10,000',
+      '10000_19999':'$10,000-$19,999',
+      '20000_49999':'$20,000-$49,999',
+      '50000_99999':'$50,000-$99,999',
+      '100000_249999':'$100,000-$249,999',
+      '250000_plus':'$250,000+',
+      not_sure:'Not sure',
+      not_applicable:'Not applicable yet'
+    })[value] || briefValue(value);
+  }
+
+  function buildSavingsBrief(data) {
+    const s = data.savingsQualification || {};
+    if (!s.requested) return '- Savings qualification requested: No - standard Express pricing.';
+    return [
+      '- Savings qualification requested: Yes',
+      `- Accepts cards: ${titleCaseToken(s.acceptsCards)}`,
+      `- Approximate monthly card volume: ${cardVolumeLabel(s.monthlyCardVolume)}`,
+      `- Current processor: ${s.currentProcessor === 'other' ? briefValue(s.currentProcessorOther) : titleCaseToken(s.currentProcessor)}`,
+      `- Payment channels: ${briefValue((s.paymentChannels || []).map(titleCaseToken))}`,
+      `- Customer-facing storefront/location: ${titleCaseToken(s.hasCustomerStorefront)}`,
+      `- Open to Eagle Vision processing review: ${titleCaseToken(s.paymentsReviewInterest)}`,
+      `- Consider Eagle Vision Payments online: ${titleCaseToken(s.onlineEagleVisionPaymentsInterest)}`,
+      `- Consider Eagle Vision Payments in-store: ${briefValue(titleCaseToken(s.storefrontEagleVisionPaymentsInterest))}`,
+      `- Include potential processing savings in proposal: ${s.includeProcessingSavingsInProposal ? 'Yes' : 'No'}`
+    ].join('\n');
+  }
+
   function buildReviewFlags(data) {
     const flags = [];
     if (!data.business.oneLineDescription) flags.push('Business one-line description was not supplied.');
@@ -881,6 +937,7 @@
     if (['restaurant','church_ministry'].includes(data.business.industry) && !data.business.locations?.[0]?.street) flags.push('No public street address / physical location was supplied. Confirm before publishing visit or directions content.');
     if (data.business.industry === 'restaurant' && !data.business.locations?.[0]?.hours) flags.push('Restaurant hours were not supplied. Confirm before publishing hours.');
     if (!data.business.publicContact?.phone && !data.business.publicContact?.email) flags.push('No public phone or email is available for the website. Confirm before publishing contact details.');
+    if (data.savingsQualification?.requested && ['not_sure',null,''].includes(data.savingsQualification.monthlyCardVolume)) flags.push('Express savings review requested, but monthly processing volume is not confirmed.');
     return flags.length ? bulletLines(flags) : '- No obvious intake gaps requiring pre-build clarification.';
   }
 
@@ -1015,6 +1072,15 @@ ${extras.length ? `\nAdditional selected pages beyond the standard five:\n${bull
 - Developer account path: ${app ? titleCaseToken(app.developerAccountPreference) : 'Not applicable'}
 - Requested app capabilities: ${hasApp() ? briefValue(capabilities) : 'Not applicable'}
 
+## EXPRESS PRICING / SAVINGS QUALIFICATION
+- Standard Express Website Build Fee range: $250-$1,000
+- Express Website Care Plan range: $49-$249/month
+- Express App Build Fee range: $250-$1,000
+- App ongoing service: depends on selected features and publishing/service path
+${buildSavingsBrief(data)}
+
+Important: The intake does not itself promise a discount or $0 setup. Eagle Vision determines the final Express Build Fee and any payment-related incentive after reviewing scope and qualification economics.
+
 ## EXISTING INTEGRATIONS / PROVIDERS
 ${bulletLines(integrations, '- No existing integrations were entered.')}
 
@@ -1080,6 +1146,7 @@ Before final launch:
       ...(hasWebsite() ? [['Website Pages', `${pageLabels.length} selected`, pageLabels.join('\n'), true]] : []),
       ...(hasApp() ? [['App Capabilities', capabilities.length ? `${capabilities.length} selected` : 'Standard app shell', capabilities.join('\n') || 'No additional capabilities selected yet.', true]] : []),
       ['Content Handling', data.contentPolicy.defaultHandling.replaceAll('_',' '), data.contentPolicy.aboutNotes ? 'About/story notes supplied.' : 'Eagle Vision will use the supplied business facts and source material.', false],
+      ['Express Savings', data.savingsQualification?.requested ? 'Eligibility review requested' : 'Standard Express pricing', data.savingsQualification?.requested ? `Monthly card volume: ${cardVolumeLabel(data.savingsQualification.monthlyCardVolume)} | Online EV Payments: ${titleCaseToken(data.savingsQualification.onlineEagleVisionPaymentsInterest)}` : 'No payment-processing savings review requested.', false],
       ['Uploads', `${data.media.length} labeled image${data.media.length === 1 ? '' : 's'}`, data.media.map(m => `${m.label.replaceAll('_',' ')}: ${m.subject || m.uploadToken || 'image'}`).join('\n') || 'You can still provide additional assets during Eagle Vision review.', true]
     ].map(([small,strong,p,full]) => `<article class="ex-review-card${full ? ' full':''}"><small>${small}</small><strong>${strong}</strong><p>${p}</p></article>`).join('');
 
